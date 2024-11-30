@@ -4,14 +4,13 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false); // État pour gérer l'ouverture du menu burger
+  const [isOpen, setIsOpen] = useState(false); 
 
-  const toggleMenu = () => setIsOpen(!isOpen); // Fonction pour ouvrir/fermer le menu
+  const toggleMenu = () => setIsOpen(!isOpen); 
 
   return (
     <div className="bg-slate-900 shadow-md fixed top-0 left-0 w-full z-50">
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
-        {/* Logo cliquable avec fond en dégradé */}
         <Link
           href="/"
           className="box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 text-4xl font-bold"
@@ -19,7 +18,6 @@ export default function Navbar() {
           Elone.
         </Link>
 
-        {/* Bouton menu burger pour mobile */}
         <button
           onClick={toggleMenu}
           className="text-white text-3xl md:hidden focus:outline-none"
@@ -28,7 +26,6 @@ export default function Navbar() {
           {isOpen ? '✖' : '☰'}
         </button>
 
-        {/* Menu (visible sur desktop, caché sur mobile sauf si ouvert) */}
         <nav
           className={`${
             isOpen ? 'block' : 'hidden'
@@ -50,7 +47,6 @@ export default function Navbar() {
                 Contact
               </Link>
             </li>
-            {/* Bouton Download CV intégré dans la liste */}
             <li>
               <a
                 href="/doc/CV_elone_maccioni.pdf"
