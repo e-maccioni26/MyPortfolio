@@ -50,23 +50,18 @@ export default function Navbar() {
                 Contact
               </Link>
             </li>
+            {/* Bouton Download CV intégré dans la liste */}
+            <li>
+              <a
+                href="/doc/CV_elone_maccioni.pdf"
+                download
+                className="bg-indigo-600 text-white px-4 py-2 rounded-md text-lg font-medium hover:bg-indigo-700"
+              >
+                Download CV
+              </a>
+            </li>
           </ul>
         </nav>
-
-        {/* Bouton Download CV (visible sur desktop, caché sur mobile sauf si ouvert) */}
-        <div
-          className={`${
-            isOpen ? 'block mt-4 text-center' : 'hidden md:block'
-          } md:ml-4`}
-        >
-          <a
-            href="/doc/CV_elone_maccioni.pdf" 
-            download
-            className="bg-indigo-600 text-white px-4 py-2 rounded-md text-lg font-medium hover:bg-indigo-700"
-          >
-            Download CV
-          </a>
-        </div>
       </div>
     </div>
   );
