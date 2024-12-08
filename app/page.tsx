@@ -4,10 +4,9 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { TextPlugin } from 'gsap/TextPlugin';
 import Navbar from '../app/components/navbar';
-import Card from '../app/components/card';
+import Button from '../app/components/button'; 
 
 gsap.registerPlugin(TextPlugin);
-
 
 export default function Page() {
   const hiThereRef = useRef<HTMLParagraphElement>(null);
@@ -32,40 +31,37 @@ export default function Page() {
     }
   }, []);
 
-
   return (
     <>
       <Navbar />
-      <main className="min-h-screen mt-32 text-white flex flex-col items-center justify-center text-center">
-        <p
-          ref={hiThereRef}
-          className="text-4xl font-bold text-indigo-400 mb-4"
-        ></p>
-        <h1
-          ref={nameRef}
-          className="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 mb-6"
-        ></h1>
+      <main className="mt-32 text-white flex flex-col items-center justify-center text-center">
+        <div>
+          <p
+            ref={hiThereRef}
+            className="text-4xl font-bold text-indigo-400 mb-4"
+          ></p>
+          <h1
+            ref={nameRef}
+            className="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 mb-6"
+          ></h1>
 
-        <p className="text-lg leading-relaxed max-w-3xl mx-auto">
-          I am a Master’s student in Full Stack Development at Efrei Paris and a Digital Project Manager Apprentice at Crédit Agricole d’Ile-de-France. I am passionate about programming and specialize in using modern technologies like React and Next.js to build innovative web solutions.
-        </p>
+          <p className="text-lg leading-relaxed max-w-3xl mx-auto mb-8">
+            I am a Master’s student in Full Stack Development at Efrei Paris and a Digital Project Manager Apprentice at Crédit Agricole d’Ile-de-France. I am passionate about programming and specialize in using modern technologies like React and Next.js to build innovative web solutions.
+          </p>
 
-        <section className="py-24 w-full container">
-          <div className='text-start'>
-            <h2 className="text-3xl text-start font-bold mb-2 text-indigo-400">My last Projects</h2>
-            <p>Consultez mes projets les plus récents...</p>
-          </div>
-
-          <div>
-            <Card
-              image="/images/landing-page_1.png"
-              title="Next.js"
-              description="The React Framework for Production"
-              link="https://nextjs.org/"
+          <div className="flex justify-center space-x-4">
+            <Button
+              text="About Me"
+              href="/about"
+              style="bg-indigo-600 text-white hover:bg-indigo-700"
             />
-              
+            <Button
+              text="Contact Me"
+              href="/contact"
+              style="bg-gray-800 text-indigo-400 hover:bg-gray-900 hover:text-indigo-500"
+            />
           </div>
-        </section>
+        </div>
       </main>
     </>
   );

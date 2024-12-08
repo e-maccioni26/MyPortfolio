@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 
+
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["400", "700", "800", "600", "500"], 
@@ -10,7 +11,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Portoflio | Elone Maccioni",
+  title: "Portoflio | Elone Maccioni - Développeur React and Nextjs",
   description: "I'm Développeur Full Stack React and Nextjs",
 };
 
@@ -21,11 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${montserrat.variable} antialiased bg-animated`}
-      >
-        {children}
-      </body>
+        <body
+          className={`${montserrat.variable} antialiased bg-animated`}>
+            {children}   
+        </body>
     </html>
   );
 }

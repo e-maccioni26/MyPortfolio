@@ -17,13 +17,17 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-montserrat);
+  font-family: var(--font-montserrat)!important;
 }
 
-.bg-animated {
+/* .bg-animated {
   background: linear-gradient(270deg, #0c0b19, #100e26, #171537);
   background-size: 600% 600%;
   animation: gradient-animation 6s ease infinite;
+} */
+
+.bg-animated {
+  background-color: black; 
 }
 
 @keyframes gradient-animation {
