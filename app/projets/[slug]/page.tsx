@@ -2,11 +2,51 @@ import { ThemeToggle } from "@/components/theme-toggle"
 import { projects } from "@/components/projects-data"
 import Link from "next/link"
 import { notFound } from "next/navigation"
+import { Metadata } from "next"
+import { StructuredData } from "@/app/components/structured-data"
 
 export function generateStaticParams() {
   return projects.map((project) => ({
     slug: project.link.split("/").pop(),
   }))
+}
+
+// Génération dynamique des métadonnées pour chaque projet
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const project = projects.find((p) => p.link.endsWith(params.slug))
+  
+  if (!project) {
+    return {
+      title: "Projet non trouvé",
+      description: "Le projet que vous recherchez n'existe pas."
+    }
+  }
+
+  const technologies = project.technologies.join(", ")
+  
+  return {
+    title: `${project.title} | Portfolio Elone Maccioni`,
+    description: project.longDescription?.substring(0, 160) || project.description,
+    keywords: [...project.technologies, "projet", "portfolio", "développement web"],
+    openGraph: {
+      title: project.title,
+      description: project.longDescription?.substring(0, 160) || project.description,
+      images: [
+        {
+          url: project.thumbnail,
+          width: 1200,
+          height: 630,
+          alt: project.title
+        }
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: project.title,
+      description: project.longDescription?.substring(0, 160) || project.description,
+      images: [project.thumbnail]
+    }
+  }
 }
 
 export default async function ProjectPage({ params }: { params: { slug: string } }) {
@@ -102,6 +142,19 @@ export default async function ProjectPage({ params }: { params: { slug: string }
           </section>
         )}
       </div>
+      
+      <StructuredData
+        type="Project"
+        data={{
+          title: project.title,
+          description: project.longDescription || project.description,
+          image: project.thumbnail,
+          url: `https://elonemaccioni.fr${project.link}`,
+          author: "Elone Maccioni",
+          keywords: project.technologies.join(", "),
+          datePublished: "2024-04-07"
+        }}
+      />
     </main>
   )
 }

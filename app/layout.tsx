@@ -10,7 +10,37 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Portfolio | Elone Maccioni",
-  description: "Développeur Full Stack"
+  description: "Développeur Full Stack spécialisé en React, Next.js et technologies web modernes. Découvrez mes projets et compétences.",
+  keywords: ["développeur full stack", "portfolio", "react", "next.js", "javascript", "développeur web", "Elone Maccioni"],
+  authors: [{ name: "Elone Maccioni" }],
+  creator: "Elone Maccioni",
+  publisher: "Elone Maccioni",
+  robots: "index, follow",
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: "https://elonemaccioni.fr/",
+    title: "Portfolio | Elone Maccioni | Développeur Full Stack",
+    description: "Développeur Full Stack spécialisé en React, Next.js et technologies web modernes. Découvrez mes projets et compétences.",
+    siteName: "Portfolio d'Elone Maccioni",
+    images: [
+      {
+        url: "/avatar.png",
+        width: 800,
+        height: 800,
+        alt: "Photo d'Elone Maccioni"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Portfolio | Elone Maccioni | Développeur Full Stack",
+    description: "Développeur Full Stack spécialisé en React, Next.js et technologies web modernes. Découvrez mes projets et compétences.",
+    images: ["/avatar.png"]
+  },
+  alternates: {
+    canonical: "https://elonemaccioni.fr/"
+  }
 }
 
 export default function RootLayout({
