@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import { AnimatePresence, motion } from "motion/react"
-import { Bot, X } from "lucide-react"
+import { Bot, X, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ChatMessage } from "@/components/ui/chatbot-message"
 import { ChatInput } from "@/components/ui/chatbot-input"
@@ -21,13 +21,14 @@ export default function Chatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "welcome",
-      content: "Bonjour ! Comment puis-je vous aider aujourd'hui ?",
+      content: "Hello 👋🏼 je suis l'assistant d'Elone ! Vous pouvez me poser des questions sur lui et j'y répondrai avec plaisir.",    
       isUser: false,
       timestamp: new Date(),
     },
   ])
   const [isTyping, setIsTyping] = useState(false)
   const [showSuggestions, setShowSuggestions] = useState(true)
+  const [showWelcomeMessage, setShowWelcomeMessage] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
   const suggestedQuestions = [
@@ -49,6 +50,15 @@ export default function Chatbot() {
       }, 300)
     }
   }, [isOpen])
+  
+  // Afficher le message d'accueil après 5 secondes
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowWelcomeMessage(true)
+    }, 5000)
+    
+    return () => clearTimeout(timer)
+  }, [])
 
   const handleSendMessage = async (content: string) => {
     setShowSuggestions(false)
@@ -86,7 +96,7 @@ export default function Chatbot() {
         setMessages((prev) => [...prev, botMessage])
         setIsTyping(false)
   
-        // Réactiver les suggestions si fallback
+        
         if (data.response.startsWith("Je suis désolé")) {
           setShowSuggestions(true)
         }
@@ -111,6 +121,43 @@ export default function Chatbot() {
 
   return (
     <>
+      {/* Welcome message */}
+      <AnimatePresence>
+        {showWelcomeMessage && !isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            transition={{ duration: 0.3 }}
+            className="fixed bottom-24 right-6 z-50 bg-indigo-600 text-white p-3 rounded-lg shadow-lg max-w-[250px] flex items-start gap-2"
+          >
+            <MessageCircle className="h-5 w-5 mt-0.5 flex-shrink-0" />
+            <div>
+              <p className="text-sm font-medium">Hey je suis l&apos;assistant d&apos;Elone, n&apos;hésite pas à me poser des questions !</p>
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="mt-1 text-xs text-indigo-200 hover:text-white p-0 h-auto"
+                onClick={() => {
+                  setShowWelcomeMessage(false)
+                  setIsOpen(true)
+                }}
+              >
+                Discuter
+              </Button>
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="mt-1 ml-2 text-xs text-indigo-200 hover:text-white p-0 h-auto"
+                onClick={() => setShowWelcomeMessage(false)}
+              >
+                Fermer
+              </Button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      
       {/* Chat button */}
       <Button
         onClick={() => setIsOpen(!isOpen)}
