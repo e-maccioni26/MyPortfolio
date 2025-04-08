@@ -1,47 +1,26 @@
 "use client"
 
 import Carousel from "@/components/ui/carousel"
-import { motion } from "motion/react"
+import { motion } from "framer-motion"
 import { GradientBorderButton } from "@/components/ui/gradient-border-button"
+import { projects } from "@/components/projects-data"
 
 export default function ProjectsCarousel() {
-  const projectsData = [
-    {
-      title: "Application E-commerce",
-      description: "Plateforme de vente en ligne avec paiement intégré et gestion des stocks",
-      button: "Voir le projet",
-      src: "/images/projects/ecommerce.jpg",
-      link: "/projets/ecommerce",
-    },
-    {
-      title: "Portfolio Créatif",
-      description: "Site vitrine pour un photographe avec galerie interactive",
-      button: "Voir le projet",
-      src: "/images/projects/portfolio.jpg",
-      link: "/projets/portfolio",
-    },
-    {
-      title: "Dashboard Analytics",
-      description: "Interface d'administration avec visualisation de données en temps réel",
-      button: "Voir le projet",
-      src: "/images/projects/dashboard.jpg",
-      link: "/projets/dashboard",
-    },
-    {
-      title: "Application Mobile",
-      description: "Application de fitness avec suivi des performances et coaching personnalisé",
-      button: "Voir le projet",
-      src: "/images/projects/mobile.jpg",
-      link: "/projets/mobile",
-    },
-  ]
+  // Sélectionner les 4 premiers projets du tableau projects
+  const projectsData = projects.slice(0, 4).map(project => ({
+    title: project.title,
+    description: project.description,
+    button: "Voir le projet",
+    src: project.thumbnail,
+    link: project.link,
+  }))
 
-  // Utilisons des images de placeholder en attendant que l'utilisateur fournisse ses propres images
+  // Assurons-nous que les images s'affichent correctement
   const processedProjects = projectsData.map((project) => ({
     ...project,
-    src: project.src.includes("http")
-      ? project.src
-      : `/placeholder.svg?height=800&width=800&text=${encodeURIComponent(project.title)}`,
+    src: project.src.startsWith("http") 
+      ? project.src 
+      : project.src // Utiliser directement le chemin de l'image sans modification
   }))
 
   return (
@@ -66,7 +45,7 @@ export default function ProjectsCarousel() {
           </motion.p>
         </div>
 
-        <div className="relative overflow-hidden w-full h-full py-10">
+        <div className="relative overflow-hidden w-full h-full py-16">
           <Carousel slides={processedProjects} />
         </div>
 
