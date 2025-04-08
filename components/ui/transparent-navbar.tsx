@@ -174,7 +174,7 @@ export const NavbarLogo = () => {
   return (
     <Link href="/" className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal">
       <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
-        Portfolio
+        Elone.M
       </span>
     </Link>
   )

@@ -20,7 +20,7 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://github.com"
+                href="https://github.com/e-maccioni26"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-indigo-500 dark:text-gray-400 dark:hover:text-indigo-400 transition-colors"
@@ -29,7 +29,7 @@ export default function Footer() {
                 <span className="sr-only">GitHub</span>
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/elone-maccioni"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-indigo-500 dark:text-gray-400 dark:hover:text-indigo-400 transition-colors"
@@ -38,7 +38,7 @@ export default function Footer() {
                 <span className="sr-only">LinkedIn</span>
               </a>
               <a
-                href="mailto:contact@exemple.com"
+                href="mailto:elonemacc@gmail.com"
                 className="text-gray-600 hover:text-indigo-500 dark:text-gray-400 dark:hover:text-indigo-400 transition-colors"
               >
                 <Mail size={20} />
@@ -103,11 +103,11 @@ export default function Footer() {
               </li>
               <li className="flex items-start space-x-3">
                 <Phone size={18} className="flex-shrink-0 text-indigo-500 mt-1" />
-                <span className="text-gray-600 dark:text-gray-400">+33 6 12 34 56 78</span>
+                <span className="text-gray-600 dark:text-gray-400">+33 6 95 15 80 73</span>
               </li>
               <li className="flex items-start space-x-3">
                 <Mail size={18} className="flex-shrink-0 text-indigo-500 mt-1" />
-                <span className="text-gray-600 dark:text-gray-400">contact@exemple.com</span>
+                <span className="text-gray-600 dark:text-gray-400">elonemacc@gmail.com</span>
               </li>
             </ul>
           </div>
