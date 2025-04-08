@@ -55,7 +55,7 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold">Portfolio</span>
+            <span className="text-xl font-bold">Elone.M</span>
           </Link>
 
           {/* Desktop Navigation */}

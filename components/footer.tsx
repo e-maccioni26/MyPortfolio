@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-1">
             <Link href="/" className="flex items-center space-x-2 mb-4">
               <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
-                Portfolio
+                Elone.M
               </span>
             </Link>
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">

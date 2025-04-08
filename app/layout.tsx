@@ -54,7 +54,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} bg-white dark:bg-black text-black dark:text-white flex flex-col min-h-screen pt-16`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           <TransparentMainNavbar />
           <div className="flex-grow">{children}</div>
           <Footer />

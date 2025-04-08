@@ -1,15 +1,15 @@
 const responses = [
     {
       keywords: ["bonjour", "salut", "coucou"],
-      response: "Bonjour et bienvenue sur mon portfolio ! Je suis Elone Maccioni, développeur full stack passionné. N'hésitez pas à me poser une question pour en savoir plus sur mon parcours ou mes projets.",
+      response: "Bonjour et bienvenue sur mon portfolio ! Je suis Elone Maccioni, développeur full stack passionné par mon métier. N'hésitez pas à me poser une question pour en savoir plus sur mon parcours ou mes projets. 😉",
     },
     {
       keywords: ["projet", "réalisé", "portfolio"],
-      response: "J'ai conçu plusieurs projets variés, dont un portfolio en React/Next.js, un blog Angular permettant la publication de recettes, une application Pokedex en React Native, et un outil interne pour le Crédit Agricole IDF qui automatise l’envoi de leads clients. Vous pouvez découvrir ces projets en détail dans la section Projets.",
+      response: "J'ai conçu plusieurs projets variés, dont ce portfolio en React/Next.js, un blog de cuisine en Angular permettant la publication de recettes, une application Pokedex en React Native, et un outil interne pour le Crédit Agricole IDF qui automatise l’envoi de leads clients. Vous pouvez découvrir ces projets en détail dans la section Projets ! 😊",
     },
     {
       keywords: ["parcours", "formation", "académique"],
-      response: "Je suis actuellement en Master Dev Manager Full Stack à l’Efrei Paris dans le cadre d’un double diplôme avec l’école 3IL Ingénieur. Mon alternance se termine en septembre 2025 au Crédit Agricole d’Île-de-France, où j’ai conçu des outils digitaux internes pour améliorer les processus des conseillers.",
+      response: "Je suis actuellement en Master Dev Manager Full Stack à l’Efrei Paris dans le cadre d’un double diplôme avec l’école 3IL Ingénieur. Mon alternance se termine en septembre 2025 au Crédit Agricole d’Île-de-France. Je suis à la recherche d'un CDI en tant que développeur full stack, développeur Web.",
     },
     {
       keywords: ["compétence", "technique", "stack"],
@@ -21,7 +21,7 @@ const responses = [
     },
     {
       keywords: ["service", "propose", "prestations"],
-      response: "Je propose des services de développement sur mesure : sites web vitrines, applications métiers, outils d’automatisation, optimisation des performances, et intégration continue. Parlons de vos besoins !",
+      response: "Je propose des services de développement sur mesure : sites web vitrines, applications métiers, outils d’automatisation, optimisation des performances, et intégration continue. Parlez moi de vos besoins !",
     },
     {
       keywords: ["merci", "thanks", "super"],
