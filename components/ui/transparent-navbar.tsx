@@ -57,7 +57,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
   })
 
   return (
-    <motion.div ref={ref} className={cn("fixed inset-x-0 top-0 z-40 w-full transition-all duration-300", className)}>
+    <motion.div ref={ref} className={cn("fixed inset-x-0 top-0 z-[100] w-full transition-all duration-300", className)}>
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
           ? React.cloneElement(child as React.ReactElement<{ scrolled?: boolean }>, { scrolled })
@@ -174,7 +174,7 @@ export const NavbarLogo = () => {
   return (
     <Link href="/" className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal">
       <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
-        Elone.M
+        Portfolio
       </span>
     </Link>
   )
@@ -214,4 +214,3 @@ export const NavbarButton = ({
     </Tag>
   )
 }
-

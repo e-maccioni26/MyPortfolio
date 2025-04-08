@@ -5,6 +5,7 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import Footer from "@/components/footer"
 import TransparentMainNavbar from "@/components/transparent-main-navbar"
+import Chatbot from "@/components/chatbot"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -57,6 +58,7 @@ export default function RootLayout({
           <TransparentMainNavbar />
           <div className="flex-grow">{children}</div>
           <Footer />
+          <Chatbot />
         </ThemeProvider>
       </body>
     </html>
