@@ -6,6 +6,7 @@ import { Bot, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ChatMessage } from "@/components/ui/chatbot-message"
 import { ChatInput } from "@/components/ui/chatbot-input"
+import { ChatSuggestions } from "@/components/ui/chatbot-suggestion"
 import { cn } from "@/lib/utils"
 
 interface Message {
@@ -26,61 +27,86 @@ export default function Chatbot() {
     },
   ])
   const [isTyping, setIsTyping] = useState(false)
+  const [showSuggestions, setShowSuggestions] = useState(true)
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
- 
+  const suggestedQuestions = [
+    "Qu'as-tu fait comme projets ?",
+    "Quel est ton parcours académique ?",
+    "Quelles sont tes compétences techniques ?",
+    "Comment puis-je te contacter ?",
+    "Quels services proposes-tu ?",
+  ]
+
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
   }, [messages])
 
-  const handleSendMessage = (content: string) => {
+  useEffect(() => {
+    if (!isOpen) {
+      setTimeout(() => {
+        setShowSuggestions(true)
+      }, 300)
+    }
+  }, [isOpen])
+
+  const handleSendMessage = async (content: string) => {
+    setShowSuggestions(false)
+  
     const userMessage: Message = {
       id: Date.now().toString(),
       content,
       isUser: true,
       timestamp: new Date(),
     }
+  
     setMessages((prev) => [...prev, userMessage])
-
     setIsTyping(true)
-
-    
-    setTimeout(
-      () => {
+  
+    try {
+      const res = await fetch("/api/contact/chatbot", {
+        method: "POST",
+        body: JSON.stringify({ message: content }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+  
+      const data = await res.json()
+  
+      // Attente de 3 secondes avant réponse
+      setTimeout(() => {
         const botMessage: Message = {
           id: (Date.now() + 1).toString(),
-          content: getBotResponse(content),
+          content: data.response,
           isUser: false,
           timestamp: new Date(),
         }
+  
         setMessages((prev) => [...prev, botMessage])
         setIsTyping(false)
-      },
-      1000 + Math.random() * 2000,
-    ) 
+  
+        // Réactiver les suggestions si fallback
+        if (data.response.startsWith("Je suis désolé")) {
+          setShowSuggestions(true)
+        }
+      }, 3000)
+    } catch (error) {
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: (Date.now() + 2).toString(),
+          content: "Erreur serveur. Veuillez réessayer plus tard.",
+          isUser: false,
+          timestamp: new Date(),
+        },
+      ])
+      setIsTyping(false)
+    }
   }
 
-  
-  const getBotResponse = (message: string): string => {
-    const lowerMessage = message.toLowerCase()
-
-    if (lowerMessage.includes("bonjour") || lowerMessage.includes("salut")) {
-      return "Bonjour ! Comment puis-je vous aider aujourd'hui ?"
-    }
-
-    if (lowerMessage.includes("projet") || lowerMessage.includes("services")) {
-      return "Je propose des services de développement web, création de sites et d'applications. Vous pouvez consulter mes projets dans la section Projets du site."
-    }
-
-    if (lowerMessage.includes("contact") || lowerMessage.includes("email")) {
-      return "Vous pouvez me contacter par email à elonemacc@gmail.com ou via le formulaire de contact sur le site."
-    }
-
-    if (lowerMessage.includes("merci")) {
-      return "Je vous en prie ! N'hésitez pas si vous avez d'autres questions."
-    }
-
-    return "Je suis désolé, je ne suis qu'une démo pour le moment. Je serai bientôt connecté à un LLM pour mieux répondre à vos questions !"
+  const handleSuggestionClick = (question: string) => {
+    handleSendMessage(question)
   }
 
   return (
@@ -89,11 +115,11 @@ export default function Chatbot() {
       <Button
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          "fixed bottom-6 right-6 z-50 rounded-full shadow-lg h-14 w-14 p-0",
+          "fixed bottom-6 right-6 z-50 rounded-full shadow-lg h-16 w-16 p-0",
           isOpen ? "bg-gray-700 hover:bg-gray-800" : "bg-indigo-600 hover:bg-indigo-700",
         )}
       >
-        {isOpen ? <X className="h-6 w-6" /> : <Bot className="h-6 w-6" />}
+        {isOpen ? <X className="h-8 w-8" /> : <Bot className="h-8 w-8" />}
       </Button>
 
       {/* Chat window */}
@@ -134,7 +160,6 @@ export default function Chatbot() {
                 />
               ))}
 
-              {/* Typing indicator */}
               {isTyping && (
                 <div className="flex items-center gap-2 p-2">
                   <div className="flex h-8 w-8 shrink-0 select-none items-center justify-center rounded-md border bg-primary text-primary-foreground">
@@ -145,6 +170,13 @@ export default function Chatbot() {
                     <div className="h-2 w-2 animate-bounce rounded-full bg-muted-foreground [animation-delay:-0.15s]"></div>
                     <div className="h-2 w-2 animate-bounce rounded-full bg-muted-foreground"></div>
                   </div>
+                </div>
+              )}
+
+              {showSuggestions && !isTyping && messages.length === 1 && (
+                <div className="mt-4">
+                  <p className="text-xs text-muted-foreground mb-2">Questions suggérées :</p>
+                  <ChatSuggestions suggestions={suggestedQuestions} onSelect={handleSuggestionClick} />
                 </div>
               )}
 

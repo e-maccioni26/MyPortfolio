@@ -7,9 +7,25 @@ import { z } from 'zod';
 import { Loader2 } from 'lucide-react';
 
 const formSchema = z.object({
-  name: z.string().min(2, { message: "Le nom doit contenir au moins 2 caractères" }),
-  email: z.string().email({ message: "Format d'email invalide" }),
-  message: z.string().min(10, { message: "Le message doit contenir au moins 10 caractères" }),
+  name: z.string()
+    .min(2, { message: "Le nom doit contenir au moins 2 caractères" })
+    .max(50, { message: "Le nom ne doit pas dépasser 50 caractères" })
+    .regex(/^[a-zA-ZÀ-ÿ\s'-]+$/, { 
+      message: "Le nom ne doit contenir que des lettres, espaces, tirets ou apostrophes" 
+    }),
+    
+  email: z.string()
+    .email({ message: "Format d'email invalide" })
+    .regex(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, {
+      message: "Format d'email invalide" 
+    }),
+    
+  message: z.string()
+    .min(10, { message: "Le message doit contenir au moins 10 caractères" })
+    .max(2000, { message: "Le message ne doit pas dépasser 2000 caractères" })
+    .refine(msg => !/(https?:\/\/|www\.)/i.test(msg), {
+      message: "Les liens ne sont pas autorisés dans le message"
+    }),
 });
 
 type FormValues = z.infer<typeof formSchema>;
