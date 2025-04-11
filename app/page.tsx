@@ -4,6 +4,7 @@ import TechStack from "@/components/tech-stack"
 import ServicesSection from "@/components/services-section"
 import ProjectsCarousel from "@/components/projects-carousel"
 import ContactCard from "@/components/contact-card"
+import CertificationsSection from "@/components/certifications-section"
 import { StructuredData } from "./components/structured-data"
 import { Metadata } from "next"
 
@@ -23,6 +24,7 @@ export default function Home() {
       <HomeHero />
       <TechStack />
       <ServicesSection />
+      <CertificationsSection />
       <ProjectsCarousel />
       <ContactCard />
       

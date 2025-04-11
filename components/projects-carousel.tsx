@@ -15,12 +15,12 @@ export default function ProjectsCarousel() {
     link: project.link,
   }))
 
-  // Assurons-nous que les images s'affichent correctement
+  
   const processedProjects = projectsData.map((project) => ({
     ...project,
     src: project.src.startsWith("http") 
       ? project.src 
-      : project.src // Utiliser directement le chemin de l'image sans modification
+      : project.src 
   }))
 
   return (
