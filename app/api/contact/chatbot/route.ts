@@ -27,6 +27,10 @@ const responses = [
       keywords: ["merci", "thanks", "super", "ok"],
       response: "Avec plaisir ! Si vous avez d'autres questions, je suis à votre disposition. 😊",
     },
+    {
+      keywords: ["musk"],
+      response: "De la part d'elone Maccioni : 'Certes, j'ai les memes initilaes que lui ! Mais ce n'est pas pour ça, que je suis Elon Musk' ",
+    },
   ]
   
   export async function POST(req: Request) {

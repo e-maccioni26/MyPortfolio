@@ -24,7 +24,7 @@ export default function Home() {
       <HomeHero />
       <TechStack />
       <ServicesSection />
-      <CertificationsSection />
+      <CertificationsSection limit={2} showViewMoreButton={true} />
       <ProjectsCarousel />
       <ContactCard />
       
@@ -38,7 +38,7 @@ export default function Home() {
           socialLinks: ["https://github.com/e-maccioni26", "https://linkedin.com/in/elone-maccioni"],
           image: "/avatar.png",
           email: "contact@elonemaccioni.fr",
-          skills: ["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "CSS", "HTML", "API REST"]
+          skills: ["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "CSS", "HTML", "API REST", "PHP", "SQL", "Git", "Docker", "Linux", "SEO", "WordPress", "SEO", "IA"]
         }}
       />
       
