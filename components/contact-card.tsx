@@ -26,8 +26,8 @@ export default function ContactCard() {
                   Un projet en tête ?
                 </h2>
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-                  N'hésitez pas à me contacter pour discuter de votre projet. Que vous ayez besoin d'un site web, d'une
-                  application ou d'une refonte, je suis là pour vous accompagner dans la réalisation de vos idées.
+                  Que vous ayez besoin d'un site web, d'une
+                  application ou d'une refonte,<br /> je suis là pour vous accompagner dans la réalisation de vos idées.
                 </p>
               </div>
               <div className="flex-shrink-0">

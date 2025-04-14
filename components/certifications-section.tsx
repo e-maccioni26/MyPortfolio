@@ -50,20 +50,6 @@ const certifications: Certification[] = [
     url: "https://www.digitalschool.paris/programmes/post-bac/bachelor-chef-de-projet-digital/"
   },
   {
-    school: "Skills4All",
-    degree: "Design thinking : créativité et innovation dans vos projets",
-    period: "Mars 2024",
-    status: "Obtenu",
-    skills: [
-      "Développer la créativité des équipes",
-      "Accompagner la transformation digitale",
-      "Proposer des produits, services à haute valeur ajoutée",
-      "Faire évoluer l'organisation de son entreprise",
-    ],
-    logo: "/skills4all-logo.jpeg",
-    url: "https://lms.skills4all.com/mod/linkedincert/verify_certificate.php?code=TlqMhSxWpi"
-  },
-  {
     school: "Abilways",
     degree: "Manager les projets avec Agilité",
     period: "Mars 2025",
@@ -77,6 +63,20 @@ const certifications: Certification[] = [
     ],
     logo: "/abiways-logo.png",
     url: "https://abilways-digital-place.lms.crossknowledge.com/certification/r/384728/t/1741707521/h/4456df65986d9cb0d406c0a779a6a136/"
+  },
+  {
+    school: "Skills4All",
+    degree: "Design thinking : créativité et innovation dans vos projets",
+    period: "Mars 2024",
+    status: "Obtenu",
+    skills: [
+      "Développer la créativité des équipes",
+      "Accompagner la transformation digitale",
+      "Proposer des produits, services à haute valeur ajoutée",
+      "Faire évoluer l'organisation de son entreprise",
+    ],
+    logo: "/skills4all-logo.jpeg",
+    url: "https://lms.skills4all.com/mod/linkedincert/verify_certificate.php?code=TlqMhSxWpi"
   },
   {
     school: "Opquast",

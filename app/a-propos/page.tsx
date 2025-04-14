@@ -11,7 +11,7 @@ export default function AProposPage() {
       <AboutBeamsDemo />
       <TechStackSection />
 
-      <section className="py-20 bg-neutral-900/50 backdrop-blur-sm">
+      {/* <section className="py-20 bg-neutral-900/50 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -47,7 +47,7 @@ export default function AProposPage() {
             />
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   )
 }

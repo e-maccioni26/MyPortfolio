@@ -31,6 +31,7 @@ export default function TransparentMainNavbar() {
     {
       name: "Contact",
       link: "/contact",
+      mobileHidden: true, 
     },
   ]
 
@@ -84,7 +85,7 @@ export default function TransparentMainNavbar() {
         </MobileNavHeader>
 
         <MobileNavMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)}>
-          {navItems.map((item, idx) => (
+          {navItems.filter(item => !item.mobileHidden).map((item, idx) => (
             <a
               key={`mobile-link-${idx}`}
               href={item.link}

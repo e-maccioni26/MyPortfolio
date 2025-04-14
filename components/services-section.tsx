@@ -9,7 +9,7 @@ const IconArrowLeft = ArrowLeft
 const IconArrowRight = ArrowRight
 
 export default function ServicesSection() {
-  // Créons des images avec des icônes au lieu d'utiliser des images réelles
+  
   const serviceIcons = [
     {
       icon: <Code size={80} className="text-purple-500" />,
@@ -81,7 +81,6 @@ export default function ServicesSection() {
     },
   ]
 
-  // Modifions le composant AnimatedTestimonials pour afficher nos icônes
   const CustomAnimatedTestimonials = () => {
     const [active, setActive] = useState(0)
 
@@ -98,7 +97,7 @@ export default function ServicesSection() {
     }
 
     useEffect(() => {
-      const interval = setInterval(handleNext, 5000)
+      const interval = setInterval(handleNext, 7000)
       return () => clearInterval(interval)
     }, [])
 
