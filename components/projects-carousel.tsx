@@ -6,7 +6,7 @@ import { GradientBorderButton } from "@/components/ui/gradient-border-button"
 import { projects } from "@/components/projects-data"
 
 export default function ProjectsCarousel() {
-  // Sélectionner les 4 premiers projets du tableau projects
+  
   const projectsData = projects.slice(0, 4).map(project => ({
     title: project.title,
     description: project.description,

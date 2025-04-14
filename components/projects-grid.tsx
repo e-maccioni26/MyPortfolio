@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import Image from "next/image"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
-import { motion } from "motion/react"
+import { motion, AnimatePresence } from "motion/react"
 
 export default function ProjectsGrid() {
   const [filteredProjects, setFilteredProjects] = useState<Project[]>(projects)
@@ -146,7 +146,7 @@ export default function ProjectsGrid() {
                           key={i} 
                           className={cn(
                             "px-2 py-1 text-xs rounded-full border border-border/50",
-                            selectedTech === tech ? "bg-primary/10 border-primary/50 text-primary-foreground" : "bg-muted/50"
+                            selectedTech === tech ? "bg-primary/10 border-primary/50 text-primary-foreground text-black dark:text-white" : "bg-muted/50"
                           )}
                         >
                           {tech}

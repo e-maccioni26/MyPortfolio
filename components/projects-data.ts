@@ -64,7 +64,7 @@ export const projects: Project[] = [
     thumbnail: "/images/projects/plateforme-leads.png", 
     description: "Automatisation de l’envoi de leads",
     longDescription: "Ce formulaire a été conçu pour les conseillers du Crédit Agricole d’Île-de-France afin de leur permettre d’envoyer rapidement les besoins de leurs clients (Assurance, Épargne, Entrée en relation) via un outil simple, efficace et centralisé.Ce projet remplace l’envoi manuel d’emails par un formulaire web sécurisé, qui transmet automatiquement les informations vers l’outil SOLEAD et la plateforme IAV pour la prise de rendez-vous ou le rappel client. J’ai développé l’ensemble en HTML, CSS, JavaScript et PHP, en m’assurant que les données soient correctement formatées et analysées par un robot de lecture côté messagerie. Le système intègre également un code apporteur pour assurer la traçabilité des leads.",
-    technologies: ["HTML", "CSS", "JavaScript", "PHP", "Express", "Material UI"],
+    technologies: ["HTML", "CSS", "JavaScript", "PHP"],
     features: [
       "Formulaire intelligent : Remplissage guidé avec champs conditionnels selon le besoin client.",
       "Envoi automatique d’emails formatés : Les données sont analysées par un robot chaque minute pour intégration dans un outil en interne.",
