@@ -1,4 +1,5 @@
 import HeroParallaxProjects from "@/components/hero-parallax-projects"
+import ProjectsGrid from "@/components/projects-grid"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Metadata } from "next"
 
@@ -21,6 +22,9 @@ export default function ProjetsPage() {
     <main className="min-h-screen">
       <ThemeToggle />
       <HeroParallaxProjects />
+      <div className="mt-[-100px] relative z-10">
+        <ProjectsGrid />
+      </div>
     </main>
   )
 }

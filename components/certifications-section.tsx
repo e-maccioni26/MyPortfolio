@@ -18,6 +18,21 @@ type Certification = {
 
 const certifications: Certification[] = [
   {
+    school: "Efrei",
+    degree: "Master Dev Manager Full Stack",
+    period: "2023-2025",
+    status: "En cours",
+    skills: [
+      "Développement d'applications web et mobile",
+      "Management de projets et SI",
+      "Informatique et SI",
+      "Data & Services",
+      "AI"
+    ],
+    logo: "/efrei-logo.png",
+    url: "https://www.efrei.fr/programmes-experts/master-developpeur-full-stack/"
+  },
+  {
     school: "Digital School of Paris",
     degree: "Bachelor Chef de Projet Digital",
     period: "2020-2023",
@@ -33,21 +48,6 @@ const certifications: Certification[] = [
     ],
     logo: "/dsp-logo.png",
     url: "https://www.digitalschool.paris/programmes/post-bac/bachelor-chef-de-projet-digital/"
-  },
-  {
-    school: "Efrei",
-    degree: "Master Dev Manager Full Stack",
-    period: "2023-2025",
-    status: "En cours",
-    skills: [
-      "Développement d'applications web et mobile",
-      "Management de projets et SI",
-      "Informatique et SI",
-      "Data & Services",
-      "AI"
-    ],
-    logo: "/efrei-logo.png",
-    url: "https://www.efrei.fr/programmes-experts/master-developpeur-full-stack/"
   },
   {
     school: "Skills4All",
@@ -104,8 +104,7 @@ export default function CertificationsSection({ limit, showViewMoreButton = fals
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [showAll, setShowAll] = useState(false)
   
-  // Si showViewMoreButton est true, on utilise l'état showAll pour déterminer combien de certifications afficher
-  // Sinon, on utilise le limit s'il est défini
+
   const displayedCertifications = showViewMoreButton
     ? showAll
       ? certifications
@@ -117,7 +116,7 @@ export default function CertificationsSection({ limit, showViewMoreButton = fals
   return (
     <section className="py-20 px-4 max-w-7xl mx-auto">
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500 mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-black-600 dark:text-white mb-4">
           Mes Certifications
         </h2>
         <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
@@ -153,7 +152,7 @@ export default function CertificationsSection({ limit, showViewMoreButton = fals
                 </div>
                 <div className="flex-1">
                   <div className="flex justify-between items-start">
-                    <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500">
+                    <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
                       {cert.degree}
                     </h3>
                     <a 
@@ -172,7 +171,7 @@ export default function CertificationsSection({ limit, showViewMoreButton = fals
               
               <div className="mb-4">
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm font-medium text-purple-400">{cert.period}</span>
+                  <span className="text-sm font-medium text-purple-500">{cert.period}</span>
                   <span className={`text-sm font-medium px-3 py-1 rounded-full ${cert.status === "Obtenu" ? "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400" : "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400"}`}>
                     {cert.status}
                   </span>
@@ -201,7 +200,7 @@ export default function CertificationsSection({ limit, showViewMoreButton = fals
         <div className="mt-12 text-center">
           <button 
             onClick={() => setShowAll(!showAll)}
-            className="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-md text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-purple-500/30"
+            className="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-md text-white bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 shadow-lg hover:shadow-purple-500/30"
           >
             {showAll ? "Voir moins" : "Voir plus"}
           </button>
