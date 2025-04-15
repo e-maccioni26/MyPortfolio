@@ -171,7 +171,7 @@ const onSubmit = async (data: FormValues) => {
 
               <div className="py-4">
                 <ReCAPTCHA
-                  sitekey={process.env.RECAPTCHA_SITE_KEY || ''}
+                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
                   onChange={(token) => setRecaptchaToken(token)}
                 />
               </div>
