@@ -116,12 +116,22 @@ export default function CertificationsSection({ limit, showViewMoreButton = fals
   return (
     <section className="py-20 px-4 max-w-7xl mx-auto">
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-black-600 dark:text-white mb-4">
-          Mes Certifications
-        </h2>
-        <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
-          Parcours académique et formations qui ont façonné mes compétences
-        </p>
+      <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl md:text-4xl font-bold bg-clip-text text-black-600 dark:text-white mb-4"
+          >
+            Mes Certifications
+      </motion.h2>
+      <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-muted-foreground max-w-2xl mx-auto"
+          >
+            Parcours académique et formations qui ont façonné mes compétences
+      </motion.p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">

@@ -72,7 +72,7 @@ export const NavBody = ({ children, className, scrolled }: NavBodyProps) => {
     <div
       className={cn(
         "relative z-[60] hidden h-16 w-full flex-row items-center justify-between px-6 lg:flex transition-all duration-300",
-        scrolled ? "bg-white dark:bg-gray-950 shadow-sm" : "bg-white/70 dark:bg-gray-950/70 backdrop-blur-md",
+        scrolled ? "bg-white/80 dark:bg-gray-950/80 backdrop-blur-md shadow-sm" : "bg-transparent",
         className,
       )}
     >
@@ -115,7 +115,7 @@ export const MobileNav = ({ children, className, scrolled }: MobileNavProps) => 
     <div
       className={cn(
         "relative z-50 flex h-16 w-full items-center justify-between px-4 lg:hidden transition-all duration-300",
-        scrolled ? "bg-white dark:bg-gray-950 shadow-sm" : "bg-white/70 dark:bg-gray-950/70 backdrop-blur-md",
+        scrolled ? "bg-white/80 dark:bg-gray-950/80 backdrop-blur-md shadow-sm" : "bg-transparent",
         className,
       )}
     >
