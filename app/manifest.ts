@@ -2,9 +2,9 @@ import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Portfolio d'Elone Maccioni",
+    name: "Portfolio d'Elone Maccioni - Freelance Web Developer",
     short_name: "Portfolio Elone",
-    description: "Portfolio de développeur full stack Elone Maccioni",
+    description: "Portfolio développeur full stack - Elone Maccioni",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",
