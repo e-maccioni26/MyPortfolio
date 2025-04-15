@@ -14,7 +14,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Portfolio | Elone Maccioni",
   description: "Développeur Full Stack spécialisé en React, Next.js et technologies web modernes. Découvrez mes projets et compétences.",
-  keywords: ["développeur full stack", "portfolio", "react", "next.js", "javascript", "développeur web", "Elone Maccioni"],
+  keywords: ["développeur full stack", "portfolio", "react", "next.js", "javascript", "développeur web", "Elone Maccioni", "freelance"],
   authors: [{ name: "Elone Maccioni" }],
   creator: "Elone Maccioni",
   publisher: "Elone Maccioni",

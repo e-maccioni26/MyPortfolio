@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Loader2 } from 'lucide-react';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const formSchema = z.object({
   name: z.string()
@@ -44,7 +45,15 @@ export default function ContactPage() {
     resolver: zodResolver(formSchema),
   });
 
-  const onSubmit = async (data: FormValues) => {
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+
+const onSubmit = async (data: FormValues) => {
+    if (!recaptchaToken) {
+      setSubmitStatus('error');
+      setErrorMessage('Veuillez vérifier que vous n\'êtes pas un robot');
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus('idle');
     setErrorMessage('');
@@ -55,7 +64,7 @@ export default function ContactPage() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({...data, recaptchaToken}),
       });
 
       const result = await response.json();
@@ -160,10 +169,17 @@ export default function ContactPage() {
                 )}
               </div>
 
+              <div className="py-4">
+                <ReCAPTCHA
+                  sitekey={process.env.RECAPTCHA_SITE_KEY || ''}
+                  onChange={(token) => setRecaptchaToken(token)}
+                />
+              </div>
+
               <button
                 type="submit"
                 className="rounded-md bg-primary px-4 py-2 text-primary-foreground hover:bg-primary/90 flex items-center justify-center w-full md:w-auto"
-                disabled={isSubmitting}
+                disabled={isSubmitting || !recaptchaToken}
               >
                 {isSubmitting ? (
                   <>

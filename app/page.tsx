@@ -11,7 +11,7 @@ import { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Elone Maccioni | Développeur Full Stack",
   description: "Portfolio professionnel d'Elone Maccioni, développeur full stack spécialisé en React, Next.js et technologies web modernes. Découvrez mes compétences, projets et services.",
-  keywords: ["développeur full stack", "portfolio", "react", "next.js", "javascript", "développeur web", "Elone Maccioni"],
+  keywords: ["développeur full stack", "portfolio", "react", "next.js", "javascript", "développeur web", "Elone Maccioni", "Freelance", "freelance"],
   alternates: {
     canonical: "https://elonemaccioni.fr/"
   }
@@ -37,7 +37,7 @@ export default function Home() {
           url: "https://elonemaccioni.fr",
           socialLinks: ["https://github.com/e-maccioni26", "https://linkedin.com/in/elone-maccioni"],
           image: "/avatar.png",
-          email: "contact@elonemaccioni.fr",
+          email: "elonemacc@gmail.com",
           skills: ["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "CSS", "HTML", "API REST", "PHP", "SQL", "Git", "Docker", "Linux", "SEO", "WordPress", "SEO", "IA"]
         }}
       />
