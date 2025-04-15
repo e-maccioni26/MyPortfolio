@@ -181,7 +181,7 @@ export default function ContactPage() {
         <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="rounded-lg border bg-card p-6 text-center">
             <h3 className="font-medium mb-2">Email</h3>
-            <p className="text-muted-foreground">elonemacc@gmail.com</p>
+            <p className="text-muted-foreground">contact@elonemaccioni.fr</p>
           </div>
 
           <div className="rounded-lg border bg-card p-6 text-center">

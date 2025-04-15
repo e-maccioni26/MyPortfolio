@@ -38,7 +38,7 @@ export default function Footer() {
                 <span className="sr-only">LinkedIn</span>
               </a>
               <a
-                href="mailto:elonemacc@gmail.com"
+                href="mailto:contact@elonemaccioni.fr"
                 className="text-gray-600 hover:text-indigo-500 dark:text-gray-400 dark:hover:text-indigo-400 transition-colors"
               >
                 <Mail size={20} />
