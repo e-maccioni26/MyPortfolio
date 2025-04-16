@@ -4,6 +4,10 @@ const responses = [
       response: "Bonjour et bienvenue sur mon portfolio ! Je suis Elone Maccioni, développeur full stack passionné par mon métier. N'hésitez pas à me poser une question pour en savoir plus sur mon parcours ou mes projets. 😉",
     },
     {
+      keywords: ["age", "âge"],
+      response: "J'ai 23 ans. Je suis né le 04/05/2001. 🎂",
+    },
+    {
       keywords: ["projet", "réalisé", "portfolio"],
       response: "J'ai conçu plusieurs projets variés, dont ce portfolio en React/Next.js, un blog de cuisine en Angular permettant la publication de recettes, une application Pokedex en React Native, et un outil interne pour le Crédit Agricole IDF qui automatise l’envoi de leads clients. Vous pouvez découvrir ces projets en détail dans la section Projets ! 😊",
     },
