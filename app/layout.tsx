@@ -43,6 +43,16 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://elonemaccioni.fr/"
+  },
+  icons: {
+    icon: '/icon.png', 
+    shortcut: '/favicon.ico', 
+    apple: '/apple-icon.png', 
+    other: {
+      rel: 'icon', 
+      url: '/favicon-32x32.png',
+      sizes: '32x32'
+    },
   }
 }
 
