@@ -107,7 +107,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start space-x-3">
                 <Mail size={18} className="flex-shrink-0 text-indigo-500 mt-1" />
-                <span className="text-gray-600 dark:text-gray-400">elonemacc@gmail.com</span>
+                <span className="text-gray-600 dark:text-gray-400">contact@elonemaccioni.fr</span>
               </li>
             </ul>
           </div>
