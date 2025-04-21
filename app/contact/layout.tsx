@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Contact | Portfolio Elone Maccioni",
-  description: "Contactez Elone Maccioni, développeur full stack. Discutons de vos projets web et des solutions digitales adaptées à vos besoins.",
-  keywords: ["contact développeur", "freelance web", "développeur full stack", "Elone Maccioni", "devis projet web", "contact"],
+  description: "Contactez Elone Maccioni. Discutons de vos projets web et des solutions digitales adaptées à vos besoins.",
+  keywords: ["contact développeur", "freelance web", "développeur full stack", "Elone Maccioni", "devis projet web", "contact", "freelance developpeur"],
   openGraph: {
     title: "Contact | Portfolio Elone Maccioni",
-    description: "Contactez Elone Maccioni, développeur full stack. Discutons de vos projets web et des solutions digitales adaptées à vos besoins.",
+    description: "Contactez Elone Maccioni. Discutons de vos projets web et des solutions digitales adaptées à vos besoins.",
     url: "https://elonemaccioni.fr/contact",
   },
   alternates: {
