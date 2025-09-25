@@ -52,7 +52,7 @@ export default function HomeHero() {
               <div className="flex flex-wrap gap-4">
                 <GradientBorderButton href="/a-propos">À propos de moi</GradientBorderButton>
                 <GradientBorderButton 
-                  href="/CV_EloneMaccioni.pdf" 
+                  href="/Freelance_EloneMaccioni.pdf" 
                   className="flex items-center gap-2"
                 >
                   <div className="flex items-center gap-2">

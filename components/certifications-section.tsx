@@ -21,7 +21,7 @@ const certifications: Certification[] = [
     school: "Efrei",
     degree: "Master Dev Manager Full Stack",
     period: "2023-2025",
-    status: "En cours",
+    status: "Obtenu",
     skills: [
       "Développement d'applications web et mobile",
       "Management de projets et SI",

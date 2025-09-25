@@ -194,4 +194,20 @@ export const projects: Project[] = [
     ],
     githubLink: "https://github.com/e-maccioni26/Social_MetricsAI"
   },  
+  {
+    title: "Site headless Wordpress | NextJS pour un psychanalyste et psychothérapeute à Bordeaux",
+    link: "/projets/psychanaliste-bordeaux",
+    thumbnail: "/images/projects/mission-freelance-psychanalyste.png", 
+    description: "Site Headless Wordpress | NextJS",
+    longDescription: "J’ai réalisé un site vitrine moderne pour [Nom du client] en adoptant une architecture headless. Le back-office repose sur WordPress, permettant au client de gérer ses contenus facilement et en autonomie, tandis que le front-end a été développé en Next.js et React afin d’assurer rapidité, fluidité et optimisation SEO. Le design a été pensé pour offrir une expérience utilisateur claire, responsive et adaptée à tous les supports. Le projet intègre les bonnes pratiques d’optimisation et de référencement, avec notamment la mise en place d’un sitemap et l’indexation des pages clés via Google Search Console.",
+    technologies: ["Wordpress", "ReactJS", "NextJS", "Vercel", "TailwindCSS"],
+    features: [
+      "Architecture headless : CWordPress utilisé uniquement comme CMS pour la gestion des contenus et Next.js/React pour l’affichage.",
+      "Interface d’administration simple : le client peut modifier textes, images et articles depuis WordPress sans toucher au code.",
+      "Frontend optimisé : rendu rapide, responsive et adapté aux mobiles, tablettes et ordinateurs.",
+      "SEO-friendly : optimisation des balises, sitemap XML, indexation via Google Search Console.",
+      "Séparation contenu / design : meilleure évolutivité et flexibilité pour les futures mises à jour.",
+    ],
+    demoLink: "https://hervemaccioni.fr"
+  },  
 ] 
