@@ -199,7 +199,7 @@ export const projects: Project[] = [
     link: "/projets/psychanaliste-bordeaux",
     thumbnail: "/images/projects/mission-freelance-psychanalyste.png", 
     description: "Site Headless Wordpress | NextJS",
-    longDescription: "J’ai réalisé un site vitrine moderne pour [Nom du client] en adoptant une architecture headless. Le back-office repose sur WordPress, permettant au client de gérer ses contenus facilement et en autonomie, tandis que le front-end a été développé en Next.js et React afin d’assurer rapidité, fluidité et optimisation SEO. Le design a été pensé pour offrir une expérience utilisateur claire, responsive et adaptée à tous les supports. Le projet intègre les bonnes pratiques d’optimisation et de référencement, avec notamment la mise en place d’un sitemap et l’indexation des pages clés via Google Search Console.",
+    longDescription: "J’ai réalisé un site vitrine moderne en adoptant une architecture headless. Le back-office repose sur WordPress, permettant au client de gérer ses contenus facilement et en autonomie, tandis que le front-end a été développé en Next.js et React afin d’assurer rapidité, fluidité et optimisation SEO. Le design a été pensé pour offrir une expérience utilisateur claire, responsive et adaptée à tous les supports. Le projet intègre les bonnes pratiques d’optimisation et de référencement, avec notamment la mise en place d’un sitemap et l’indexation des pages clés via Google Search Console.",
     technologies: ["Wordpress", "ReactJS", "NextJS", "Vercel", "TailwindCSS"],
     features: [
       "Architecture headless : CWordPress utilisé uniquement comme CMS pour la gestion des contenus et Next.js/React pour l’affichage.",
