@@ -9,6 +9,7 @@ import {
   SiPhp,
   SiTypescript,
   SiAngular,
+  SiWordpress,
 } from "react-icons/si"
 
 export default function TechStack() {
@@ -28,6 +29,10 @@ export default function TechStack() {
     {
       icon: <SiPostgresql className="text-[#336791]" />,
       name: "PostgreSQL",
+    },
+    {
+      icon: <SiWordpress className="text-[#336791]" />,
+      name: "WordPress",
     },
     {
       icon: <SiMysql className="text-[#4479A1]" />,
