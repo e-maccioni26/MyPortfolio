@@ -102,10 +102,6 @@ export default function Footer() {
                 <span className="text-gray-600 dark:text-gray-400">Paris, France</span>
               </li>
               <li className="flex items-start space-x-3">
-                <Phone size={18} className="flex-shrink-0 text-indigo-500 mt-1" />
-                <span className="text-gray-600 dark:text-gray-400">+33 6 95 15 80 73</span>
-              </li>
-              <li className="flex items-start space-x-3">
                 <Mail size={18} className="flex-shrink-0 text-indigo-500 mt-1" />
                 <span className="text-gray-600 dark:text-gray-400">contact@elonemaccioni.fr</span>
               </li>
