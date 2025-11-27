@@ -11,9 +11,9 @@ export function generateStaticParams() {
   }))
 }
 
-// Génération dynamique des métadonnées pour chaque projet
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const project = projects.find((p) => p.link.endsWith(params.slug))
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const project = projects.find((p) => p.link.endsWith(slug))
   
   if (!project) {
     return {
@@ -21,8 +21,6 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       description: "Le projet que vous recherchez n'existe pas."
     }
   }
-
-  const technologies = project.technologies.join(", ")
   
   return {
     title: `${project.title} | Portfolio Elone Maccioni`,
@@ -49,8 +47,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 }
 
-export default async function ProjectPage({ params }: { params: { slug: string } }) {
-  const project = projects.find((p) => p.link.endsWith(params.slug))
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const project = projects.find((p) => p.link.endsWith(slug))
 
   if (!project) {
     notFound()
@@ -158,4 +157,3 @@ export default async function ProjectPage({ params }: { params: { slug: string }
     </main>
   )
 }
-
