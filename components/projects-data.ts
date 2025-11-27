@@ -211,19 +211,19 @@ export const projects: Project[] = [
     demoLink: "https://hervemaccioni.fr"
   },  
   {
-    title: "Site React | Vite pour un ostéopathe à pantin",
+    title: "Site Vitrine React | Vite pour un ostéopathe à Pantin",
     link: "/projets/osteopathe",
-    thumbnail: "/images/projects/mission-freelance-psychanalyste.png", 
-    description: "Site React | Vite",
-    longDescription: "J’ai réalisé un site vitrine moderne en adoptant une architecture headless. Le back-office repose sur WordPress, permettant au client de gérer ses contenus facilement et en autonomie, tandis que le front-end a été développé en Next.js et React afin d’assurer rapidité, fluidité et optimisation SEO. Le design a été pensé pour offrir une expérience utilisateur claire, responsive et adaptée à tous les supports. Le projet intègre les bonnes pratiques d’optimisation et de référencement, avec notamment la mise en place d’un sitemap et l’indexation des pages clés via Google Search Console.",
-    technologies: ["Wordpress", "ReactJS", "NextJS", "Vercel", "TailwindCSS"],
+    thumbnail: "/images/projects/mission-freelance-osteopathe.png", 
+    description: "Site Vitrine ultra-rapide | React + Vite",
+    longDescription: "J’ai conçu et développé un site internet sur-mesure pour un ostéopathe basé à Pantin. L'objectif était de créer une présence numérique moderne, fluide et rassurante pour les patients. J'ai opté pour la stack technique ReactJS couplée à Vite pour garantir des performances de chargement instantanées. L'interface, stylisée avec TailwindCSS, assure une lecture optimale sur mobile et desktop. Le site intègre également les liens vers la prise de rendez-vous en ligne et est hébergé sur Vercel pour une disponibilité maximale.",
+    technologies: ["ReactJS", "Vite", "TailwindCSS", "Vercel", "JavaScript"],
     features: [
-      "Architecture headless : CWordPress utilisé uniquement comme CMS pour la gestion des contenus et Next.js/React pour l’affichage.",
-      "Interface d’administration simple : le client peut modifier textes, images et articles depuis WordPress sans toucher au code.",
-      "Frontend optimisé : rendu rapide, responsive et adapté aux mobiles, tablettes et ordinateurs.",
-      "SEO-friendly : optimisation des balises, sitemap XML, indexation via Google Search Console.",
-      "Séparation contenu / design : meilleure évolutivité et flexibilité pour les futures mises à jour.",
+      "Performance optimale : Utilisation de Vite pour un build ultra-léger et un temps de chargement quasi-instantané.",
+      "Design Responsive & UX : Interface soignée avec TailwindCSS, pensée pour faciliter l'accès aux informations (adresse, tarifs, urgences).",
+      "Architecture SPA : Navigation fluide sans rechargement de page grâce à React Router.",
+      "Intégration externe : Boutons d'appel à l'action clairs redirigeant vers la prise de rendez-vous (Doctolib).",
+      "Déploiement CI/CD : Hébergement automatisé et sécurisé via Vercel.",
     ],
     demoLink: "https://aaronzitoun-osteopathe.fr"
-  },  
+  },
 ] 
