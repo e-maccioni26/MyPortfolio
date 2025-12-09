@@ -214,7 +214,7 @@ export const projects: Project[] = [
     title: "Site Vitrine React | Vite pour un ostéopathe à Pantin",
     link: "/projets/osteopathe",
     thumbnail: "/images/projects/mission-freelance-osteopathe.png", 
-    description: "Site Vitrine ultra-rapide | React + Vite",
+    description: "Site Vitrine | React + Vite",
     longDescription: "J’ai conçu et développé un site internet sur-mesure pour un ostéopathe basé à Pantin. L'objectif était de créer une présence numérique moderne, fluide et rassurante pour les patients. J'ai opté pour la stack technique ReactJS couplée à Vite pour garantir des performances de chargement instantanées. L'interface, stylisée avec TailwindCSS, assure une lecture optimale sur mobile et desktop. Le site intègre également les liens vers la prise de rendez-vous en ligne et est hébergé sur Vercel pour une disponibilité maximale.",
     technologies: ["ReactJS", "Vite", "TailwindCSS", "Vercel", "JavaScript"],
     features: [
