@@ -9,9 +9,9 @@ import { StructuredData } from "./components/structured-data"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Elone Maccioni | Développeur Full Stack",
-  description: "Portfolio professionnel d'Elone Maccioni, développeur full stack spécialisé en React, Next.js et technologies web modernes. Découvrez mes compétences, projets et services.",
-  keywords: ["développeur full stack", "portfolio", "react", "next.js", "javascript", "développeur web", "Elone Maccioni", "Freelance", "freelance"],
+  title: "Elone Maccioni - Développeur Freelance React / Next.js & Wordpress (Paris)",
+  description: "Expert React / Next.js et WordPress à Paris. J'accompagne les entreprises et indépendants dans la création d'applications web performantes et sur-mesure. Devis gratuit sous 24h.",
+  keywords: ["développeur full stack", "développeur", "portfolio", "react", "next.js", "javascript", "développeur web", "Elone Maccioni", "Freelance", "freelance"],
   alternates: {
     canonical: "https://elonemaccioni.fr/"
   }
@@ -32,8 +32,8 @@ export default function Home() {
         type="Person"
         data={{
           name: "Elone Maccioni",
-          jobTitle: "Développeur Full Stack",
-          description: "Développeur Full Stack spécialisé en React, Next.js et technologies web modernes.",
+          jobTitle: "Développeur Full Stack - Freelance",
+          description: "Expert React / Next.js et WordPress à Paris. J'accompagne les entreprises dans la création d'applications web performantes et sur-mesure. Devis gratuit sous 24h.",
           url: "https://elonemaccioni.fr",
           socialLinks: ["https://github.com/e-maccioni26", "https://linkedin.com/in/elone-maccioni"],
           image: "/avatar.png",
