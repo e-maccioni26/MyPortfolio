@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react"
 
 export default function Footer() {
@@ -38,11 +39,28 @@ export default function Footer() {
                 <span className="sr-only">LinkedIn</span>
               </a>
               <a
-                href="mailto:contact@elonemaccioni.fr"
+                href="mailto:elonemacc@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-600 hover:text-indigo-500 dark:text-gray-400 dark:hover:text-indigo-400 transition-colors"
               >
                 <Mail size={20} />
                 <span className="sr-only">Email</span>
+              </a>
+              <a
+                href="https://www.malt.fr/profile/elonemaccioni"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-indigo-500 dark:text-gray-400 dark:hover:text-indigo-400 transition-colors flex items-center"
+              >
+                <Image 
+                  src="/malt-logo-red.svg" 
+                  alt="Malt" 
+                  width={60} 
+                  height={20} 
+                  className="h-5 w-auto" 
+                />
+                <span className="sr-only">Malt</span>
               </a>
             </div>
           </div>

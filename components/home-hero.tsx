@@ -50,14 +50,32 @@ export default function HomeHero() {
               className="mt-8 px-4 md:px-0"
             >
               <div className="flex flex-wrap gap-4">
-                <GradientBorderButton href="/a-propos">À propos de moi</GradientBorderButton>
+                <GradientBorderButton 
+                  href="https://www.malt.fr/profile/elonemaccioni" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                  contentClassName="px-4 py-2"
+                >
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm">Mon profil</span>
+                    <Image 
+                      src="/malt-logo-red.svg" 
+                      alt="Malt" 
+                      width={60} 
+                      height={20} 
+                      className="h-5 w-auto mb-0.5" 
+                    />
+                  </div>
+                </GradientBorderButton>
                 <GradientBorderButton 
                   href="/Freelance_Maccioni_Elone.pdf" 
                   className="flex items-center gap-2"
+                  contentClassName="px-4 py-2"
                 >
                   <div className="flex items-center gap-2">
-                    <span>Télécharger mon CV</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-download">
+                    <span className="text-sm">Télécharger mon CV</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-download">
                       <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
                       <polyline points="7 10 12 15 17 10"/>
                       <line x1="12" y1="15" x2="12" y2="3"/>
@@ -66,7 +84,7 @@ export default function HomeHero() {
                 </GradientBorderButton>
               </div>
               
-              <div className="flex space-x-4 mt-6">
+              <div className="flex items-center gap-4 mt-8 text-muted-foreground">
                 <motion.a
                   href="https://github.com/e-maccioni26"
                   target="_blank"
