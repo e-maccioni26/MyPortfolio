@@ -3,7 +3,7 @@ import { motion } from "motion/react"
 import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight"
 import Image from "next/image"
 import { GradientBorderButton } from "@/components/ui/gradient-border-button"
-import { Github, Linkedin, Mail } from "lucide-react"
+import { Github, Linkedin, Mail, Calendar } from "lucide-react"
 
 export default function HomeHero() {
   return (
@@ -69,17 +69,13 @@ export default function HomeHero() {
                   </div>
                 </GradientBorderButton>
                 <GradientBorderButton 
-                  href="/Freelance_Maccioni_Elone.pdf" 
+                  href="https://calendly.com/elonemacc/appel-gratuit" 
                   className="flex items-center gap-2"
                   contentClassName="px-4 py-2"
                 >
                   <div className="flex items-center gap-2">
-                    <span className="text-sm">Télécharger mon CV</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-download">
-                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                      <polyline points="7 10 12 15 17 10"/>
-                      <line x1="12" y1="15" x2="12" y2="3"/>
-                    </svg>
+                    <Calendar size={20} />
+                    <span className="text-sm">Réserver un appel de 15 minutes</span>
                   </div>
                 </GradientBorderButton>
               </div>
