@@ -2,8 +2,8 @@ import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Portfolio d'Elone Maccioni - Freelance Web Developer",
-    short_name: "Portfolio Elone",
+    name: "Elone Maccioni - Développeur Freelance Expert React/Next.js & Wordpress",
+    short_name: "Elone Dev",
     description: "Portfolio développeur full stack - Elone Maccioni",
     start_url: "/",
     display: "standalone",

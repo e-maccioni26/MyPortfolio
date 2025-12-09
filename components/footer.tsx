@@ -12,12 +12,16 @@ export default function Footer() {
           {/* Logo et description */}
           <div className="col-span-1 md:col-span-1">
             <Link href="/" className="flex items-center space-x-2 mb-4">
-              <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
-                Elone.M
-              </span>
+              <Image
+                src="/logo-elone-maccioni.png"
+                alt="Logo"
+                width={60}
+                height={60}
+                className="h-[60px] w-auto object-contain"
+              />
             </Link>
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-              Développeur passionné, créant des expériences numériques qui inspirent et engagent.
+              Développeur Full Stack Freelance, <br/>Je transforme la présence digitale des entreprises et indépendants.
             </p>
             <div className="flex space-x-4">
               <a
@@ -73,7 +77,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {[
                 { name: "Accueil", href: "/" },
-                { name: "À propos", href: "/a-propos" },
+                { name: "Mes services", href: "/mes-services" },
                 { name: "Projets", href: "/projets" },
                 { name: "Contact", href: "/contact" },
               ].map((item) => (

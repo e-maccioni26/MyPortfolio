@@ -40,7 +40,7 @@ export default function HomeHero() {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="mt-4 px-4 md:px-0 text-base md:text-lg text-neutral-600 dark:text-neutral-300 max-w-xl"
             >
-              Je conçois des applications web performantes et agiles, en alliant rigueur, créativité et expérience terrain pour répondre aux enjeux digitaux d’aujourd’hui.
+              Mon rôle est de vous aider à passer un cap digital en concevant des outils sur mesure, performants et surtout rentables. Je me concentre sur l'impact réel et le retour sur investissement.
             </motion.p>
 
             <motion.div

@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils"
 import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "motion/react"
 import Link from "next/link"
+import Image from "next/image"
 import React, { useRef, useState } from "react"
 
 interface NavbarProps {
@@ -173,9 +174,13 @@ export const MobileNavToggle = ({
 export const NavbarLogo = () => {
   return (
     <Link href="/" className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal">
-      <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
-        Elone.M
-      </span>
+      <Image
+        src="/logo-elone-maccioni.png"
+        alt="Logo"
+        width={60}
+        height={60}
+        className="h-[60px] w-auto object-contain"
+      />
     </Link>
   )
 }

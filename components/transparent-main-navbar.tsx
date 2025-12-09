@@ -25,8 +25,8 @@ export default function TransparentMainNavbar() {
       link: "/projets",
     },
     {
-      name: "À propos",
-      link: "/a-propos",
+      name: "Mes services",
+      link: "/mes-services",
     },
     {
       name: "Contact",
