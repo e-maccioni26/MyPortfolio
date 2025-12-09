@@ -24,7 +24,7 @@ export default function MainNavbar() {
       link: "/projets",
     },
     {
-      name: "Mes services",
+      name: "Services",
       link: "/mes-services",
     },
     {
