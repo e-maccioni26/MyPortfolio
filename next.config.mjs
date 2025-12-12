@@ -32,7 +32,7 @@ const nextConfig = {
     return [
       {
         source: '/a-propos', 
-        destination: '/services', 
+        destination: '/mes-services', 
         permanent: true, 
       },
     ]
