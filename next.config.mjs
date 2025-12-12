@@ -27,6 +27,16 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
+  // --- AJOUT DE LA REDIRECTION ICI ---
+  async redirects() {
+    return [
+      {
+        source: '/a-propos', 
+        destination: '/services', 
+        permanent: true, 
+      },
+    ]
+  },
 }
 
 if (userConfig) {
