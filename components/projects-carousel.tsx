@@ -7,7 +7,7 @@ import { projects } from "@/components/projects-data"
 
 export default function ProjectsCarousel() {
   
-  const projectsData = projects.slice(0, 4).map(project => ({
+  const projectsData = [...projects].reverse().slice(0, 4).map(project => ({
     title: project.title,
     description: project.description,
     button: "Voir le projet",
