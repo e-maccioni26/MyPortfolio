@@ -9,14 +9,15 @@ import { cn } from "@/lib/utils"
 import { motion, AnimatePresence } from "motion/react"
 
 export default function ProjectsGrid() {
-  const [filteredProjects, setFilteredProjects] = useState<Project[]>(projects)
+  const reversedProjects = [...projects].reverse()
+  const [filteredProjects, setFilteredProjects] = useState<Project[]>(reversedProjects)
   const [selectedTech, setSelectedTech] = useState<string>("Tous")
   const [isFiltering, setIsFiltering] = useState(false)
 
   
   const allProgrammingLanguages = Array.from(
     new Set(
-      projects.flatMap((project) => 
+      reversedProjects.flatMap((project) => 
         project.technologies.filter(tech => [
           "React", "React Native", "PHP", "JavaScript", "TypeScript", "Python", 
           "HTML", "CSS", "TailwindCss", "Bootstrap", "Wordpress", "Flask", "Express",
@@ -24,7 +25,7 @@ export default function ProjectsGrid() {
         ].includes(tech))
       )
     )
-  ).sort()
+  )
 
  
   const filterOptions = ["Tous", ...allProgrammingLanguages]
@@ -33,7 +34,7 @@ export default function ProjectsGrid() {
   useEffect(() => {
     setIsFiltering(true)
     
-    let result = [...projects]
+    let result = [...reversedProjects]
 
     if (selectedTech !== "Tous") {
       result = result.filter((project) => 
