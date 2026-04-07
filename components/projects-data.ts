@@ -226,4 +226,20 @@ export const projects: Project[] = [
     ],
     demoLink: "https://aaronzitoun-osteopathe.fr"
   },
+    {
+    title: "Site Vitrine | Conciergerie de luxe - FASTER CLUB",
+    link: "/projets/conciergerie-luxe",
+    thumbnail: "/images/projects/faster-club.png", 
+    description: "Site Vitrine | React + Vite",
+    longDescription: "J’ai conçu et développé un site internet sur-mesure pour une conciergerie de luxe basé sur Paris. L'objectif était de créer une présence numérique moderne, fluide et rassurante pour les clients. J'ai opté pour la stack technique ReactJS couplée à Vite pour garantir des performances de chargement instantanées. L'interface, stylisée avec TailwindCSS, assure une lecture optimale sur mobile et desktop. Le site intègre également un formulaire de contact dont mon client recevra la notification directement sur sa boite mail.",
+    technologies: ["ReactJS", "Vite", "TailwindCSS", "Vercel", "JavaScript"],
+    features: [
+      "Performance optimale : Utilisation de Vite pour un build ultra-léger et un temps de chargement quasi-instantané.",
+      "Design Responsive & UX : Interface soignée avec TailwindCSS, pensée pour faciliter l'accès aux informations (adresse, tarifs, urgences).",
+      "Architecture SPA : Navigation fluide sans rechargement de page grâce à React Router.",
+      "Intégration d'un formulaire de contact : Formulaire de contact directement sur la page.",
+      "Déploiement CI/CD : Hébergement automatisé et sécurisé via Vercel.",
+    ],
+    demoLink: "https://www.fasterclub.fr/"
+  },
 ] 
