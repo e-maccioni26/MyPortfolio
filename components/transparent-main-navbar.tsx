@@ -61,7 +61,7 @@ export default function TransparentMainNavbar() {
               <span className="sr-only">Changer de thème</span>
             </button>
             <NavbarButton href="/contact" variant="gradient">
-              Contact
+              Contactez moi
             </NavbarButton>
           </div>
         </div>

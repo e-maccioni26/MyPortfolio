@@ -45,7 +45,7 @@ export default function MainNavbar() {
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
             <ModeToggle />
-            <GradientBorderButton href="/contact">Contact</GradientBorderButton>
+            <GradientBorderButton href="/contact">Contactez moi</GradientBorderButton>
           </div>
         </NavBody>
 

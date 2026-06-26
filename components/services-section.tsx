@@ -242,8 +242,9 @@ export default function ServicesSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-center mt-8"
+          className="text-center mt-8 flex justify-center gap-4"
         >
+          <GradientBorderButton href="/services">Voir mes services</GradientBorderButton>
           <GradientBorderButton href="/contact">Parlez-moi de votre projet</GradientBorderButton>
         </motion.div>
       </div>
