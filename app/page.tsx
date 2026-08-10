@@ -1,5 +1,6 @@
 import { ThemeToggle } from "@/components/theme-toggle"
 import HomeHero from "@/components/home-hero"
+import AboutSection from "@/components/about-section"
 import BlogPreviewSection from "@/components/blog-preview-section"
 import ServicesSection from "@/components/services-section"
 import RecentProjectsSection from "@/components/recent-projects-section"
@@ -25,6 +26,7 @@ export default function Home() {
     <main className="min-h-screen">
       <ThemeToggle />
       <HomeHero latestPosts={latestPosts} />
+      <AboutSection />
       <BlogPreviewSection posts={latestPosts} />
       <ServicesSection />
       <RecentProjectsSection />
