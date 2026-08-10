@@ -18,6 +18,7 @@ export default function BlogPreviewSection({ posts }: { posts: BlogPost[] }) {
               glowColor="rgba(132,93,244,0.6)"
               animationDuration={1}
               pauseBetweenAnimations={2}
+              freezeOnMobile
               className="font-heading text-3xl md:text-[28px] font-bold text-foreground"
             />
           </h2>

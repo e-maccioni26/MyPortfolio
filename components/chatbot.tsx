@@ -51,12 +51,12 @@ export default function Chatbot() {
     }
   }, [isOpen])
   
-  // Afficher le message d'accueil après 5 secondes
+  // Afficher le message d'accueil après 15 secondes pour ne pas gêner l'utilisateur à l'arrivée sur le site
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowWelcomeMessage(true)
-    }, 5000)
-    
+    }, 15000)
+
     return () => clearTimeout(timer)
   }, [])
 

@@ -13,6 +13,8 @@ interface TrueFocusProps {
   animationDuration?: number;
   pauseBetweenAnimations?: number;
   className?: string;
+  /** Fige le cyclage sur le premier mot en dessous du breakpoint `md` (768px), pour ne pas distraire sur mobile. */
+  freezeOnMobile?: boolean;
 }
 
 interface FocusRect {
@@ -31,7 +33,8 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
   glowColor = 'rgba(0, 255, 0, 0.6)',
   animationDuration = 0.5,
   pauseBetweenAnimations = 1,
-  className
+  className,
+  freezeOnMobile = false
 }) => {
   const words = sentence.split(separator);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -39,9 +42,21 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
   const containerRef = useRef<HTMLDivElement | null>(null);
   const wordRefs = useRef<(HTMLSpanElement | null)[]>([]);
   const [focusRect, setFocusRect] = useState<FocusRect>({ x: 0, y: 0, width: 0, height: 0 });
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    if (!manualMode) {
+    if (!freezeOnMobile) return;
+
+    const mediaQuery = window.matchMedia('(max-width: 767px)');
+    setIsMobile(mediaQuery.matches);
+
+    const handleChange = (event: MediaQueryListEvent) => setIsMobile(event.matches);
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, [freezeOnMobile]);
+
+  useEffect(() => {
+    if (!manualMode && !(freezeOnMobile && isMobile)) {
       const interval = setInterval(
         () => {
           setCurrentIndex(prev => (prev + 1) % words.length);
@@ -51,22 +66,34 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
 
       return () => clearInterval(interval);
     }
-  }, [manualMode, animationDuration, pauseBetweenAnimations, words.length]);
+  }, [manualMode, animationDuration, pauseBetweenAnimations, words.length, freezeOnMobile, isMobile]);
 
   useEffect(() => {
-    if (currentIndex === null || currentIndex === -1) return;
-    if (!wordRefs.current[currentIndex] || !containerRef.current) return;
+    const measure = () => {
+      if (currentIndex === null || currentIndex === -1) return;
+      if (!wordRefs.current[currentIndex] || !containerRef.current) return;
 
-    const parentRect = containerRef.current.getBoundingClientRect();
-    const activeRect = wordRefs.current[currentIndex]!.getBoundingClientRect();
+      const parentRect = containerRef.current.getBoundingClientRect();
+      const activeRect = wordRefs.current[currentIndex]!.getBoundingClientRect();
 
-    setFocusRect({
-      x: activeRect.left - parentRect.left,
-      y: activeRect.top - parentRect.top,
-      width: activeRect.width,
-      height: activeRect.height
-    });
-  }, [currentIndex, words.length]);
+      const next = {
+        x: activeRect.left - parentRect.left,
+        y: activeRect.top - parentRect.top,
+        width: activeRect.width,
+        height: activeRect.height
+      };
+      // eslint-disable-next-line no-console
+      console.log('[TrueFocus debug] measure()', { currentIndex, next });
+      setFocusRect(next);
+    };
+
+    // Le mode figé (mobile) ne fait plus varier currentIndex, donc rien ne redéclenche
+    // cet effet naturellement : on remesure aussi au redimensionnement pour éviter un
+    // encadré resté à 0x0 si la mise en page n'était pas prête au premier rendu.
+    measure();
+    window.addEventListener('resize', measure);
+    return () => window.removeEventListener('resize', measure);
+  }, [currentIndex, words.length, isMobile]);
 
   const handleMouseEnter = (index: number) => {
     if (manualMode) {
@@ -89,6 +116,7 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
     >
       {words.map((word, index) => {
         const isActive = index === currentIndex;
+        const isFrozen = freezeOnMobile && isMobile;
         return (
           <span
             key={index}
@@ -98,13 +126,8 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
             className={`relative cursor-pointer ${className ?? 'text-[3rem] font-black'}`}
             style={
               {
-                filter: manualMode
-                  ? isActive
-                    ? `blur(0px)`
-                    : `blur(${blurAmount}px)`
-                  : isActive
-                    ? `blur(0px)`
-                    : `blur(${blurAmount}px)`,
+                // Figé sur mobile : aucun mot n'est flouté, seul l'encadré reste sur le mot actif (le premier).
+                filter: isFrozen ? `blur(0px)` : isActive ? `blur(0px)` : `blur(${blurAmount}px)`,
                 transition: `filter ${animationDuration}s ease`,
                 outline: 'none',
                 userSelect: 'none'

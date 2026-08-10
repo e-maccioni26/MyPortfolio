@@ -4,11 +4,11 @@ import BlogList from "@/components/blog-list"
 
 export const metadata: Metadata = {
   title: "Blog | Elone Maccioni - Développeur Freelance React/Next.js",
-  description: "Notes de veille, retours d'expérience et analyses sur l'IA générative, le développement web et les outils du quotidien.",
-  keywords: ["blog développeur", "veille tech", "ia générative", "développement web", "Elone Maccioni", "freelance"],
+  description: "Retrouvez toutes les dernières actualités tech et IA sur mon blog.",
+  keywords: ["blog développeur", "articles", "veille tech", "ia générative", "développement web", "Elone Maccioni", "freelance"],
   openGraph: {
     title: "Blog | Elone Maccioni",
-    description: "Notes de veille, retours d'expérience et analyses sur l'IA générative, le développement web et les outils du quotidien.",
+    description: "Retrouvez toutes les dernières actualités tech et IA sur mon blog.",
     url: "https://elonemaccioni.fr/blog",
   },
   alternates: {
