@@ -76,22 +76,22 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
       const parentRect = containerRef.current.getBoundingClientRect();
       const activeRect = wordRefs.current[currentIndex]!.getBoundingClientRect();
 
-      const next = {
+      setFocusRect({
         x: activeRect.left - parentRect.left,
         y: activeRect.top - parentRect.top,
         width: activeRect.width,
         height: activeRect.height
-      };
-      // eslint-disable-next-line no-console
-      console.log('[TrueFocus debug] measure()', { currentIndex, next });
-      setFocusRect(next);
+      });
     };
 
-    // Le mode figé (mobile) ne fait plus varier currentIndex, donc rien ne redéclenche
-    // cet effet naturellement : on remesure aussi au redimensionnement pour éviter un
-    // encadré resté à 0x0 si la mise en page n'était pas prête au premier rendu.
+    // En mode figé (mobile), `currentIndex` ne varie plus : rien ne redéclenche cet
+    // effet, donc une première mesure faite trop tôt resterait figée telle quelle.
+    // On remesure au redimensionnement et une fois les polices web chargées, car
+    // leurs métriques changent la largeur du texte après le premier rendu.
     measure();
     window.addEventListener('resize', measure);
+    document.fonts?.ready.then(measure).catch(() => {});
+
     return () => window.removeEventListener('resize', measure);
   }, [currentIndex, words.length, isMobile]);
 

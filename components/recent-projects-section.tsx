@@ -23,10 +23,10 @@ export default function RecentProjectsSection() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-[22px]">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-[22px]">
           {recentProjects.map((project) => (
             <div key={project.link} className="flex flex-col gap-3">
-              <Link href={project.link} className="relative h-[150px] w-full rounded-xl overflow-hidden block">
+              <Link href={project.link} className="relative h-[210px] md:h-[150px] w-full rounded-xl overflow-hidden block">
                 <Image
                   src={project.thumbnail || "/placeholder.svg"}
                   alt={project.title}

@@ -1,5 +1,6 @@
 import { projects } from "@/components/projects-data";
 import { getAllPosts } from "@/lib/blog";
+import { parseBlogDate } from "@/lib/blog-utils";
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -58,7 +59,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...getAllPosts().map((post) => ({
       url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: new Date(post.frontmatter.date),
+      // Une date d'article invalide ne doit pas produire un `<lastmod>` cassé.
+      lastModified: parseBlogDate(post.frontmatter.date) ?? new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),
