@@ -1,10 +1,9 @@
 "use client"
 import { cn } from "@/lib/utils"
 import { Menu, X } from "lucide-react"
-import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "motion/react"
 import Link from "next/link"
 import Image from "next/image"
-import React, { useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 
 interface NavbarProps {
   children: React.ReactNode
@@ -46,25 +45,23 @@ interface MobileNavMenuProps {
 
 export const Navbar = ({ children, className }: NavbarProps) => {
   const ref = useRef<HTMLDivElement>(null)
-  const { scrollY } = useScroll()
   const [scrolled, setScrolled] = useState<boolean>(false)
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > 10) {
-      setScrolled(true)
-    } else {
-      setScrolled(false)
-    }
-  })
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 10)
+    handleScroll()
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
-    <motion.div ref={ref} className={cn("fixed inset-x-0 top-0 z-[100] w-full transition-all duration-300", className)}>
+    <div ref={ref} className={cn("fixed inset-x-0 top-0 z-[100] w-full", className)}>
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
           ? React.cloneElement(child as React.ReactElement<{ scrolled?: boolean }>, { scrolled })
           : child,
       )}
-    </motion.div>
+    </div>
   )
 }
 
@@ -72,7 +69,7 @@ export const NavBody = ({ children, className, scrolled }: NavBodyProps) => {
   return (
     <div
       className={cn(
-        "relative z-[60] hidden h-16 w-full flex-row items-center justify-between px-6 lg:flex transition-all duration-300",
+        "relative z-[60] hidden h-16 w-full flex-row items-center justify-between px-6 lg:flex",
         scrolled ? "bg-white/80 dark:bg-gray-950/80 backdrop-blur-md shadow-sm" : "bg-transparent",
         className,
       )}
@@ -99,10 +96,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
           href={item.link}
         >
           {hovered === idx && (
-            <motion.div
-              layoutId="hovered"
-              className="absolute inset-0 h-full w-full rounded-md bg-gray-100 dark:bg-neutral-800"
-            />
+            <div className="absolute inset-0 h-full w-full rounded-md bg-gray-100 dark:bg-neutral-800" />
           )}
           <span className="relative z-20">{item.name}</span>
         </Link>
@@ -115,7 +109,7 @@ export const MobileNav = ({ children, className, scrolled }: MobileNavProps) => 
   return (
     <div
       className={cn(
-        "relative z-50 flex h-16 w-full items-center justify-between px-4 lg:hidden transition-all duration-300",
+        "relative z-50 flex h-16 w-full items-center justify-between px-4 lg:hidden",
         scrolled ? "bg-white/80 dark:bg-gray-950/80 backdrop-blur-md shadow-sm" : "bg-transparent",
         className,
       )}
@@ -129,24 +123,18 @@ export const MobileNavHeader = ({ children, className }: MobileNavHeaderProps) =
   return <div className={cn("flex w-full flex-row items-center justify-between", className)}>{children}</div>
 }
 
-export const MobileNavMenu = ({ children, className, isOpen, onClose }: MobileNavMenuProps) => {
+export const MobileNavMenu = ({ children, className, isOpen }: MobileNavMenuProps) => {
+  if (!isOpen) return null
+
   return (
-    <AnimatePresence>
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ duration: 0.2 }}
-          className={cn(
-            "absolute inset-x-0 top-full z-50 flex w-full flex-col items-start justify-start gap-1 border-t border-gray-100 bg-white px-4 py-4 shadow-lg dark:border-gray-800 dark:bg-gray-950",
-            className,
-          )}
-        >
-          {children}
-        </motion.div>
+    <div
+      className={cn(
+        "absolute inset-x-0 top-full z-50 flex w-full flex-col items-start justify-start gap-1 border-t border-gray-100 bg-white px-4 py-4 shadow-lg dark:border-gray-800 dark:bg-gray-950",
+        className,
       )}
-    </AnimatePresence>
+    >
+      {children}
+    </div>
   )
 }
 

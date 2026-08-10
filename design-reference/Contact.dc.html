@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#EDEAF8;font-family:Inter,sans-serif}
+a{color:#4F46E5}
+a:hover{color:#845DF4}
+input,textarea{font-family:Inter,sans-serif;outline:none;box-sizing:border-box}
+input::placeholder,textarea::placeholder{color:rgba(20,18,43,.4)}
+</style>
+</helmet>
+
+<div style="display:flex;justify-content:center;padding:44px">
+<div style="width:1440px;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 30px 80px -30px rgba(20,18,43,.25)">
+
+  <header style="display:flex;align-items:center;justify-content:space-between;padding:18px 56px;border-bottom:1px solid rgba(20,18,43,.06)">
+    <img src="uploads/logo-elone-maccioni.png" alt="Elone Maccioni" style="height:38px;width:auto">
+    <nav style="display:flex;gap:36px;font:500 14px Inter,sans-serif;color:#14122B">
+      <span style="color:rgba(20,18,43,.55)">Accueil</span><span style="color:rgba(20,18,43,.55)">Blog</span><span style="color:rgba(20,18,43,.55)">Projets</span><span style="color:rgba(20,18,43,.55)">Services</span><span>Contact</span>
+    </nav>
+    <div style="font:600 13px Inter,sans-serif;color:#fff;background:linear-gradient(135deg,#845DF4,#4F46E5);padding:10px 20px;border-radius:8px">Contactez-moi</div>
+  </header>
+
+  <section style="padding:64px 56px 8px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px">
+    <div style="font:600 12px 'JetBrains Mono',monospace;letter-spacing:.08em;color:#845DF4;text-transform:uppercase">Contact</div>
+    <h1 style="margin:0;font:800 42px/1.15 Outfit,sans-serif;color:#14122B;letter-spacing:-.01em">Me contacter</h1>
+    <p style="margin:0;font:400 16px/1.65 Inter,sans-serif;color:rgba(20,18,43,.6);max-width:480px">N'hésitez pas à me contacter pour discuter de vos projets.</p>
+  </section>
+
+  <section style="padding:56px 56px 88px;display:grid;grid-template-columns:1.3fr 1fr;gap:48px">
+
+    <form style="display:flex;flex-direction:column;gap:20px">
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <label style="font:600 13px Inter,sans-serif;color:#14122B">Nom</label>
+        <input type="text" placeholder="Votre nom" style="border:1px solid rgba(20,18,43,.15);border-radius:9px;padding:13px 16px;font:400 14.5px Inter,sans-serif;color:#14122B">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <label style="font:600 13px Inter,sans-serif;color:#14122B">Email</label>
+        <input type="email" placeholder="vous@exemple.com" style="border:1px solid rgba(20,18,43,.15);border-radius:9px;padding:13px 16px;font:400 14.5px Inter,sans-serif;color:#14122B">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <label style="font:600 13px Inter,sans-serif;color:#14122B">Message</label>
+        <textarea placeholder="Parlez-moi de votre projet…" rows="6" style="border:1px solid rgba(20,18,43,.15);border-radius:9px;padding:13px 16px;font:400 14.5px/1.6 Inter,sans-serif;color:#14122B;resize:none"></textarea>
+      </div>
+      <div style="align-self:flex-start;font:600 14px Inter,sans-serif;color:#fff;background:linear-gradient(135deg,#845DF4,#4F46E5);padding:14px 30px;border-radius:9px;margin-top:4px">Envoyer</div>
+    </form>
+
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <div style="background:#F7F5FE;border-radius:16px;padding:26px;display:flex;align-items:center;gap:16px">
+        <div style="width:44px;height:44px;border-radius:11px;background:rgba(132,93,244,.14);display:flex;align-items:center;justify-content:center;flex:none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#845DF4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"></path><path d="M22 6 12 13 2 6"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg></div>
+        <div>
+          <div style="font:600 11px 'JetBrains Mono',monospace;color:rgba(20,18,43,.45);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Email</div>
+          <div style="font:600 14.5px Inter,sans-serif;color:#14122B">contact@elonemaccioni.fr</div>
+        </div>
+      </div>
+      <div style="background:#F7F5FE;border-radius:16px;padding:26px;display:flex;align-items:center;gap:16px">
+        <div style="width:44px;height:44px;border-radius:11px;background:rgba(101,101,241,.14);display:flex;align-items:center;justify-content:center;flex:none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6565F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></div>
+        <div>
+          <div style="font:600 11px 'JetBrains Mono',monospace;color:rgba(20,18,43,.45);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Téléphone</div>
+          <div style="font:600 14.5px Inter,sans-serif;color:#14122B">+33 6 95 15 80 73</div>
+        </div>
+      </div>
+      <div style="background:#F7F5FE;border-radius:16px;padding:26px;display:flex;align-items:center;gap:16px">
+        <div style="width:44px;height:44px;border-radius:11px;background:rgba(79,70,229,.14);display:flex;align-items:center;justify-content:center;flex:none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+        <div>
+          <div style="font:600 11px 'JetBrains Mono',monospace;color:rgba(20,18,43,.45);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Localisation</div>
+          <div style="font:600 14.5px Inter,sans-serif;color:#14122B">Paris, France</div>
+        </div>
+      </div>
+
+      <div style="background:linear-gradient(160deg,#5B3FC9,#2C1568);border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:10px;margin-top:6px">
+        <h3 style="margin:0;font:700 17px Outfit,sans-serif;color:#fff">Un appel rapide ?</h3>
+        <p style="margin:0;font:400 13.5px/1.6 Inter,sans-serif;color:rgba(255,255,255,.8)">15 minutes gratuites pour cadrer votre projet.</p>
+        <span style="font:600 13px Inter,sans-serif;color:#fff;text-decoration:underline;margin-top:4px">Réserver un appel →</span>
+      </div>
+    </div>
+  </section>
+
+  <footer style="padding:48px 56px;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;border-top:1px solid rgba(20,18,43,.06)">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font:700 17px Outfit,sans-serif;color:#14122B">Elone Maccioni</div>
+      <p style="margin:0;font:400 13.5px/1.6 Inter,sans-serif;color:rgba(20,18,43,.55);max-width:320px">Développeur Full Stack Freelance. Je transforme la présence digitale des entreprises et indépendants.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;font:400 13.5px Inter,sans-serif;color:rgba(20,18,43,.65)">
+      <div style="font:600 12px 'JetBrains Mono',monospace;color:#14122B;margin-bottom:4px">NAVIGATION</div>
+      <span>Accueil</span><span>Blog</span><span>Projets</span><span>Services</span><span>Contact</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;font:400 13.5px Inter,sans-serif;color:rgba(20,18,43,.65)">
+      <div style="font:600 12px 'JetBrains Mono',monospace;color:#14122B;margin-bottom:4px">CONTACT</div>
+      <span>Paris, France</span><span>contact@elonemaccioni.fr</span>
+    </div>
+  </footer>
+</div>
+</div>
+
+</x-dc>
+</body>
+</html>

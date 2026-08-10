@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#EDEAF8;font-family:Inter,sans-serif}
+a{color:#4F46E5}
+a:hover{color:#845DF4}
+.filter-chip{cursor:pointer}
+</style>
+</helmet>
+
+<div style="display:flex;justify-content:center;padding:44px">
+<div style="width:1440px;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 30px 80px -30px rgba(20,18,43,.25)">
+
+  <header style="display:flex;align-items:center;justify-content:space-between;padding:18px 56px;border-bottom:1px solid rgba(20,18,43,.06)">
+    <img src="uploads/logo-elone-maccioni.png" alt="Elone Maccioni" style="height:38px;width:auto">
+    <nav style="display:flex;gap:36px;font:500 14px Inter,sans-serif;color:#14122B">
+      <span style="color:rgba(20,18,43,.55)">Accueil</span><span>Blog</span><span style="color:rgba(20,18,43,.55)">Projets</span><span style="color:rgba(20,18,43,.55)">Services</span><span style="color:rgba(20,18,43,.55)">Contact</span>
+    </nav>
+    <div style="font:600 13px Inter,sans-serif;color:#fff;background:linear-gradient(135deg,#845DF4,#4F46E5);padding:10px 20px;border-radius:8px">Contactez-moi</div>
+  </header>
+
+  <section style="padding:64px 56px 8px">
+    <div style="font:600 12px 'JetBrains Mono',monospace;letter-spacing:.08em;color:#845DF4;text-transform:uppercase;margin-bottom:14px">Blog</div>
+    <h1 style="margin:0 0 14px;font:800 42px/1.15 Outfit,sans-serif;color:#14122B;letter-spacing:-.01em">Veille Tech &amp; IA, documentée chaque semaine</h1>
+    <p style="margin:0;font:400 16px/1.65 Inter,sans-serif;color:rgba(20,18,43,.6);max-width:600px">Notes de veille, retours d'expérience et analyses sur l'IA générative, le développement web et les outils du quotidien.</p>
+  </section>
+
+  <section style="padding:32px 56px 24px;display:flex;gap:10px;flex-wrap:wrap">
+    <span class="filter-chip" style="font:600 13px Inter,sans-serif;color:#fff;background:linear-gradient(135deg,#845DF4,#4F46E5);padding:9px 18px;border-radius:999px">Tous les articles</span>
+    <span class="filter-chip" style="font:500 13px Inter,sans-serif;color:#14122B;background:#F7F5FE;padding:9px 18px;border-radius:999px">IA Générative</span>
+    <span class="filter-chip" style="font:500 13px Inter,sans-serif;color:#14122B;background:#F7F5FE;padding:9px 18px;border-radius:999px">Développement Web</span>
+    <span class="filter-chip" style="font:500 13px Inter,sans-serif;color:#14122B;background:#F7F5FE;padding:9px 18px;border-radius:999px">Veille Tech Quotidienne</span>
+  </section>
+
+  <section style="padding:8px 56px 40px">
+    <a href="Article Blog.dc.html" style="text-decoration:none;display:block;background:#F7F5FE;border-radius:18px;padding:36px;display:grid;grid-template-columns:1.1fr 1.4fr;gap:36px;align-items:center">
+      <div style="height:220px;border-radius:14px;background:repeating-linear-gradient(135deg,#E4DEFB,#E4DEFB 14px,#DAD2F9 14px,#DAD2F9 28px);display:flex;align-items:center;justify-content:center;font:500 11px 'JetBrains Mono',monospace;color:#6565F1">image de couverture</div>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;align-items:center;gap:12px">
+          <span style="font:600 10.5px 'JetBrains Mono',monospace;color:#845DF4;background:rgba(132,93,244,.1);padding:5px 10px;border-radius:6px">IA GÉNÉRATIVE</span>
+          <span style="font:500 12px 'JetBrains Mono',monospace;color:rgba(20,18,43,.4)">À la une</span>
+        </div>
+        <h2 style="margin:0;font:700 26px/1.3 Outfit,sans-serif;color:#14122B">GPT-5.x : des agents multi-étapes passés en prod</h2>
+        <p style="margin:0;font:400 14.5px/1.6 Inter,sans-serif;color:rgba(20,18,43,.6)">Ce qui change vraiment quand un agent gère une tâche de bout en bout, en production — retours d'expérience sur plusieurs projets clients.</p>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:4px">
+          <span style="font:500 12px 'JetBrains Mono',monospace;color:rgba(20,18,43,.4)">18 juillet 2026 · 12 min de lecture</span>
+        </div>
+      </div>
+    </a>
+  </section>
+
+  <section style="padding:0 56px 88px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px">
+
+    <article style="background:#fff;border:1px solid rgba(20,18,43,.08);border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+      <div style="height:160px;background:repeating-linear-gradient(135deg,#E4DEFB,#E4DEFB 14px,#DAD2F9 14px,#DAD2F9 28px);display:flex;align-items:center;justify-content:center;font:500 11px 'JetBrains Mono',monospace;color:#6565F1">image de couverture</div>
+      <div style="padding:24px;display:flex;flex-direction:column;gap:12px;flex:1">
+        <span style="align-self:flex-start;font:600 10.5px 'JetBrains Mono',monospace;color:#6565F1;background:rgba(101,101,241,.1);padding:5px 10px;border-radius:6px">DÉVELOPPEMENT WEB</span>
+        <h3 style="margin:0;font:700 18px/1.3 Outfit,sans-serif;color:#14122B;flex:1">Server Components, le vrai bilan un an après</h3>
+        <p style="margin:0;font:400 13.5px/1.55 Inter,sans-serif;color:rgba(20,18,43,.6)">Retour d'expérience sur des projets clients : gains réels, pièges, et ce qu'on garde.</p>
+        <span style="font:500 12px 'JetBrains Mono',monospace;color:rgba(20,18,43,.4)">11 juillet 2026 · 8 min de lecture</span>
+      </div>
+    </article>
+
+    <article style="background:#fff;border:1px solid rgba(20,18,43,.08);border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+      <div style="height:160px;background:repeating-linear-gradient(135deg,#E4DEFB,#E4DEFB 14px,#DAD2F9 14px,#DAD2F9 28px);display:flex;align-items:center;justify-content:center;font:500 11px 'JetBrains Mono',monospace;color:#6565F1">image de couverture</div>
+      <div style="padding:24px;display:flex;flex-direction:column;gap:12px;flex:1">
+        <span style="align-self:flex-start;font:600 10.5px 'JetBrains Mono',monospace;color:#4F46E5;background:rgba(79,70,229,.1);padding:5px 10px;border-radius:6px">VEILLE TECH QUOTIDIENNE</span>
+        <h3 style="margin:0;font:700 18px/1.3 Outfit,sans-serif;color:#14122B;flex:1">Next.js 16 : le cache par défaut revu de fond en comble</h3>
+        <p style="margin:0;font:400 13.5px/1.55 Inter,sans-serif;color:rgba(20,18,43,.6)">Ce que ça change pour vos projets existants, en 5 minutes.</p>
+        <span style="font:500 12px 'JetBrains Mono',monospace;color:rgba(20,18,43,.4)">9 juillet 2026 · 5 min de lecture</span>
+      </div>
+    </article>
+
+    <article style="background:#fff;border:1px solid rgba(20,18,43,.08);border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+      <div style="height:160px;background:repeating-linear-gradient(135deg,#E4DEFB,#E4DEFB 14px,#DAD2F9 14px,#DAD2F9 28px);display:flex;align-items:center;justify-content:center;font:500 11px 'JetBrains Mono',monospace;color:#6565F1">image de couverture</div>
+      <div style="padding:24px;display:flex;flex-direction:column;gap:12px;flex:1">
+        <span style="align-self:flex-start;font:600 10.5px 'JetBrains Mono',monospace;color:#845DF4;background:rgba(132,93,244,.1);padding:5px 10px;border-radius:6px">IA GÉNÉRATIVE</span>
+        <h3 style="margin:0;font:700 18px/1.3 Outfit,sans-serif;color:#14122B;flex:1">RAG en production : ce que j'aurais fait différemment</h3>
+        <p style="margin:0;font:400 13.5px/1.55 Inter,sans-serif;color:rgba(20,18,43,.6)">Les pièges classiques d'un pipeline de recherche augmentée, vus après plusieurs déploiements clients.</p>
+        <span style="font:500 12px 'JetBrains Mono',monospace;color:rgba(20,18,43,.4)">3 juillet 2026 · 9 min de lecture</span>
+      </div>
+    </article>
+
+    <article style="background:#fff;border:1px solid rgba(20,18,43,.08);border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+      <div style="height:160px;background:repeating-linear-gradient(135deg,#E4DEFB,#E4DEFB 14px,#DAD2F9 14px,#DAD2F9 28px);display:flex;align-items:center;justify-content:center;font:500 11px 'JetBrains Mono',monospace;color:#6565F1">image de couverture</div>
+      <div style="padding:24px;display:flex;flex-direction:column;gap:12px;flex:1">
+        <span style="align-self:flex-start;font:600 10.5px 'JetBrains Mono',monospace;color:#6565F1;background:rgba(101,101,241,.1);padding:5px 10px;border-radius:6px">DÉVELOPPEMENT WEB</span>
+        <h3 style="margin:0;font:700 18px/1.3 Outfit,sans-serif;color:#14122B;flex:1">WordPress headless : quand ça vaut vraiment le coup</h3>
+        <p style="margin:0;font:400 13.5px/1.55 Inter,sans-serif;color:rgba(20,18,43,.6)">Le cas concret d'un site headless livré à un client, et les critères pour savoir si c'est le bon choix.</p>
+        <span style="font:500 12px 'JetBrains Mono',monospace;color:rgba(20,18,43,.4)">27 juin 2026 · 7 min de lecture</span>
+      </div>
+    </article>
+
+    <article style="background:#fff;border:1px solid rgba(20,18,43,.08);border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+      <div style="height:160px;background:repeating-linear-gradient(135deg,#E4DEFB,#E4DEFB 14px,#DAD2F9 14px,#DAD2F9 28px);display:flex;align-items:center;justify-content:center;font:500 11px 'JetBrains Mono',monospace;color:#6565F1">image de couverture</div>
+      <div style="padding:24px;display:flex;flex-direction:column;gap:12px;flex:1">
+        <span style="align-self:flex-start;font:600 10.5px 'JetBrains Mono',monospace;color:#4F46E5;background:rgba(79,70,229,.1);padding:5px 10px;border-radius:6px">VEILLE TECH QUOTIDIENNE</span>
+        <h3 style="margin:0;font:700 18px/1.3 Outfit,sans-serif;color:#14122B;flex:1">TailwindCSS v5 : ce qui casse, ce qui s'améliore</h3>
+        <p style="margin:0;font:400 13.5px/1.55 Inter,sans-serif;color:rgba(20,18,43,.6)">Un tour d'horizon rapide des changements à anticiper avant de migrer un projet existant.</p>
+        <span style="font:500 12px 'JetBrains Mono',monospace;color:rgba(20,18,43,.4)">20 juin 2026 · 4 min de lecture</span>
+      </div>
+    </article>
+
+    <article style="background:#fff;border:1px solid rgba(20,18,43,.08);border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+      <div style="height:160px;background:repeating-linear-gradient(135deg,#E4DEFB,#E4DEFB 14px,#DAD2F9 14px,#DAD2F9 28px);display:flex;align-items:center;justify-content:center;font:500 11px 'JetBrains Mono',monospace;color:#6565F1">image de couverture</div>
+      <div style="padding:24px;display:flex;flex-direction:column;gap:12px;flex:1">
+        <span style="align-self:flex-start;font:600 10.5px 'JetBrains Mono',monospace;color:#845DF4;background:rgba(132,93,244,.1);padding:5px 10px;border-radius:6px">IA GÉNÉRATIVE</span>
+        <h3 style="margin:0;font:700 18px/1.3 Outfit,sans-serif;color:#14122B;flex:1">Copilotes de code : mesurer le vrai gain de productivité</h3>
+        <p style="margin:0;font:400 13.5px/1.55 Inter,sans-serif;color:rgba(20,18,43,.6)">Trois mois d'usage intensif sur des projets clients, chiffres à l'appui.</p>
+        <span style="font:500 12px 'JetBrains Mono',monospace;color:rgba(20,18,43,.4)">13 juin 2026 · 6 min de lecture</span>
+      </div>
+    </article>
+
+  </section>
+
+  <footer style="padding:48px 56px;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;border-top:1px solid rgba(20,18,43,.06)">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font:700 17px Outfit,sans-serif;color:#14122B">Elone Maccioni</div>
+      <p style="margin:0;font:400 13.5px/1.6 Inter,sans-serif;color:rgba(20,18,43,.55);max-width:320px">Développeur Full Stack Freelance. Je transforme la présence digitale des entreprises et indépendants.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;font:400 13.5px Inter,sans-serif;color:rgba(20,18,43,.65)">
+      <div style="font:600 12px 'JetBrains Mono',monospace;color:#14122B;margin-bottom:4px">NAVIGATION</div>
+      <span>Accueil</span><span>Blog</span><span>Projets</span><span>Services</span><span>Contact</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;font:400 13.5px Inter,sans-serif;color:rgba(20,18,43,.65)">
+      <div style="font:600 12px 'JetBrains Mono',monospace;color:#14122B;margin-bottom:4px">CONTACT</div>
+      <span>Paris, France</span><span>contact@elonemaccioni.fr</span>
+    </div>
+  </footer>
+</div>
+</div>
+
+</x-dc>
+</body>
+</html>

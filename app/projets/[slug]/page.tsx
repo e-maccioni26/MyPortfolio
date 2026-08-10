@@ -26,9 +26,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${project.title} | Portfolio Elone Maccioni`,
     description: project.longDescription?.substring(0, 160) || project.description,
     keywords: [...project.technologies, "projet", "portfolio", "développement web"],
+    alternates: {
+      canonical: `https://elonemaccioni.fr${project.link}`,
+    },
     openGraph: {
       title: project.title,
       description: project.longDescription?.substring(0, 160) || project.description,
+      url: `https://elonemaccioni.fr${project.link}`,
       images: [
         {
           url: project.thumbnail,

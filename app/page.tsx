@@ -1,11 +1,13 @@
 import { ThemeToggle } from "@/components/theme-toggle"
 import HomeHero from "@/components/home-hero"
-import TechStack from "@/components/tech-stack"
+import BlogPreviewSection from "@/components/blog-preview-section"
 import ServicesSection from "@/components/services-section"
-import ProjectsCarousel from "@/components/projects-carousel"
+import RecentProjectsSection from "@/components/recent-projects-section"
+import FaqSection from "@/components/faq-section"
 import ContactCard from "@/components/contact-card"
 import { StructuredData } from "./components/structured-data"
 import { Metadata } from "next"
+import { getAllPosts } from "@/lib/blog"
 
 export const metadata: Metadata = {
   title: "Elone Maccioni - Développeur Freelance React/Next.js & Wordpress (Paris)",
@@ -17,15 +19,18 @@ export const metadata: Metadata = {
 }
 
 export default function Home() {
+  const latestPosts = getAllPosts().slice(0, 3)
+
   return (
-    <main className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
+    <main className="min-h-screen">
       <ThemeToggle />
-      <HomeHero />
-      <TechStack />
+      <HomeHero latestPosts={latestPosts} />
+      <BlogPreviewSection posts={latestPosts} />
       <ServicesSection />
-      <ProjectsCarousel />
+      <RecentProjectsSection />
+      <FaqSection />
       <ContactCard />
-      
+
       <StructuredData
         type="Person"
         data={{

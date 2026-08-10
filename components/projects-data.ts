@@ -164,36 +164,20 @@ export const projects: Project[] = [
     githubLink: "https://github.com/e-maccioni26/Pokemon_app"
   },  
   {
-    title: "App full stack de suivi sportif avec coach IA",
-    link: "/projets/goalfit",
-    thumbnail: "/images/projects/goalfit.png", 
-    description: "Application web, suivi sportif avec coach IA",
-    longDescription: "GoalFit est une application web full stack développée avec ReactJS et Supabase, qui permet aux utilisateurs de créer, suivre et compléter des objectifs sportifs personnalisés, tout en bénéficiant d’un accompagnement intelligent via une IA coach.Chaque utilisateur peut s’inscrire, se connecter, et gérer ses objectifs en toute sécurité grâce à un système d’authentification intégré avec Supabase. Les données sont stockées en temps réel dans une base PostgreSQL, et accessibles uniquement par leur propriétaire.Un des éléments clés du projet est l’intégration d’un assistant virtuel basé sur une IA (connecté via une API) avec lequel l’utilisateur peut poser des questions, recevoir des conseils ou de la motivation comme s’il s’agissait d’un coach personnel intelligent.",
-    technologies: ["ReactJS", "Supabase", "API / IA", "TailwindCss"],
+    title: "Site Vitrine React | Vite pour une entreprise de rénovation d'intérieure sur Paris",
+    link: "/projets/thierry-zitoun",
+    thumbnail: "/images/projects/site_vitrine_thierry_zitoun.png",
+    description: "Site vitrine sur mesure, élégant et performant pour un expert en rénovation d'appartements de luxe.",
+    longDescription: "Développé avec ReactJS et Vite, ce site vitrine a été conçu pour mettre en valeur l'expertise de Thierry Zitoun dans la rénovation d'intérieurs de prestige à Paris. L'objectif était de créer une plateforme digitale à l'image de ses services haut de gamme, fluide et sans compromis sur la qualité. L'interface, entièrement stylisée avec TailwindCSS, offre une navigation épurée qui valorise les galeries de réalisations (appartements haussmanniens, lofts, etc.) et les témoignages clients. L'expérience utilisateur est pensée pour faciliter la prise de contact avec un formulaire de devis dynamique, le tout avec des performances de chargement ultra-rapides.",
+    technologies: ["ReactJS", "Vite", "TailwindCSS"],
     features: [
-      "Système d’authentification sécurisé : Connexion et inscription via Supabase avec gestion des sessions.",
-      "Gestion personnalisée des objectifs : Ajout, suppression, suivi des tâches avec persistance des données.",
-      "Assistant IA intégré : Chat intelligent pour poser des questions et recevoir du coaching sportif personnalisé.",
-      "Base de données en temps réel : Synchronisation instantanée des données utilisateurs via Supabase."
+      "Design moderne et responsive : Interface épurée et adaptée à tous les écrans (mobile, tablette, desktop).",
+      "Performances optimisées : Vitesse de chargement ultra-rapide et fluidité de navigation garanties par Vite et ReactJS.",
+      "Mise en valeur visuelle : Sections dédiées aux réalisations avant/après et à la présentation détaillée des services de rénovation.",
+      "Formulaire de devis intégré : Parcours utilisateur simplifié pour encourager la prise de contact et la génération de leads qualifiés."
     ],
-    githubLink: "https://github.com/e-maccioni26/GoalFit"
-  },  
-  {
-    title: "Social Metrics AI – Analyse de sentiments en temps réel",
-    link: "/projets/social-metrics",
-    thumbnail: "/images/projects/social-metrics.png", 
-    description: "Analyse de sentiments en temps réel",
-    longDescription: "Social Metrics AI est un outil d’analyse de sentiments de tweets que j’ai développé de bout en bout en Python avec Flask pour l’API, scikit-learn pour le modèle de machine learning, et MySQL (via Docker) pour le stockage des données.Le projet permet d’analyser l’opinion publique sur un mot-clé ou un sujet donné en temps réel, en récupérant les tweets et en déterminant automatiquement s’ils sont positifs, négatifs ou neutres grâce à un modèle de régression logistique entraîné sur des données annotées.L’outil propose une interface simple pour saisir un mot-clé, consulter les résultats agrégés, et visualiser les tendances. Le modèle peut être réentraîné automatiquement à partir des données les plus récentes.",
-    technologies: ["Python", "Flask (API REST)", "MySQL (via Docker)", "TailwindCss"],
-    features: [
-      "Analyse de sentiments : Classement automatique des tweets en positifs, négatifs ou neutres.",
-      "API Flask : Interface backend propre, avec endpoints pour recherche, prédiction, réentraînement.",
-      "Base de données MySQL Dockerisée : Stockage structuré des tweets analysés.",
-      "Réentraînement automatique du modèle : Mise à jour du modèle ML avec les nouvelles données.",
-      "Interface de recherche : Saisie d’un mot-clé avec affichage des résultats et visualisation agrégée",
-    ],
-    githubLink: "https://github.com/e-maccioni26/Social_MetricsAI"
-  },  
+    demoLink: "https://www.thierryzitoun.fr/"
+  },
   {
     title: "Site headless Wordpress | NextJS pour un psychanalyste et psychothérapeute à Bordeaux",
     link: "/projets/psychanaliste-bordeaux",

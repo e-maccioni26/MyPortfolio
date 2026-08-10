@@ -5,47 +5,51 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --foreground: 245 41% 12%;
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 245 41% 12%;
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --popover-foreground: 245 41% 12%;
+    --primary: 243 75% 59%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 256 87% 66%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 253 60% 97%;
+    --muted-foreground: 245 15% 45%;
+    --accent: 256 87% 96%;
+    --accent-foreground: 256 87% 56%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
-    --radius: 0.5rem;
+    --border: 245 15% 91%;
+    --input: 245 15% 91%;
+    --ring: 243 75% 59%;
+    --radius: 0.75rem;
+
+    --font-heading: var(--font-outfit);
+    --font-body: var(--font-inter);
+    --font-mono-label: var(--font-jetbrains-mono);
   }
 
   .dark {
-    --background: 240 10% 3.9%;
+    --background: 243 42% 9%;
     --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
+    --card: 243 35% 13%;
     --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
+    --popover: 243 35% 13%;
     --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
+    --primary: 243 75% 66%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 256 87% 70%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 243 30% 18%;
+    --muted-foreground: 243 15% 65%;
+    --accent: 256 50% 22%;
+    --accent-foreground: 256 87% 75%;
+    --destructive: 0 62.8% 40%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --border: 243 25% 20%;
+    --input: 243 25% 20%;
+    --ring: 243 75% 66%;
   }
 }
 
@@ -75,5 +79,57 @@
 /* Amélioration des transitions pour le dark mode */
 .dark-transition {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Typographie des articles de blog (contenu MDX) */
+.article-prose p {
+  margin: 0 0 20px;
+  font-size: 17px;
+  line-height: 1.85;
+  color: hsl(var(--foreground) / 0.82);
+}
+.article-prose h2 {
+  font-family: var(--font-heading), sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  color: hsl(var(--foreground));
+  margin: 44px 0 16px;
+  scroll-margin-top: 96px;
+}
+.article-prose h3 {
+  font-family: var(--font-heading), sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: hsl(var(--foreground));
+  margin: 32px 0 12px;
+  scroll-margin-top: 96px;
+}
+.article-prose ul {
+  margin: 0 0 20px;
+  padding-left: 22px;
+}
+.article-prose li {
+  font-size: 16.5px;
+  line-height: 1.8;
+  color: hsl(var(--foreground) / 0.82);
+  margin-bottom: 8px;
+}
+.article-prose code {
+  font-family: var(--font-mono-label), monospace;
+  font-size: 14px;
+  background: hsl(var(--muted));
+  color: hsl(var(--primary));
+  padding: 2px 6px;
+  border-radius: 5px;
+}
+.article-prose blockquote {
+  margin: 28px 0;
+  padding: 4px 0 4px 22px;
+  border-left: 3px solid hsl(var(--secondary));
+  font-family: var(--font-heading), sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.7;
+  color: hsl(var(--foreground));
 }
 

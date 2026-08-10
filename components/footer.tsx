@@ -25,15 +25,6 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://github.com/e-maccioni26"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-indigo-500 dark:text-gray-400 dark:hover:text-indigo-400 transition-colors"
-              >
-                <Github size={20} />
-                <span className="sr-only">GitHub</span>
-              </a>
-              <a
                 href="https://linkedin.com/in/elone-maccioni"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -71,7 +62,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div className="col-span-1">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-900 dark:text-gray-100 mb-4">
+            <h3 className="font-mono text-xs font-semibold uppercase tracking-wider text-gray-900 dark:text-gray-100 mb-4">
               Navigation
             </h3>
             <ul className="space-y-2">
@@ -80,6 +71,7 @@ export default function Footer() {
                 { name: "Mes services", href: "/mes-services" },
                 { name: "Projets", href: "/projets" },
                 { name: "Contact", href: "/contact" },
+                { name: "Blog", href: "/blog" },
               ].map((item) => (
                 <li key={item.name}>
                   <Link
@@ -95,7 +87,7 @@ export default function Footer() {
 
           {/* Services */}
           <div className="col-span-1">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-900 dark:text-gray-100 mb-4">
+            <h3 className="font-mono text-xs font-semibold uppercase tracking-wider text-gray-900 dark:text-gray-100 mb-4">
               Services
             </h3>
             <ul className="space-y-2">
@@ -104,7 +96,7 @@ export default function Footer() {
                 "UI/UX Design",
                 "Applications Mobiles",
                 "Optimisation & Performance",
-                "CMS & E-commerce",
+                "IA & Automatisation",
               ].map((service) => (
                 <li key={service}>
                   <span className="text-gray-600 dark:text-gray-400">{service}</span>
@@ -115,7 +107,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="col-span-1">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-900 dark:text-gray-100 mb-4">
+            <h3 className="font-mono text-xs font-semibold uppercase tracking-wider text-gray-900 dark:text-gray-100 mb-4">
               Contact
             </h3>
             <ul className="space-y-2">

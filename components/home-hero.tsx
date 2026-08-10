@@ -1,147 +1,73 @@
-"use client"
-import { motion } from "motion/react"
-import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight"
-import Image from "next/image"
-import { GradientBorderButton } from "@/components/ui/gradient-border-button"
-import { Github, Linkedin, Mail, Calendar } from "lucide-react"
+import Link from "next/link"
+import { PrimaryButton, OutlineButton } from "@/components/maquette-buttons"
+import TextType from "@/components/ui/text-type"
+import type { BlogPost } from "@/lib/blog-utils"
 
-export default function HomeHero() {
-  return (
-    <HeroHighlight>
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="md:w-1/2"
-          >
-            <motion.h1
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              animate={{
-                opacity: 1,
-                y: [20, -5, 0],
-              }}
-              transition={{
-                duration: 0.5,
-                ease: [0.4, 0.0, 0.2, 1],
-              }}
-              className="text-2xl px-4 md:px-0 md:text-4xl lg:text-6xl font-bold text-neutral-700 dark:text-white max-w-2xl leading-relaxed lg:leading-snug"
-            >
-              Développeur <Highlight className="text-black dark:text-white">Full Stack</Highlight>
-            </motion.h1>
-            
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="mt-4 px-4 md:px-0 text-base md:text-lg text-neutral-600 dark:text-neutral-300 max-w-xl"
-            >
-              Mon rôle est de vous aider à passer un cap digital en concevant des outils sur mesure, performants et surtout rentables. Je me concentre sur l'impact réel et le retour sur investissement.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.7 }}
-              className="mt-8 px-4 md:px-0"
-            >
-              <div className="flex flex-wrap gap-4">
-                <GradientBorderButton 
-                  href="https://www.malt.fr/profile/elonemaccioni" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2"
-                  contentClassName="px-4 py-2"
-                >
-                  <div className="flex items-center gap-2">
-                    <span className="text-sm">Mon profil</span>
-                    <Image 
-                      src="/malt-logo-red.svg" 
-                      alt="Malt" 
-                      width={60} 
-                      height={20} 
-                      className="h-5 w-auto mb-0.5" 
-                    />
-                  </div>
-                </GradientBorderButton>
-                <GradientBorderButton 
-                  href="https://calendly.com/elonemacc/appel-gratuit" 
-                  className="flex items-center gap-2"
-                  contentClassName="px-4 py-2"
-                >
-                  <div className="flex items-center gap-2">
-                    <Calendar size={20} />
-                    <span className="text-sm">Réserver un appel de 15 minutes</span>
-                  </div>
-                </GradientBorderButton>
-              </div>
-              
-              <div className="flex items-center gap-4 mt-8 text-muted-foreground">
-                <motion.a
-                  href="https://github.com/e-maccioni26"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-indigo-500 dark:text-gray-400 dark:hover:text-indigo-400 transition-colors"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3, delay: 0.8 }}
-                >
-                  <Github size={22} />
-                  <span className="sr-only">GitHub</span>
-                </motion.a>
-                <motion.a
-                  href="https://linkedin.com/in/elone-maccioni"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-indigo-500 dark:text-gray-400 dark:hover:text-indigo-400 transition-colors"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3, delay: 0.9 }}
-                >
-                  <Linkedin size={22} />
-                  <span className="sr-only">LinkedIn</span>
-                </motion.a>
-                <motion.a
-                  href="mailto:elonemacc@gmail.com"
-                  className="text-gray-600 hover:text-indigo-500 dark:text-gray-400 dark:hover:text-indigo-400 transition-colors"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3, delay: 1 }}
-                >
-                  <Mail size={22} />
-                  <span className="sr-only">Email</span>
-                </motion.a>
-              </div>
-            </motion.div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="md:w-1/2 flex justify-center md:justify-end"
-          >
-            <div className="relative w-64 h-64 md:w-80 md:h-80">
-              <div className="absolute inset-0 -bottom-4 -right-4 bg-purple-500/30 dark:bg-purple-600/40 rounded-full blur-xl z-0"></div>
-              <div className="absolute inset-0 -top-4 -left-4 bg-indigo-500/20 dark:bg-indigo-600/30 rounded-full blur-xl z-0"></div>
-              <div className="relative z-10 w-full h-full">
-                <Image
-                  src="/avatar.png"
-                  alt="Avatar"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-    </HeroHighlight>
-  )
+const CATEGORY_DOT: Record<string, string> = {
+  "IA Générative": "text-[#845DF4]",
+  "Développement Web": "text-[#6565F1]",
+  "Veille Tech Quotidienne": "text-[#4F46E5]",
 }
 
+export default function HomeHero({ latestPosts = [] }: { latestPosts?: BlogPost[] }) {
+  return (
+    <section className="pt-16 pb-20 md:pt-24 md:pb-28">
+      <div className="container mx-auto px-4">
+        <div className="grid md:grid-cols-2 gap-14 items-center">
+          <div className="flex flex-col gap-5">
+            <span className="font-mono font-semibold text-xs tracking-wide uppercase text-secondary">
+              Elone Maccioni · Disponible pour vos projets.
+            </span>
+            <TextType
+              as="h1"
+              text={["Développeur Full Stack React & Next.js", "Je code, Je veille, je Partage.","Retrouver les actualités Techs du moment",]}
+              typingSpeed={55}
+              deletingSpeed={25}
+              pauseDuration={2200}
+              initialDelay={300}
+              loop
+              showCursor
+              className="font-heading font-extrabold text-4xl md:text-5xl lg:text-[56px] leading-[1.06] tracking-tight text-foreground max-w-xl min-h-[2.2em]"
+            />
+            <p className="text-base md:text-[17px] leading-relaxed text-muted-foreground max-w-md">
+              Vos projets digitaux sont mes préocupations, laissez-moi vous aider à les concrétiser. Retrouvez également les dernières actualités tech et IA du moment.
+            </p>
+
+            <div className="flex flex-wrap gap-3.5 mt-2">
+              <PrimaryButton href="/mes-services">Voir mes services</PrimaryButton>
+              <OutlineButton href="/blog">Lire le blog</OutlineButton>
+            </div>
+          </div>
+
+          <div className="rounded-2xl bg-[#0F0E22] shadow-2xl shadow-primary/20 overflow-hidden">
+            <div className="flex items-center p-3 gap-2 px-4.5 py-3 bg-white/[0.04] border-b border-white/[0.06]">
+              <div className="w-2.5 h-2.5 rounded-full bg-[#845DF4]" />
+              <div className="w-2.5 h-2.5 rounded-full bg-[#6565F1]" />
+              <div className="w-2.5 h-2.5 rounded-full bg-[#4F46E5]" />
+              <span className="ml-2 font-mono text-xs text-white/50">veille.log</span>
+            </div>
+            <div className="p-6 flex flex-col gap-3.5 font-mono text-[13.5px] leading-relaxed text-[#B8B2E8]">
+              {latestPosts.length > 0 ? (
+                latestPosts.map((post) => (
+                  <Link
+                    key={post.slug}
+                    href={`/blog/${post.slug}`}
+                    className="hover:text-white transition-colors"
+                  >
+                    <span className={CATEGORY_DOT[post.frontmatter.category] ?? "text-[#845DF4]"}>
+                      [{post.frontmatter.category}]
+                    </span>{" "}
+                    {post.frontmatter.title}
+                  </Link>
+                ))
+              ) : (
+                <div className="text-white/40">Aucun article pour le moment.</div>
+              )}
+              <div className="text-white">$ tail -f veille.log</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter, Outfit, JetBrains_Mono } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -11,9 +11,12 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from '@vercel/analytics/next';
 
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
+const outfit = Outfit({ subsets: ["latin"], weight: ["600", "700", "800"], variable: "--font-outfit" })
+const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-jetbrains-mono" })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://elonemaccioni.fr"),
   title: "Portfolio | Elone Maccioni",
   description: "Développeur Full Stack spécialisé en React, Next.js et technologies web modernes. Découvrez mes projets et compétences.",
   keywords: ["développeur full stack", "portfolio", "react", "next.js", "javascript", "développeur web", "Elone Maccioni", "freelance"],
@@ -30,7 +33,7 @@ export const metadata: Metadata = {
     siteName: "Portfolio d'Elone Maccioni",
     images: [
       {
-        url: "/avatar.png",
+        url: "https://elonemaccioni.fr/avatar.png",
         width: 800,
         height: 800,
         alt: "Photo d'Elone Maccioni"
@@ -41,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Portfolio | Elone Maccioni | Développeur Full Stack",
     description: "Développeur Full Stack spécialisé en React, Next.js et technologies web modernes. Découvrez mes projets et compétences.",
-    images: ["/avatar.png"]
+    images: ["https://elonemaccioni.fr/avatar.png"]
   },
   alternates: {
     canonical: "https://elonemaccioni.fr/"
@@ -77,7 +80,7 @@ export default function RootLayout({
         {/* End Google Tag Manager */}
       </head>
       <body
-        className={`${inter.className} bg-white dark:bg-black text-black dark:text-white flex flex-col min-h-screen pt-16`}
+        className={`${inter.variable} ${outfit.variable} ${jetbrainsMono.variable} font-sans bg-background text-foreground flex flex-col min-h-screen pt-16`}
       >
         {/* Google Tag Manager (noscript) */}
         <noscript>
@@ -89,7 +92,7 @@ export default function RootLayout({
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <TransparentMainNavbar />
           <div className="flex-grow">{children}</div>
           <Footer />

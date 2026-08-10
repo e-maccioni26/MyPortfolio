@@ -33,6 +33,10 @@ export default function TransparentMainNavbar() {
       link: "/contact",
       mobileHidden: true, 
     },
+    {
+      name: "Blog",
+      link: "/blog",
+    },
   ]
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)

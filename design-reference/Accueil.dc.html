@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#EDEAF8;font-family:Inter,sans-serif}
+a{color:#4F46E5}
+a:hover{color:#845DF4}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+@media (prefers-reduced-motion: reduce){.cursor,.livedot{animation:none !important}}
+.frame-label{font:600 11px "JetBrains Mono",monospace;color:rgba(20,18,43,.5);letter-spacing:.06em;text-transform:uppercase;padding:0 0 14px}
+</style>
+</helmet>
+
+<div style="display:flex;flex-direction:column;gap:56px;padding:44px;align-items:center">
+
+<div style="width:1440px">
+<div class="frame-label">Desktop — 1440px</div>
+<div style="width:1440px;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 30px 80px -30px rgba(20,18,43,.25)">
+
+  <header style="display:flex;align-items:center;justify-content:space-between;padding:18px 56px;border-bottom:1px solid rgba(20,18,43,.06)">
+    <img src="uploads/logo-elone-maccioni.png" alt="Elone Maccioni" style="height:38px;width:auto">
+    <nav style="display:flex;gap:36px;font:500 14px Inter,sans-serif;color:#14122B">
+      <span>Accueil</span><span style="color:rgba(20,18,43,.55)">Blog</span><span style="color:rgba(20,18,43,.55)">Projets</span><span style="color:rgba(20,18,43,.55)">Services</span><span style="color:rgba(20,18,43,.55)">Contact</span>
+    </nav>
+    <div style="font:600 13px Inter,sans-serif;color:#fff;background:linear-gradient(135deg,#845DF4,#4F46E5);padding:10px 20px;border-radius:8px">Contactez-moi</div>
+  </header>
+
+  <section style="display:grid;grid-template-columns:1fr 1fr;gap:64px;padding:72px 56px 88px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <div style="font:700 15px Outfit,sans-serif;color:#14122B">Elone Maccioni</div>
+      <div style="font:600 12px 'JetBrains Mono',monospace;letter-spacing:.08em;color:#845DF4;text-transform:uppercase">Développeur Full Stack — Paris</div>
+      <h1 style="margin:0;font:800 56px/1.06 Outfit,sans-serif;color:#14122B;letter-spacing:-.01em;min-height:126px;max-width:520px">{{ typed }}<span class="cursor" style="animation:blink 1s step-end infinite">_</span></h1>
+      <p style="margin:0;font:400 17px/1.65 Inter,sans-serif;color:rgba(20,18,43,.65);max-width:460px">Développeur freelance qui documente sa veille Tech &amp; IA chaque semaine et construit des produits web sur mesure le reste du temps.</p>
+      <div style="display:flex;gap:14px;margin-top:8px">
+        <div style="font:600 14px Inter,sans-serif;color:#fff;background:linear-gradient(135deg,#845DF4,#4F46E5);padding:14px 26px;border-radius:9px">Voir mes services</div>
+        <div style="font:600 14px Inter,sans-serif;color:#14122B;border:1px solid rgba(20,18,43,.15);padding:14px 26px;border-radius:9px">Lire le blog</div>
+      </div>
+    </div>
+    <div style="border-radius:16px;background:#0F0E22;box-shadow:0 25px 60px -20px rgba(20,18,43,.45);overflow:hidden">
+      <div style="display:flex;align-items:center;gap:8px;padding:12px 18px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.06)">
+        <div style="width:10px;height:10px;border-radius:50%;background:#845DF4"></div>
+        <div style="width:10px;height:10px;border-radius:50%;background:#6565F1"></div>
+        <div style="width:10px;height:10px;border-radius:50%;background:#4F46E5"></div>
+        <span style="margin-left:8px;font:500 12px 'JetBrains Mono',monospace;color:rgba(255,255,255,.5)">veille.log</span>
+      </div>
+      <div style="padding:22px 20px;display:flex;flex-direction:column;gap:12px;font:400 13.5px/1.6 'JetBrains Mono',monospace;color:#B8B2E8">
+        <div><span style="color:#845DF4">[IA Générative]</span> GPT-5.x agents multi-étapes en prod</div>
+        <div><span style="color:#6565F1">[Veille Tech]</span> Next.js 16 : cache par défaut revu</div>
+        <div><span style="color:#4F46E5">[Dev Web]</span> Server Components, le vrai bilan un an après</div>
+        <div style="color:#fff">$ tail -f veille.log<span class="cursor" style="animation:blink 1s step-end infinite">_</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#F7F5FE;padding:72px 56px">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:32px">
+      <h2 style="margin:0;font:700 28px Outfit,sans-serif;color:#14122B">Dernières publications</h2>
+      <span style="font:600 13px Inter,sans-serif;color:#4F46E5">Voir tous les articles →</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px">
+      <article style="background:#fff;border-radius:14px;border:1px solid rgba(20,18,43,.06);padding:26px;display:flex;flex-direction:column;gap:14px">
+        <span style="align-self:flex-start;font:600 10.5px 'JetBrains Mono',monospace;color:#845DF4;background:rgba(132,93,244,.1);padding:5px 10px;border-radius:6px">IA GÉNÉRATIVE</span>
+        <h3 style="margin:0;font:700 19px/1.3 Outfit,sans-serif;color:#14122B">GPT-5.x : des agents multi-étapes passés en prod</h3>
+        <p style="margin:0;font:400 14px/1.6 Inter,sans-serif;color:rgba(20,18,43,.6)">Ce qui change vraiment quand un agent gère une tâche de bout en bout, en production.</p>
+        <span style="font:500 12px 'JetBrains Mono',monospace;color:rgba(20,18,43,.4)">12 min de lecture</span>
+      </article>
+      <article style="background:#fff;border-radius:14px;border:1px solid rgba(20,18,43,.06);padding:26px;display:flex;flex-direction:column;gap:14px">
+        <span style="align-self:flex-start;font:600 10.5px 'JetBrains Mono',monospace;color:#6565F1;background:rgba(101,101,241,.1);padding:5px 10px;border-radius:6px">DÉVELOPPEMENT WEB</span>
+        <h3 style="margin:0;font:700 19px/1.3 Outfit,sans-serif;color:#14122B">Server Components, le vrai bilan un an après</h3>
+        <p style="margin:0;font:400 14px/1.6 Inter,sans-serif;color:rgba(20,18,43,.6)">Retour d'expérience sur des projets clients : gains réels, pièges, et ce qu'on garde.</p>
+        <span style="font:500 12px 'JetBrains Mono',monospace;color:rgba(20,18,43,.4)">8 min de lecture</span>
+      </article>
+      <article style="background:#fff;border-radius:14px;border:1px solid rgba(20,18,43,.06);padding:26px;display:flex;flex-direction:column;gap:14px">
+        <span style="align-self:flex-start;font:600 10.5px 'JetBrains Mono',monospace;color:#4F46E5;background:rgba(79,70,229,.1);padding:5px 10px;border-radius:6px">VEILLE TECH QUOTIDIENNE</span>
+        <h3 style="margin:0;font:700 19px/1.3 Outfit,sans-serif;color:#14122B">Next.js 16 : le cache par défaut revu de fond en comble</h3>
+        <p style="margin:0;font:400 14px/1.6 Inter,sans-serif;color:rgba(20,18,43,.6)">Ce que ça change pour vos projets existants, en 5 minutes.</p>
+        <span style="font:500 12px 'JetBrains Mono',monospace;color:rgba(20,18,43,.4)">5 min de lecture</span>
+      </article>
+    </div>
+  </section>
+
+  <section style="padding:80px 56px">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:8px">
+      <h2 style="margin:0;font:700 28px Outfit,sans-serif;color:#14122B">Mes services</h2>
+      <span style="font:600 13px Inter,sans-serif;color:#4F46E5">Voir tous les services →</span>
+    </div>
+    <p style="margin:0 0 36px;font:400 15px Inter,sans-serif;color:rgba(20,18,43,.6)">Des solutions sur mesure pour répondre à vos besoins digitaux</p>
+    <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:auto auto;gap:20px">
+      <div style="grid-row:span 2;background:linear-gradient(160deg,#845DF4,#4F46E5);border-radius:16px;padding:32px;display:flex;flex-direction:column;justify-content:space-between;color:#fff">
+        <div>
+          <div style="width:44px;height:44px;border-radius:11px;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 3 12 9 6"></polyline><polyline points="15 6 21 12 15 18"></polyline></svg></div>
+          <h3 style="margin:16px 0 10px;font:700 24px Outfit,sans-serif">Développement Web</h3>
+          <p style="margin:0;font:400 14.5px/1.6 Inter,sans-serif;opacity:.9">Sites vitrines, e-commerce, applications sur mesure — React, Next.js, WordPress.</p>
+        </div>
+      </div>
+      <div style="background:#F7F5FE;border-radius:16px;padding:26px">
+        <div style="width:38px;height:38px;border-radius:10px;background:rgba(132,93,244,.12);display:flex;align-items:center;justify-content:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#845DF4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg></div>
+        <h3 style="margin:14px 0 8px;font:700 18px Outfit,sans-serif;color:#14122B">UI/UX Design</h3>
+        <p style="margin:0;font:400 13.5px/1.55 Inter,sans-serif;color:rgba(20,18,43,.6)">Interfaces claires, pensées pour convertir.</p>
+      </div>
+      <div style="background:#F7F5FE;border-radius:16px;padding:26px">
+        <div style="width:38px;height:38px;border-radius:10px;background:rgba(101,101,241,.12);display:flex;align-items:center;justify-content:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#6565F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"></rect><line x1="11" y1="18" x2="13" y2="18"></line></svg></div>
+        <h3 style="margin:14px 0 8px;font:700 18px Outfit,sans-serif;color:#14122B">Applications Mobiles</h3>
+        <p style="margin:0;font:400 13.5px/1.55 Inter,sans-serif;color:rgba(20,18,43,.6)">Des apps rapides, natives ou hybrides.</p>
+      </div>
+      <div style="background:#F7F5FE;border-radius:16px;padding:26px">
+        <div style="width:38px;height:38px;border-radius:10px;background:rgba(79,70,229,.12);display:flex;align-items:center;justify-content:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16.5 14.5"></polyline></svg></div>
+        <h3 style="margin:14px 0 8px;font:700 18px Outfit,sans-serif;color:#14122B">Optimisation &amp; Performance</h3>
+        <p style="margin:0;font:400 13.5px/1.55 Inter,sans-serif;color:rgba(20,18,43,.6)">Vitesse, SEO technique, Core Web Vitals.</p>
+      </div>
+      <div style="background:#F7F5FE;border-radius:16px;padding:26px">
+        <div style="width:38px;height:38px;border-radius:10px;background:rgba(132,93,244,.12);display:flex;align-items:center;justify-content:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#845DF4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h2l2.6 12.6a2 2 0 0 0 2 1.4h8.8a2 2 0 0 0 2-1.6L22 8H6"></path><circle cx="9" cy="20" r="1"></circle><circle cx="17" cy="20" r="1"></circle></svg></div>
+        <h3 style="margin:14px 0 8px;font:700 18px Outfit,sans-serif;color:#14122B">CMS &amp; E-commerce</h3>
+        <p style="margin:0;font:400 13.5px/1.55 Inter,sans-serif;color:rgba(20,18,43,.6)">WordPress notamment, sur mesure.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#F7F5FE;padding:80px 56px">
+    <h2 style="margin:0 0 8px;font:700 28px Outfit,sans-serif;color:#14122B">Projets récents</h2>
+    <p style="margin:0 0 36px;font:400 15px Inter,sans-serif;color:rgba(20,18,43,.6)">Découvrez mes dernières réalisations</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:22px">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="height:150px;border-radius:12px;background:repeating-linear-gradient(135deg,#E4DEFB,#E4DEFB 10px,#DAD2F9 10px,#DAD2F9 20px);display:flex;align-items:center;justify-content:center;font:500 11px 'JetBrains Mono',monospace;color:#6565F1">visuel projet</div>
+        <span style="font:500 11px Inter,sans-serif;color:rgba(20,18,43,.45)">Site vitrine</span>
+        <h4 style="margin:0;font:700 15px/1.35 Outfit,sans-serif;color:#14122B">FASTER CLUB — Conciergerie de luxe</h4>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="height:150px;border-radius:12px;background:repeating-linear-gradient(135deg,#E4DEFB,#E4DEFB 10px,#DAD2F9 10px,#DAD2F9 20px);display:flex;align-items:center;justify-content:center;font:500 11px 'JetBrains Mono',monospace;color:#6565F1">visuel projet</div>
+        <span style="font:500 11px Inter,sans-serif;color:rgba(20,18,43,.45)">React / Vite</span>
+        <h4 style="margin:0;font:700 15px/1.35 Outfit,sans-serif;color:#14122B">Ostéopathe à Pantin</h4>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="height:150px;border-radius:12px;background:repeating-linear-gradient(135deg,#E4DEFB,#E4DEFB 10px,#DAD2F9 10px,#DAD2F9 20px);display:flex;align-items:center;justify-content:center;font:500 11px 'JetBrains Mono',monospace;color:#6565F1">visuel projet</div>
+        <span style="font:500 11px Inter,sans-serif;color:rgba(20,18,43,.45)">Headless WP / Next.js</span>
+        <h4 style="margin:0;font:700 15px/1.35 Outfit,sans-serif;color:#14122B">Psychanalyste à Bordeaux</h4>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="height:150px;border-radius:12px;background:repeating-linear-gradient(135deg,#E4DEFB,#E4DEFB 10px,#DAD2F9 10px,#DAD2F9 20px);display:flex;align-items:center;justify-content:center;font:500 11px 'JetBrains Mono',monospace;color:#6565F1">visuel projet</div>
+        <span style="font:500 11px Inter,sans-serif;color:rgba(20,18,43,.45)">IA / Data</span>
+        <h4 style="margin:0;font:700 15px/1.35 Outfit,sans-serif;color:#14122B">Social Metrics AI</h4>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:80px 56px">
+    <h2 style="margin:0 0 8px;font:700 28px Outfit,sans-serif;color:#14122B">Questions fréquentes</h2>
+    <p style="margin:0 0 36px;font:400 15px Inter,sans-serif;color:rgba(20,18,43,.6)">Tout ce qu'il faut savoir avant de démarrer un projet</p>
+    <div style="display:flex;flex-direction:column;gap:14px;max-width:760px">
+      <div style="background:#F7F5FE;border-radius:14px;padding:22px 26px">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px">
+          <h3 style="margin:0;font:700 16px Outfit,sans-serif;color:#14122B">Combien de temps dure un projet de développement web ?</h3>
+          <span style="font:400 20px Inter,sans-serif;color:#845DF4;flex:none">+</span>
+        </div>
+        <p style="margin:14px 0 0;font:400 14px/1.6 Inter,sans-serif;color:rgba(20,18,43,.6)">Un site vitrine prend généralement 2 à 4 semaines, une application sur mesure 6 à 12 semaines selon le périmètre.</p>
+      </div>
+      <div style="background:#F7F5FE;border-radius:14px;padding:22px 26px">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px">
+          <h3 style="margin:0;font:700 16px Outfit,sans-serif;color:#14122B">Travaillez-vous avec des entreprises hors de Paris ?</h3>
+          <span style="font:400 20px Inter,sans-serif;color:#845DF4;flex:none">+</span>
+        </div>
+        <p style="margin:14px 0 0;font:400 14px/1.6 Inter,sans-serif;color:rgba(20,18,43,.6)">Oui, la majorité des échanges se font à distance ; des points en visio sont organisés tout au long du projet.</p>
+      </div>
+      <div style="background:#F7F5FE;border-radius:14px;padding:22px 26px">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px">
+          <h3 style="margin:0;font:700 16px Outfit,sans-serif;color:#14122B">Proposez-vous un accompagnement après la mise en ligne ?</h3>
+          <span style="font:400 20px Inter,sans-serif;color:#845DF4;flex:none">+</span>
+        </div>
+        <p style="margin:14px 0 0;font:400 14px/1.6 Inter,sans-serif;color:rgba(20,18,43,.6)">Oui, maintenance, évolutions et suivi de performance peuvent être inclus dans une formule mensuelle.</p>
+      </div>
+      <div style="background:#F7F5FE;border-radius:14px;padding:22px 26px">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px">
+          <h3 style="margin:0;font:700 16px Outfit,sans-serif;color:#14122B">Comment se déroule la première prise de contact ?</h3>
+          <span style="font:400 20px Inter,sans-serif;color:#845DF4;flex:none">+</span>
+        </div>
+        <p style="margin:14px 0 0;font:400 14px/1.6 Inter,sans-serif;color:rgba(20,18,43,.6)">Un appel de 30 minutes pour cadrer le besoin, suivi d'une proposition détaillée avec périmètre et budget.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:72px 56px 88px">
+    <div style="background:linear-gradient(160deg,#5B3FC9,#2C1568);border-radius:24px;padding:64px 48px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px">
+      <span style="font:600 12.5px Inter,sans-serif;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:8px 18px;border-radius:999px">Disponible pour de nouveaux projets</span>
+      <h2 style="margin:0;font:700 34px/1.25 Outfit,sans-serif;background:linear-gradient(90deg,#fff,#D9C9FF);-webkit-background-clip:text;background-clip:text;color:transparent;max-width:600px">Un projet en tête ? Discutons-en.</h2>
+      <p style="margin:0;font:400 15px Inter,sans-serif;color:rgba(255,255,255,.75)">Paris, France — contact@elonemaccioni.fr</p>
+      <div style="font:600 14px Inter,sans-serif;color:#2C1568;background:#fff;padding:15px 32px;border-radius:999px;margin-top:6px">Me contacter</div>
+    </div>
+  </section>
+
+  <footer style="padding:48px 56px;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;border-top:1px solid rgba(20,18,43,.06)">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font:700 17px Outfit,sans-serif;color:#14122B">Elone Maccioni</div>
+      <p style="margin:0;font:400 13.5px/1.6 Inter,sans-serif;color:rgba(20,18,43,.55);max-width:320px">Développeur Full Stack Freelance. Je transforme la présence digitale des entreprises et indépendants.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;font:400 13.5px Inter,sans-serif;color:rgba(20,18,43,.65)">
+      <div style="font:600 12px 'JetBrains Mono',monospace;color:#14122B;margin-bottom:4px">NAVIGATION</div>
+      <span>Accueil</span><span>Blog</span><span>Projets</span><span>Services</span><span>Contact</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;font:400 13.5px Inter,sans-serif;color:rgba(20,18,43,.65)">
+      <div style="font:600 12px 'JetBrains Mono',monospace;color:#14122B;margin-bottom:4px">CONTACT</div>
+      <span>Paris, France</span><span>contact@elonemaccioni.fr</span>
+    </div>
+  </footer>
+</div>
+</div>
+
+<div style="width:390px">
+<div class="frame-label">Mobile — 390px</div>
+<div style="width:390px;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 30px 80px -30px rgba(20,18,43,.25)">
+
+  <header style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid rgba(20,18,43,.06)">
+    <img src="uploads/logo-elone-maccioni.png" alt="Elone Maccioni" style="height:30px;width:auto">
+    <div style="display:flex;flex-direction:column;gap:4px">
+      <div style="width:20px;height:2px;background:#14122B"></div>
+      <div style="width:20px;height:2px;background:#14122B"></div>
+      <div style="width:20px;height:2px;background:#14122B"></div>
+    </div>
+  </header>
+
+  <section style="padding:36px 20px 44px;display:flex;flex-direction:column;gap:18px">
+    <div style="font:700 14px Outfit,sans-serif;color:#14122B">Elone Maccioni</div>
+    <div style="font:600 11px 'JetBrains Mono',monospace;letter-spacing:.06em;color:#845DF4;text-transform:uppercase">Développeur Full Stack — Paris</div>
+    <h1 style="margin:0;font:800 32px/1.12 Outfit,sans-serif;color:#14122B;letter-spacing:-.01em;min-height:72px">{{ typed }}<span class="cursor" style="animation:blink 1s step-end infinite">_</span></h1>
+    <p style="margin:0;font:400 14.5px/1.6 Inter,sans-serif;color:rgba(20,18,43,.65)">Développeur freelance qui documente sa veille Tech &amp; IA et construit des produits web sur mesure.</p>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-top:4px">
+      <div style="text-align:center;font:600 14px Inter,sans-serif;color:#fff;background:linear-gradient(135deg,#845DF4,#4F46E5);padding:14px;border-radius:9px">Voir mes services</div>
+      <div style="text-align:center;font:600 14px Inter,sans-serif;color:#14122B;border:1px solid rgba(20,18,43,.15);padding:14px;border-radius:9px">Lire le blog</div>
+    </div>
+    <div style="margin-top:10px;border-radius:14px;background:#0F0E22;overflow:hidden">
+      <div style="display:flex;align-items:center;gap:7px;padding:11px 14px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.06)">
+        <div style="width:8px;height:8px;border-radius:50%;background:#845DF4"></div>
+        <div style="width:8px;height:8px;border-radius:50%;background:#6565F1"></div>
+        <div style="width:8px;height:8px;border-radius:50%;background:#4F46E5"></div>
+        <span style="margin-left:6px;font:500 11px 'JetBrains Mono',monospace;color:rgba(255,255,255,.5)">veille.log</span>
+      </div>
+      <div style="padding:16px 14px;display:flex;flex-direction:column;gap:9px;font:400 12px/1.5 'JetBrains Mono',monospace;color:#B8B2E8">
+        <div><span style="color:#845DF4">[IA Gén.]</span> Agents multi-étapes en prod</div>
+        <div><span style="color:#6565F1">[Veille]</span> Next.js 16 : cache revu</div>
+        <div style="color:#fff">$ tail -f veille.log<span class="cursor" style="animation:blink 1s step-end infinite">_</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#F7F5FE;padding:40px 20px">
+    <h2 style="margin:0 0 20px;font:700 21px Outfit,sans-serif;color:#14122B">Dernières publications</h2>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <article style="background:#fff;border-radius:14px;border:1px solid rgba(20,18,43,.06);padding:20px;display:flex;flex-direction:column;gap:10px">
+        <span style="align-self:flex-start;font:600 10px 'JetBrains Mono',monospace;color:#845DF4;background:rgba(132,93,244,.1);padding:4px 9px;border-radius:6px">IA GÉNÉRATIVE</span>
+        <h3 style="margin:0;font:700 16px/1.3 Outfit,sans-serif;color:#14122B">GPT-5.x : des agents multi-étapes passés en prod</h3>
+        <span style="font:500 11px 'JetBrains Mono',monospace;color:rgba(20,18,43,.4)">12 min de lecture</span>
+      </article>
+      <article style="background:#fff;border-radius:14px;border:1px solid rgba(20,18,43,.06);padding:20px;display:flex;flex-direction:column;gap:10px">
+        <span style="align-self:flex-start;font:600 10px 'JetBrains Mono',monospace;color:#6565F1;background:rgba(101,101,241,.1);padding:4px 9px;border-radius:6px">DÉVELOPPEMENT WEB</span>
+        <h3 style="margin:0;font:700 16px/1.3 Outfit,sans-serif;color:#14122B">Server Components, le vrai bilan un an après</h3>
+        <span style="font:500 11px 'JetBrains Mono',monospace;color:rgba(20,18,43,.4)">8 min de lecture</span>
+      </article>
+      <article style="background:#fff;border-radius:14px;border:1px solid rgba(20,18,43,.06);padding:20px;display:flex;flex-direction:column;gap:10px">
+        <span style="align-self:flex-start;font:600 10px 'JetBrains Mono',monospace;color:#4F46E5;background:rgba(79,70,229,.1);padding:4px 9px;border-radius:6px">VEILLE TECH QUOTIDIENNE</span>
+        <h3 style="margin:0;font:700 16px/1.3 Outfit,sans-serif;color:#14122B">Next.js 16 : le cache par défaut revu de fond en comble</h3>
+        <span style="font:500 11px 'JetBrains Mono',monospace;color:rgba(20,18,43,.4)">5 min de lecture</span>
+      </article>
+    </div>
+  </section>
+
+  <section style="padding:40px 20px">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px">
+      <h2 style="margin:0;font:700 21px Outfit,sans-serif;color:#14122B">Mes services</h2>
+      <span style="font:600 12px Inter,sans-serif;color:#4F46E5">Voir tout →</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="background:linear-gradient(160deg,#845DF4,#4F46E5);border-radius:14px;padding:22px;color:#fff">
+        <div style="width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;margin-bottom:10px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 3 12 9 6"></polyline><polyline points="15 6 21 12 15 18"></polyline></svg></div>
+        <h3 style="margin:0 0 6px;font:700 17px Outfit,sans-serif">Développement Web</h3>
+        <p style="margin:0;font:400 13px/1.55 Inter,sans-serif;opacity:.9">Sites vitrines, e-commerce, apps sur mesure.</p>
+      </div>
+      <div style="background:#F7F5FE;border-radius:14px;padding:20px"><div style="width:32px;height:32px;border-radius:9px;background:rgba(132,93,244,.12);display:flex;align-items:center;justify-content:center;margin-bottom:10px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#845DF4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><circle cx="11" cy="11" r="2"></circle></svg></div><h3 style="margin:0 0 4px;font:700 16px Outfit,sans-serif;color:#14122B">UI/UX Design</h3></div>
+      <div style="background:#F7F5FE;border-radius:14px;padding:20px"><div style="width:32px;height:32px;border-radius:9px;background:rgba(101,101,241,.12);display:flex;align-items:center;justify-content:center;margin-bottom:10px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6565F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"></rect><line x1="11" y1="18" x2="13" y2="18"></line></svg></div><h3 style="margin:0 0 4px;font:700 16px Outfit,sans-serif;color:#14122B">Applications Mobiles</h3></div>
+      <div style="background:#F7F5FE;border-radius:14px;padding:20px"><div style="width:32px;height:32px;border-radius:9px;background:rgba(79,70,229,.12);display:flex;align-items:center;justify-content:center;margin-bottom:10px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16.5 14.5"></polyline></svg></div><h3 style="margin:0 0 4px;font:700 16px Outfit,sans-serif;color:#14122B">Optimisation &amp; Performance</h3></div>
+      <div style="background:#F7F5FE;border-radius:14px;padding:20px"><div style="width:32px;height:32px;border-radius:9px;background:rgba(132,93,244,.12);display:flex;align-items:center;justify-content:center;margin-bottom:10px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#845DF4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h2l2.6 12.6a2 2 0 0 0 2 1.4h8.8a2 2 0 0 0 2-1.6L22 8H6"></path><circle cx="9" cy="20" r="1"></circle><circle cx="17" cy="20" r="1"></circle></svg></div><h3 style="margin:0 0 4px;font:700 16px Outfit,sans-serif;color:#14122B">CMS &amp; E-commerce</h3></div>
+    </div>
+  </section>
+
+  <section style="background:#F7F5FE;padding:40px 20px">
+    <h2 style="margin:0 0 20px;font:700 21px Outfit,sans-serif;color:#14122B">Projets récents</h2>
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="height:130px;border-radius:12px;background:repeating-linear-gradient(135deg,#E4DEFB,#E4DEFB 10px,#DAD2F9 10px,#DAD2F9 20px);display:flex;align-items:center;justify-content:center;font:500 11px 'JetBrains Mono',monospace;color:#6565F1">visuel projet</div>
+        <h4 style="margin:0;font:700 15px Outfit,sans-serif;color:#14122B">FASTER CLUB — Conciergerie de luxe</h4>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="height:130px;border-radius:12px;background:repeating-linear-gradient(135deg,#E4DEFB,#E4DEFB 10px,#DAD2F9 10px,#DAD2F9 20px);display:flex;align-items:center;justify-content:center;font:500 11px 'JetBrains Mono',monospace;color:#6565F1">visuel projet</div>
+        <h4 style="margin:0;font:700 15px Outfit,sans-serif;color:#14122B">Ostéopathe à Pantin</h4>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:40px 20px">
+    <h2 style="margin:0 0 20px;font:700 21px Outfit,sans-serif;color:#14122B">Questions fréquentes</h2>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="background:#F7F5FE;border-radius:14px;padding:18px 20px">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+          <h3 style="margin:0;font:700 14.5px/1.3 Outfit,sans-serif;color:#14122B">Combien de temps dure un projet ?</h3>
+          <span style="font:400 18px Inter,sans-serif;color:#845DF4;flex:none">+</span>
+        </div>
+        <p style="margin:12px 0 0;font:400 13px/1.55 Inter,sans-serif;color:rgba(20,18,43,.6)">2 à 4 semaines pour un site vitrine, 6 à 12 semaines pour une application sur mesure.</p>
+      </div>
+      <div style="background:#F7F5FE;border-radius:14px;padding:18px 20px">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+          <h3 style="margin:0;font:700 14.5px/1.3 Outfit,sans-serif;color:#14122B">Travaillez-vous hors de Paris ?</h3>
+          <span style="font:400 18px Inter,sans-serif;color:#845DF4;flex:none">+</span>
+        </div>
+        <p style="margin:12px 0 0;font:400 13px/1.55 Inter,sans-serif;color:rgba(20,18,43,.6)">Oui, la majorité des échanges se font à distance avec des points en visio.</p>
+      </div>
+      <div style="background:#F7F5FE;border-radius:14px;padding:18px 20px">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+          <h3 style="margin:0;font:700 14.5px/1.3 Outfit,sans-serif;color:#14122B">Un suivi après la mise en ligne ?</h3>
+          <span style="font:400 18px Inter,sans-serif;color:#845DF4;flex:none">+</span>
+        </div>
+        <p style="margin:12px 0 0;font:400 13px/1.55 Inter,sans-serif;color:rgba(20,18,43,.6)">Maintenance et évolutions possibles via une formule mensuelle.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:32px 20px 44px">
+    <div style="background:linear-gradient(160deg,#5B3FC9,#2C1568);border-radius:20px;padding:36px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
+      <span style="font:600 11px Inter,sans-serif;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:7px 14px;border-radius:999px">Disponible pour de nouveaux projets</span>
+      <h2 style="margin:0;font:700 22px/1.3 Outfit,sans-serif;background:linear-gradient(90deg,#fff,#D9C9FF);-webkit-background-clip:text;background-clip:text;color:transparent">Un projet en tête ? Discutons-en.</h2>
+      <p style="margin:0;font:400 13.5px Inter,sans-serif;color:rgba(255,255,255,.75)">contact@elonemaccioni.fr</p>
+      <div style="font:600 14px Inter,sans-serif;color:#2C1568;background:#fff;padding:14px 28px;border-radius:999px">Me contacter</div>
+    </div>
+  </section>
+
+  <footer style="padding:32px 20px;display:flex;flex-direction:column;gap:16px;border-top:1px solid rgba(20,18,43,.06)">
+    <div style="font:700 16px Outfit,sans-serif;color:#14122B">Elone Maccioni</div>
+    <div style="font:400 12.5px Inter,sans-serif;color:rgba(20,18,43,.55)">Paris, France — contact@elonemaccioni.fr</div>
+  </footer>
+</div>
+</div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { typed: '' };
+  fullText = 'Je code, je veille, je partage.';
+  componentDidMount() {
+    let i = 0;
+    this.timer = setInterval(() => {
+      i++;
+      this.setState({ typed: this.fullText.slice(0, i) });
+      if (i >= this.fullText.length) clearInterval(this.timer);
+    }, 55);
+  }
+  componentWillUnmount() {
+    clearInterval(this.timer);
+  }
+  renderVals() {
+    return { typed: this.state.typed };
+  }
+}
+</script>
+</body>
+</html>
