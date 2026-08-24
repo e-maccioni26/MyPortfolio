@@ -1,0 +1,44 @@
+---
+title: "Next.js : une faille critique arrive le 26 août, voici comment vous y préparer"
+category: "Développement Web"
+excerpt: "Vercel a annoncé un correctif de sécurité critique pour Next.js, prévu le 26 août 2026. Versions concernées, ce que ça implique, et la marche à suivre avant la publication de l'avis complet."
+date: "2026-08-24"
+coverImage: "/blog/nextjs-faille.png"
+sources: ["https://nextjs.org/blog/upcoming-nextjs-security-release-august-2026"]
+author: "Elone Maccioni"
+---
+
+Vercel vient de faire une annonce inhabituelle : prévenir cinq jours à l'avance qu'un correctif de sécurité critique va sortir, sans encore donner le détail de la faille. Pour un site sur deux construit avec du JavaScript moderne, ça vaut la peine de s'y arrêter.
+
+## Next.js, en une phrase
+
+Next.js est un framework construit sur React, qui sert à créer des sites et applications web. C'est l'un des plus utilisés au monde : boutiques en ligne, plateformes SaaS, sites vitrines de grandes entreprises. Si un site charge vite, gère des pages qui se génèrent à la demande et un routage propre, il y a de bonnes chances que Next.js tourne derrière.
+
+## Ce qui a été annoncé
+
+Vercel, l'éditeur du framework, a publié un avis préventif : un correctif de sévérité critique sortira le 26 août 2026, sous forme de deux versions patchées, 16.3.3 et 15.5.24. L'avis complet, avec le détail de l'impact, les versions exactement touchées et les instructions de mise à jour, sera publié à cette date.
+
+Ce préavis fait partie d'un programme de sécurité mis en place par Vercel justement pour ce genre de situation : donner aux équipes le temps de s'organiser avant que les détails techniques (et donc la façon d'exploiter la faille) ne deviennent publics.
+
+
+## Ce qu'il faut faire, concrètement
+
+Pas besoin d'attendre le 26 pour commencer :
+
+• Identifiez la version de Next.js qui tourne en production sur vos projets. Si elle est antérieure à 16.3.3 ou 15.5.24, elle sera probablement concernée.
+• Bloquez un créneau dans votre agenda la semaine du 26 août pour appliquer le correctif dès sa sortie, plutôt que de le glisser dans une todo-list qui s'allonge.
+• Abonnez-vous à l'avis de sécurité officiel de Next.js pour être notifié dès sa publication.
+
+Rien de plus n'est possible avant la sortie de l'avis complet : la nature exacte de la faille n'est pas encore publique, et c'est volontaire.
+
+## Pourquoi ça concerne aussi les non-développeurs
+
+Derrière un site qui semble stable, il y a une maintenance permanente, invisible pour l'utilisateur final. Une faille critique non corrigée sur un framework aussi répandu que Next.js peut affecter des millions de sites d'un coup, pas seulement celui d'une petite équipe isolée. Si vous gérez un site (même sans le développer vous-même), la question à poser à votre prestataire ou votre équipe technique est simple : « notre version de Next.js sera-t-elle patchée le 26 août ? »
+
+### À retenir
+
+• Correctif critique prévu le 26 août 2026, versions 16.3.3 et 15.5.24.
+
+• Vérifiez votre version en production dès maintenant, sans attendre l'avis complet.
+
+• Prévoyez le temps de déployer le correctif la semaine de sa sortie.

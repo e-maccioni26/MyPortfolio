@@ -37,10 +37,10 @@ export default function Home() {
         type="Person"
         data={{
           name: "Elone Maccioni",
-          jobTitle: "Elone Maccioni - Développeur Freelance React/Next.js & Wordpress (Paris)",
+          jobTitle: "Elone Maccioni - Développeur Freelance React/Next.js",
           description: "Expert React / Next.js et WordPress à Paris. J'accompagne les entreprises dans la création d'applications web performantes et sur-mesure. Devis gratuit sous 24h.",
           url: "https://elonemaccioni.fr",
-          socialLinks: ["https://github.com/e-maccioni26", "https://linkedin.com/in/elone-maccioni"],
+          socialLinks: ["https://linkedin.com/in/elone-maccioni"],
           image: "/avatar.png",
           email: "elonemacc@gmail.com",
           skills: ["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "CSS", "HTML", "API REST", "PHP", "SQL", "Git", "Docker", "Linux", "SEO", "WordPress", "SEO", "IA"]
@@ -50,9 +50,8 @@ export default function Home() {
       <StructuredData
         type="WebSite"
         data={{
-          name: "Elone Maccioni - Développeur Freelance React/Next.js & Wordpress",
+          name: "Elone Maccioni - Développeur Freelance React/Next.js",
           url: "https://elonemaccioni.fr",
-          description: "Portfolio professionnel d'Elone Maccioni, développeur full stack",
           author: "Elone Maccioni",
           language: "fr-FR"
         }}
