@@ -40,6 +40,7 @@ export default function BlogPreviewSection({ posts }: { posts: BlogPost[] }) {
                     src={post.frontmatter.coverImage}
                     alt={post.frontmatter.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover rounded-t-2xl"
                   />
                 </div>

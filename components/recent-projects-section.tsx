@@ -31,17 +31,18 @@ export default function RecentProjectsSection() {
                   src={project.thumbnail || "/placeholder.svg"}
                   alt={project.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, 25vw"
                   className="object-cover object-top"
                 />
               </Link>
               <span className="text-[11px] font-medium text-muted-foreground">
                 {project.technologies.slice(0, 2).join(" / ")}
               </span>
-              <h4 className="font-heading font-bold text-[15px] leading-tight text-foreground">
+              <h3 className="font-heading font-bold text-[15px] leading-tight text-foreground">
                 <Link href={project.link} className="hover:text-secondary transition-colors">
                   {project.title}
                 </Link>
-              </h4>
+              </h3>
               <Link
                 href={project.link}
                 className="font-semibold text-[13px] text-secondary hover:text-primary transition-colors"

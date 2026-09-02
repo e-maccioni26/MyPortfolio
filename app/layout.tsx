@@ -69,7 +69,11 @@ export default function RootLayout({
     <html lang="fr" suppressHydrationWarning>
       <head>
         {/* Google Tag Manager */}
-        <Script id="gtm-head" strategy="beforeInteractive">
+        {/* afterInteractive et non beforeInteractive : GTM n'a pas besoin de
+            s'exécuter avant l'hydratation, et le charger plus tôt bloque le
+            rendu et alourdit le thread principal. C'est la stratégie
+            recommandée par Google pour GTM dans Next.js. */}
+        <Script id="gtm-head" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
           j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=

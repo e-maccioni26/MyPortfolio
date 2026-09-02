@@ -148,6 +148,8 @@ export const MobileNavToggle = ({
   return (
     <button
       onClick={onClick}
+      aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
+      aria-expanded={isOpen}
       className="flex h-10 w-10 items-center justify-center rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
     >
       {isOpen ? (
@@ -164,7 +166,7 @@ export const NavbarLogo = () => {
     <Link href="/" className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal">
       <Image
         src="/logo-elone-maccioni.png"
-        alt="Logo"
+        alt="Elone Maccioni, développeur web freelance — retour à l’accueil"
         width={60}
         height={60}
         className="h-[60px] w-auto object-contain"

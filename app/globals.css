@@ -12,7 +12,9 @@
     --popover-foreground: 245 41% 12%;
     --primary: 243 75% 59%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 256 87% 66%;
+    /* 62% et non 66% : en dessous, le violet sur fond clair tombe à 3.9:1
+       et échoue au critère WCAG AA de 4.5:1 pour le petit texte. */
+    --secondary: 256 87% 62%;
     --secondary-foreground: 0 0% 100%;
     --muted: 253 60% 97%;
     --muted-foreground: 245 15% 45%;

@@ -15,6 +15,7 @@ function CoverImage({ post, className }: { post: BlogPost; className?: string })
           src={post.frontmatter.coverImage}
           alt={post.frontmatter.title}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover"
         />
       </div>

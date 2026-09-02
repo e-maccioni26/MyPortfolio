@@ -42,7 +42,10 @@ export default function AboutSection() {
               <span>Développeur</span>
               <RotatingText
                 texts={["Full Stack", "PHP", "Wordpress", "React", "NextJs"]}
-                mainClassName="px-2.5 md:px-3 py-0.5 md:py-1 bg-primary text-primary-foreground overflow-hidden justify-center rounded-lg"
+                // min-w calé sur le mot le plus long : sans lui la pastille passe
+                // de « PHP » à « Wordpress » toutes les 2 s, et le titre peut
+                // basculer sur deux lignes, ce qui décale tout le contenu (CLS).
+                mainClassName="px-2.5 md:px-3 py-0.5 md:py-1 min-w-[10ch] bg-primary text-primary-foreground overflow-hidden justify-center rounded-lg"
                 staggerFrom="last"
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}

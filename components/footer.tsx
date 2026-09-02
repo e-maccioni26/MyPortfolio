@@ -14,7 +14,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center space-x-2 mb-4">
               <Image
                 src="/logo-elone-maccioni.png"
-                alt="Logo"
+                alt="Elone Maccioni, développeur web freelance — retour à l’accueil"
                 width={60}
                 height={60}
                 className="h-[60px] w-auto object-contain"
