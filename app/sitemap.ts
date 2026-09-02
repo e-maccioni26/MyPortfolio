@@ -3,6 +3,8 @@ import { getAllPosts } from "@/lib/blog";
 import { parseBlogDate } from "@/lib/blog-utils";
 import { MetadataRoute } from "next";
 
+// Pas de `lastModified` sur les pages sans date réelle : Google ignore le
+// signal quand il est systématiquement égal à la date de build.
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://elonemaccioni.fr";
   
@@ -10,31 +12,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     {
       url: baseUrl,
-      lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 1.0,
     },
     {
       url: `${baseUrl}/mes-services`,
-      lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/projets`,
-      lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
@@ -44,7 +41,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const projectPages = projects.map((project) => {
     return {
       url: `${baseUrl}/projets/${project.link.split("/").pop()}`,
-      lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.6,
     };
@@ -53,7 +49,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const blogPages = [
     {
       url: `${baseUrl}/blog`,
-      lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
