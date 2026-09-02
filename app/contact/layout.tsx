@@ -1,11 +1,11 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Contact | Portfolio Elone Maccioni",
+  title: "Contact | Elone Maccioni — Développeur Freelance React/Next.js",
   description: "Contactez Elone Maccioni. Discutons de vos projets web et des solutions digitales adaptées à vos besoins.",
   keywords: ["contact développeur", "freelance web", "développeur full stack", "Elone Maccioni", "devis projet web", "contact", "freelance developpeur"],
   openGraph: {
-    title: "Contact | Portfolio Elone Maccioni",
+    title: "Contact | Elone Maccioni — Développeur Freelance React/Next.js",
     description: "Contactez Elone Maccioni. Discutons de vos projets web et des solutions digitales adaptées à vos besoins.",
     url: "https://elonemaccioni.fr/contact",
   },
