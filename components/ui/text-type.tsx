@@ -182,7 +182,19 @@ const TextType = ({
       className: `inline-block whitespace-pre-wrap tracking-tight ${className}`,
       ...props
     },
-    <span className="inline" style={{ color: getCurrentTextColor() || 'inherit' }}>
+    // Le texte réel, rendu côté serveur : sans lui le h1 est vide dans le HTML
+    // servi, et les crawlers qui n'exécutent pas JS (GPTBot, ClaudeBot,
+    // PerplexityBot) ne voient aucun titre. Sert aussi de nom accessible stable,
+    // une animation de frappe étant illisible au lecteur d'écran.
+    <span key="sr" className="sr-only">
+      {textArray[0]}
+    </span>,
+    <span
+      key="anim"
+      aria-hidden="true"
+      className="inline"
+      style={{ color: getCurrentTextColor() || 'inherit' }}
+    >
       {reducedMotion ? textArray[0] : displayedText}
     </span>,
     showCursor && !reducedMotion && (

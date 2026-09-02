@@ -20,7 +20,7 @@ export default function HomeHero({ latestPosts = [] }: { latestPosts?: BlogPost[
             </span>
             <TextType
               as="h1"
-              text={["Développeur Full Stack React & Next.js", "Je code, Je veille, je Partage.","Retrouver les actualités Techs du moment",]}
+              text={["Développeur Full Stack React & Next.js - Paris", "Je code, Je veille, je Partage.","Retrouver les actualités Techs du moment",]}
               typingSpeed={55}
               deletingSpeed={25}
               pauseDuration={2200}

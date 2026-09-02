@@ -7,6 +7,7 @@ import RecentProjectsSection from "@/components/recent-projects-section"
 import FaqSection from "@/components/faq-section"
 import ContactCard from "@/components/contact-card"
 import { StructuredData } from "./components/structured-data"
+import { LocalBusinessSchema } from "./components/local-business-schema"
 import { Metadata } from "next"
 import { getAllPosts } from "@/lib/blog"
 
@@ -32,6 +33,8 @@ export default function Home() {
       <RecentProjectsSection />
       <FaqSection />
       <ContactCard />
+
+      <LocalBusinessSchema />
 
       <StructuredData
         type="Person"
