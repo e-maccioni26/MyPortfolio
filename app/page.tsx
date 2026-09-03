@@ -3,6 +3,7 @@ import HomeHero from "@/components/home-hero"
 import AboutSection from "@/components/about-section"
 import BlogPreviewSection from "@/components/blog-preview-section"
 import ServicesSection from "@/components/services-section"
+import TestimonialsSection from "@/components/testimonials-section"
 import RecentProjectsSection from "@/components/recent-projects-section"
 import FaqSection from "@/components/faq-section"
 import ContactCard from "@/components/contact-card"
@@ -30,6 +31,7 @@ export default function Home() {
       <AboutSection />
       <BlogPreviewSection posts={latestPosts} />
       <ServicesSection />
+      <TestimonialsSection />
       <RecentProjectsSection />
       <FaqSection />
       <ContactCard />

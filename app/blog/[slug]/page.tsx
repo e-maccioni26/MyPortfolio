@@ -5,6 +5,7 @@ import { ExternalLink } from "lucide-react"
 import { notFound } from "next/navigation"
 import { getAllPosts, getPostBySlug, getPostSlugs, getHeadings, formatBlogDate, renderMarkdownToHtml } from "@/lib/blog"
 import { BlogCategoryBadge } from "@/components/blog-category-badge"
+import BlogLinkedinCta from "@/components/blog-linkedin-cta"
 
 export async function generateStaticParams() {
   return getPostSlugs().map((slug) => ({ slug }))
@@ -118,24 +119,33 @@ export default async function BlogArticlePage({
         </div>
 
         <div className="grid md:grid-cols-[200px_1fr] gap-14">
-          {headings.length > 0 && (
-            <aside className="hidden md:flex flex-col gap-2.5 sticky top-24 self-start font-medium text-[13px] text-muted-foreground">
-              <div className="font-mono text-[11px] font-semibold text-foreground uppercase tracking-wide mb-1.5">
-                Sommaire
+          {/* Rendu même sans sommaire : l'aside porte aussi l'encart LinkedIn, et
+              une colonne absente ferait basculer l'article dans la piste de 200px. */}
+          <aside className="hidden md:flex flex-col sticky top-24 self-start font-medium text-[13px] text-muted-foreground">
+            {headings.length > 0 && (
+              <div className="flex flex-col gap-2.5">
+                <div className="font-mono text-[11px] font-semibold text-foreground uppercase tracking-wide mb-1.5">
+                  Sommaire
+                </div>
+                {headings.map((heading) => (
+                  <a
+                    key={heading.slug}
+                    href={`#${heading.slug}`}
+                    className={heading.depth === 3 ? "pl-3 hover:text-secondary transition-colors" : "hover:text-secondary transition-colors"}
+                  >
+                    {heading.text}
+                  </a>
+                ))}
               </div>
-              {headings.map((heading) => (
-                <a
-                  key={heading.slug}
-                  href={`#${heading.slug}`}
-                  className={heading.depth === 3 ? "pl-3 hover:text-secondary transition-colors" : "hover:text-secondary transition-colors"}
-                >
-                  {heading.text}
-                </a>
-              ))}
-            </aside>
-          )}
+            )}
 
-          <article className="article-prose min-w-0" dangerouslySetInnerHTML={{ __html: articleHtml }} />
+            <BlogLinkedinCta variant="sidebar" />
+          </aside>
+
+          <div className="min-w-0">
+            <article className="article-prose" dangerouslySetInnerHTML={{ __html: articleHtml }} />
+            <BlogLinkedinCta variant="card" />
+          </div>
         </div>
 
         {post.frontmatter.sources && post.frontmatter.sources.length > 0 && (
