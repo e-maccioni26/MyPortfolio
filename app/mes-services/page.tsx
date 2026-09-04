@@ -30,7 +30,7 @@ const services = [
   {
     icon: Monitor,
     title: 'Site Vitrine',
-    description: 'Un site élégant et professionnel — création ou refonte — qui présente votre entreprise et rassure vos prospects.',
+    description: 'Un site élégant et professionnel : création ou refonte, qui présente votre entreprise et rassure vos prospects/clients.',
     features: ['Création ou refonte complète', 'Design moderne & responsive', 'SEO optimisé', 'Migration sécurisée'],
     color: '#845DF4',
   },
@@ -44,7 +44,7 @@ const services = [
   {
     icon: Sparkles,
     title: 'IA & Automatisation',
-    description: "Je propose des formations IA mais aussi de l'implémenter dans vos projets.",
+    description: "Je propose des formations IA mais aussi de l'implémenter dans vos projets permettant d'accroître votre productivité.",
     features: ['Formations sur-mesure', "Intégration d'IA dans vos outils", 'Automatisation de tâches', 'Accompagnement personnalisé'],
     color: '#4F46E5',
   },
