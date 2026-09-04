@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useMemo, useRef, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
@@ -34,16 +34,43 @@ function CoverImage({ post, className }: { post: BlogPost; className?: string })
   )
 }
 
+const PAR_PAGE = 5
+
 export default function BlogList({ posts }: { posts: BlogPost[] }) {
-  const categories = Array.from(new Set(posts.map((post) => post.frontmatter.category)))
+  const categories = useMemo(
+    () => Array.from(new Set(posts.map((post) => post.frontmatter.category))),
+    [posts]
+  )
   const [activeCategory, setActiveCategory] = useState<string>("Tous les articles")
+  const [page, setPage] = useState(1)
+  const grilleRef = useRef<HTMLDivElement>(null)
 
   const filteredPosts =
     activeCategory === "Tous les articles"
       ? posts
       : posts.filter((post) => post.frontmatter.category === activeCategory)
 
+  // L'article à la une est sorti de la pagination : seuls les suivants défilent.
   const [featured, ...rest] = filteredPosts
+
+  const nbPages = Math.max(1, Math.ceil(rest.length / PAR_PAGE))
+  // Borne la page : changer de filtre peut réduire le nombre de pages sous la
+  // page courante avant que le state ne soit remis à 1.
+  const pageCourante = Math.min(page, nbPages)
+  const debut = (pageCourante - 1) * PAR_PAGE
+  const pageDArticles = rest.slice(debut, debut + PAR_PAGE)
+
+  const changerPage = (n: number) => {
+    setPage(n)
+    // Sans ça, on atterrit en bas de la nouvelle page, sur le pager qu'on vient
+    // de cliquer, au lieu des articles.
+    grilleRef.current?.scrollIntoView({ block: "start" })
+  }
+
+  const changerCategorie = (categorie: string) => {
+    setActiveCategory(categorie)
+    setPage(1)
+  }
 
   return (
     <>
@@ -54,7 +81,7 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
         {["Tous les articles", ...categories].map((category) => (
           <button
             key={category}
-            onClick={() => setActiveCategory(category)}
+            onClick={() => changerCategorie(category)}
             className={cn(
               "font-medium text-[13px] p-4 py-2 rounded-full transition-colors",
               activeCategory === category
@@ -93,8 +120,8 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
         </div>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {rest.map((post) => (
+      <div ref={grilleRef} className="scroll-mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {pageDArticles.map((post) => (
           <div key={post.slug}>
             <Link
               href={`/blog/${post.slug}`}
@@ -122,6 +149,65 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
         <div className="text-center py-20 rounded-lg border border-border bg-card/50">
           <p className="text-muted-foreground text-lg">Aucun article dans cette catégorie pour le moment.</p>
         </div>
+      )}
+
+      {nbPages > 1 && (
+        <nav
+          aria-label="Pagination des articles"
+          className="mt-10 pt-7 border-t border-border flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
+        >
+          <span className="font-medium text-[13.5px] text-muted-foreground">
+            Articles {debut + 1}&ndash;{Math.min(debut + PAR_PAGE, rest.length)} sur {rest.length}
+          </span>
+
+          <div className="flex items-center gap-2 flex-wrap">
+            <button
+              type="button"
+              onClick={() => changerPage(pageCourante - 1)}
+              disabled={pageCourante === 1}
+              className={cn(
+                "font-semibold text-[13px] px-3.5 py-2.5 rounded-lg border border-border whitespace-nowrap transition-colors",
+                pageCourante === 1
+                  ? "text-muted-foreground/50 bg-muted/40 cursor-default"
+                  : "text-primary bg-card hover:bg-muted"
+              )}
+            >
+              ← Précédent
+            </button>
+
+            {Array.from({ length: nbPages }, (_, i) => i + 1).map((n) => (
+              <button
+                key={n}
+                type="button"
+                onClick={() => changerPage(n)}
+                aria-current={n === pageCourante ? "page" : undefined}
+                aria-label={`Page ${n} sur ${nbPages}`}
+                className={cn(
+                  "min-w-[36px] text-[13px] px-3 py-2.5 rounded-lg transition-colors",
+                  n === pageCourante
+                    ? "font-semibold text-white bg-gradient-to-br from-[#845DF4] to-[#4F46E5]"
+                    : "font-medium text-foreground bg-muted hover:bg-muted/70"
+                )}
+              >
+                {n}
+              </button>
+            ))}
+
+            <button
+              type="button"
+              onClick={() => changerPage(pageCourante + 1)}
+              disabled={pageCourante === nbPages}
+              className={cn(
+                "font-semibold text-[13px] px-3.5 py-2.5 rounded-lg border border-border whitespace-nowrap transition-colors",
+                pageCourante === nbPages
+                  ? "text-muted-foreground/50 bg-muted/40 cursor-default"
+                  : "text-primary bg-card hover:bg-muted"
+              )}
+            >
+              Suivant →
+            </button>
+          </div>
+        </nav>
       )}
     </>
   )
