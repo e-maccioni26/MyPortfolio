@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     "Elone Maccioni"
   ],
   openGraph: {
-    title: "Mes services | Elone Maccioni - Développeur Full Stack Freelance",
     description: "Accompagnement sur-mesure pour vos projets digitaux : création d'applications web (SaaS), refonte de sites vitrines et optimisation de performance.",
     url: "https://elonemaccioni.fr/mes-services",
   },

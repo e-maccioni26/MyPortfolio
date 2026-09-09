@@ -6,6 +6,7 @@ import { notFound } from "next/navigation"
 import { getAllPosts, getPostBySlug, getPostSlugs, getHeadings, formatBlogDate, renderMarkdownToHtml } from "@/lib/blog"
 import { BlogCategoryBadge } from "@/components/blog-category-badge"
 import BlogLinkedinCta from "@/components/blog-linkedin-cta"
+import { ArticleSchema } from "@/app/components/article-schema"
 
 export async function generateStaticParams() {
   return getPostSlugs().map((slug) => ({ slug }))
@@ -74,6 +75,8 @@ export default async function BlogArticlePage({
 
   return (
     <main className="min-h-screen">
+      <ArticleSchema slug={slug} frontmatter={post.frontmatter} />
+
       <div className="max-w-3xl mx-auto px-6 pt-16 pb-24">
         <div>
           <div className="flex items-center gap-2.5 mb-5 font-semibold text-[13px] text-muted-foreground">

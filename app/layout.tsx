@@ -17,7 +17,7 @@ const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500"
 export const metadata: Metadata = {
   metadataBase: new URL("https://elonemaccioni.fr"),
   title: "Portfolio | Elone Maccioni",
-  description: "Développeur Full Stack spécialisé en React, Next.js et technologies web modernes. Découvrez mes projets et compétences.",
+  description: "Développeur Full Stack spécialisé en React, Next.js.",
   keywords: ["développeur full stack", "portfolio", "react", "next.js", "javascript", "développeur web", "Elone Maccioni", "freelance"],
   authors: [{ name: "Elone Maccioni" }],
   creator: "Elone Maccioni",
@@ -27,8 +27,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://elonemaccioni.fr/",
-    title: "Portfolio | Elone Maccioni | Développeur Full Stack",
-    description: "Développeur Full Stack spécialisé en React, Next.js et technologies web modernes. Découvrez mes projets et compétences.",
+    description: "Développeur Full Stack spécialisé en React, Next.js et NodeJs. ",
     siteName: "Portfolio d'Elone Maccioni",
     images: [
       {
@@ -41,7 +40,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Portfolio | Elone Maccioni | Développeur Full Stack",
     description: "Développeur Full Stack spécialisé en React, Next.js et technologies web modernes. Découvrez mes projets et compétences.",
     images: ["https://elonemaccioni.fr/avatar.png"]
   },

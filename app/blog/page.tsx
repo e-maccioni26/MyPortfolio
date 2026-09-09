@@ -7,7 +7,6 @@ export const metadata: Metadata = {
   description: "Retrouvez toutes les dernières actualités tech et IA sur mon blog.",
   keywords: ["blog développeur", "articles", "veille tech", "ia générative", "développement web", "Elone Maccioni", "freelance"],
   openGraph: {
-    title: "Blog | Elone Maccioni",
     description: "Retrouvez toutes les dernières actualités tech et IA sur mon blog.",
     url: "https://elonemaccioni.fr/blog",
   },
