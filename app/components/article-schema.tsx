@@ -1,4 +1,5 @@
 import { parseBlogDate, type BlogPostFrontmatter } from "@/lib/blog-utils"
+import { serialiserJsonLd } from "@/lib/json-ld"
 
 const SITE = "https://elonemaccioni.fr"
 
@@ -55,7 +56,7 @@ export function ArticleSchema({
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: serialiserJsonLd(schema) }}
     />
   )
 }

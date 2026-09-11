@@ -1,4 +1,5 @@
 import { faqs } from "@/components/faq-data"
+import { serialiserJsonLd } from "@/lib/json-ld"
 
 /**
  * Schémas destinés aux moteurs et aux LLM.
@@ -105,11 +106,11 @@ export function LocalBusinessSchema() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(business) }}
+        dangerouslySetInnerHTML={{ __html: serialiserJsonLd(business) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPage) }}
+        dangerouslySetInnerHTML={{ __html: serialiserJsonLd(faqPage) }}
       />
     </>
   )
