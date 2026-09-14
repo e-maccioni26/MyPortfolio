@@ -8,6 +8,8 @@ export interface Project {
   features?: string[];
   githubLink?: string;
   demoLink?: string;
+  /** Projet personnel. Absent = projet professionnel (le cas par défaut). */
+  perso?: boolean;
 }
 
 export const projects: Project[] = [
@@ -151,6 +153,7 @@ export const projects: Project[] = [
   {
     title: "Application mobile Pokémon",
     link: "/projets/react-native-app",
+    perso: true,
     thumbnail: "/images/projects/react-native-pokemon.png", 
     description: "Application mobile Pokémon",
     longDescription: "Cette application mobile Pokémon App a été développée avec React Native, dans le cadre de mon apprentissage du développement mobile. Elle permet à l’utilisateur de parcourir les différents Pokémon, de les filtrer par type et d’accéder à leurs caractéristiques détaillées.Le but de ce projet était de mettre en pratique les notions clés de React Native, comme la gestion des états, les appels API, le routing, ainsi que la création d’une interface mobile fluide et responsive.L’application consomme une API publique Pokémon pour récupérer dynamiquement les données.",
