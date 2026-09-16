@@ -1,0 +1,42 @@
+---
+title: "GitHub Copilot connecte Jira à l'IA de code"
+category: "Développement Web"
+excerpt: "GitHub Copilot importe désormais les tickets Jira dans son canvas et choisit seul le bon modèle IA pour chaque tâche. Ce que ça change au quotidien."
+date: "2026-09-16"
+coverImage: "/blog/github-copilot-jira.png"
+sources: ["https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7/"]
+author: "Elone Maccioni"
+
+---
+
+Semaine du 7 septembre 2026 : GitHub a publié sa mise à jour hebdomadaire de Copilot, et deux nouveautés changent directement le quotidien d'une équipe qui code avec un board Jira à côté. La première connecte enfin Jira à l'IA de code. La seconde fait disparaître un choix que la plupart des développeurs trouvaient déjà pénible : celui du modèle à utiliser.
+
+## Jira arrive directement dans l'IDE
+
+Avant cette mise à jour, le trajet d'un ticket ressemblait à ça : tu ouvres Jira, tu lis le ticket, tu copies le contexte utile, tu reviens dans ton éditeur, tu recolles, tu commences à coder.
+
+Avec l'intégration Jira dans l'application Copilot, ce trajet se raccourcit. Les tickets arrivent directement dans un canvas partagé. Tu choisis ceux qui avancent, et Copilot embarque leur contexte tout du long : investigation du bug ou de la demande, implémentation, préparation de la pull request. Le ticket ne sert plus juste de mémo, il pilote une partie du travail.
+
+Pour une équipe qui gère plusieurs dizaines de tickets par sprint, ça évite l'étape qui prend le plus de temps sans intérêt : reformuler à la main ce qui était déjà écrit ailleurs.
+
+
+## Project HydraFusion : Copilot choisit le modèle à ta place
+
+La deuxième nouveauté est plus discrète mais tout aussi concrète. Project HydraFusion, disponible en expérimental dans Copilot CLI, route automatiquement chaque requête vers le modèle le plus adapté : un modèle local pour une tâche simple, un modèle cloud pour une tâche complexe, un modèle "compound" pour un mélange des deux.
+
+Concrètement, tu ne choisis plus manuellement un modèle avant de poser ta question. Tu formules ta demande, et Copilot décide en coulisses avec quel modèle la traiter, selon sa nature. Une correction de syntaxe et une refonte d'architecture ne mobilisent pas la même puissance de calcul, et jusqu'ici, c'était à toi de le deviner.
+
+
+## Pourquoi ça compte, même si "Jira" ou "modèle IA" ne te parle pas encore
+
+Si tu gères une équipe produit sans coder toi-même, retiens ceci : le lien entre "ce qui est demandé" (le ticket) et "ce qui est livré" (le code) devient plus direct, avec moins d'étapes manuelles entre les deux. Moins d'étapes manuelles, moins d'occasions de perdre le contexte en cours de route.
+
+Si tu es développeur, le gain est double : tu passes moins de temps à faire le pont entre outil de gestion de projet et éditeur de code, et tu n'as plus à te soucier de savoir si tu utilises le bon modèle pour la bonne tâche.
+
+## Ce qu'il faut vérifier avant d'y aller les yeux fermés
+
+L'intégration Jira suppose de donner à Copilot un accès à ton board, ce qui mérite une vérification des permissions côté administrateur si tu es en entreprise. Project HydraFusion reste en /experimental : le routage automatique peut encore mal évaluer la complexité d'une tâche et choisir un modèle sous-dimensionné. Sur un sujet sensible, vérifier explicitement quel modèle a traité la demande reste une bonne habitude tant que la fonctionnalité n'est pas stabilisée.
+
+## À retenir
+
+Ces deux nouveautés suppriment chacune une étape manuelle : recopier le contexte d'un ticket, et choisir un modèle à la main. Prises séparément, ce sont de petits gains de temps. Sur un sprint entier, multipliés par le nombre de tickets traités, ça change réellement le rythme de travail d'une équipe.
