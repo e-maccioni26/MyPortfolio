@@ -1,0 +1,43 @@
+---
+title: "Cursor Projects : un agent IA qui dirige d'autres agents"
+category: "IA Générative"
+excerpt: "ursor lance Projects, un agent coordinateur qui délègue le code à des dizaines d'agents en parallèle. Explication simple de ce que ça change pour les devs."
+date: "2026-09-13"
+coverImage: "/blog/cursor-projects.png"
+author: "Elone Maccioni"
+---
+
+Le 10 septembre 2026, l'éditeur de l'IDE Cursor a mis en ligne **Projects**, une fonctionnalité en bêta qui change une habitude bien ancrée chez les développeurs : demander une tâche à une IA et attendre qu'elle la fasse elle-même. Avec Projects, l'IA qui reçoit la demande ne code plus. Elle organise le travail et le confie à d'autres IA.
+
+## Le principe, sans jargon
+
+Imagine un chef de chantier. Il ne pose pas les briques, il ne branche pas l'électricité. Il lit le plan, découpe le chantier en lots, et affecte chaque lot à l'équipe compétente. Puis il vérifie que tout s'assemble.
+
+C'est exactement le rôle de l'agent coordinateur de Cursor Projects. Tu lui donnes un objectif (une fonctionnalité, une migration, un gros correctif), il le découpe en tâches, crée un ou plusieurs agents pour les exécuter, et te ramène le résultat à valider. Il ne touche jamais au code source directement.
+
+
+## Ce que Projects fait concrètement
+
+– Chaque projet tourne sur une machine cloud dédiée. Tu fermes ton ordinateur portable, le travail continue.
+
+– Le coordinateur garde le contexte sur la durée : une migration qui prend trois semaines ne repart pas de zéro à chaque session.
+
+– Il peut se déclencher tout seul : surveiller un canal Slack, suivre les nouvelles pull requests d'un dépôt, ou tourner selon un planning fixe.
+
+– Il répartit le travail entre autant d'agents que la tâche l'exige, en parallèle, plutôt qu'un seul agent qui traite tout en série.
+
+
+## Pourquoi ça compte, même si tu ne codes pas au quotidien
+
+Si tu es développeur, le changement est direct : tu passes de "je donne une consigne et je reviens dans dix minutes" à "je donne un objectif et je reviens dans trois jours pour valider un travail déjà structuré". Le rôle se rapproche de celui d'un chef de projet technique.
+
+Si tu es freelance, fondateur ou porteur d'un produit sans être développeur toi-même, ça change aussi ta donne : une fonctionnalité entière peut avancer pendant que tu es sur autre chose, sans qu'un humain ait besoin de superviser chaque étape. Le coût, en revanche, dépend directement du nombre d'agents mobilisés en parallèle : un projet ambitieux peut vite consommer plus de crédits qu'un simple prompt ponctuel.
+
+## Les points de vigilance
+
+Un agent qui délègue peut aussi mal déléguer. Si le coordinateur découpe mal une tâche, l'erreur se propage à tous les sous-agents qui en héritent, et elle ne se voit qu'au moment de la relecture finale. Cursor recommande donc de garder des points de contrôle réguliers plutôt que d'attendre le livrable complet. La fonctionnalité est encore en bêta : attends-toi à des ajustements dans les semaines qui viennent, notamment sur la facturation et la stabilité des sessions longues.
+
+## À retenir
+
+Cursor Projects ne remplace pas un développeur, il change la taille des tâches qu'on peut confier à une IA d'un coup : d'une fonction à une fonctionnalité complète. La question à te poser avant de l'essayer n'est pas "est-ce que l'IA va bien coder", mais "est-ce que je peux découper mon prochain gros chantier en objectifs assez clairs pour qu'un coordinateur les comprenne".
+
