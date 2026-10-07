@@ -135,3 +135,56 @@
   color: hsl(var(--foreground));
 }
 
+
+/* Cartes de la section « Projets récents » (maquette Accueil.dc.html).
+   La maquette pilote ces mouvements avec GSAP + ScrollTrigger ; ici c'est de
+   l'IntersectionObserver et du CSS, ce qui évite de réintroduire ~50 ko de JS
+   sur une page dont les Core Web Vitals comptent. */
+.carte-reveal {
+  opacity: 0;
+  transform: perspective(900px) translateY(48px) rotateX(-8deg);
+  transform-origin: 50% 100%;
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.carte-reveal.revelee {
+  opacity: 1;
+  transform: perspective(900px) translateY(0) rotateX(0deg);
+}
+
+.carte-tilt {
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg))
+    translateY(var(--ty, 0px));
+  transition: transform 0.25s cubic-bezier(0.33, 1, 0.68, 1), box-shadow 0.4s ease;
+}
+.carte-tilt:hover {
+  --ty: -6px;
+}
+.carte-glare {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(
+    420px circle at var(--gx, 50%) var(--gy, 50%),
+    rgba(132, 93, 244, 0.14),
+    transparent 45%
+  );
+}
+.carte-tilt:hover .carte-glare {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carte-reveal,
+  .carte-reveal.revelee {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .carte-tilt {
+    transform: none;
+    transition: box-shadow 0.4s ease;
+  }
+  .carte-glare {
+    display: none;
+  }
+}

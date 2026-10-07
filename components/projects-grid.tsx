@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react"
 import { projects } from "./projects-data"
+import { EnCoursBadge } from "@/components/en-cours-badge"
 import Image from "next/image"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
@@ -62,6 +63,7 @@ export default function ProjectsGrid() {
             className="bg-card border border-border rounded-2xl overflow-hidden flex flex-col"
           >
             <div className="relative h-[180px] w-full flex-none">
+              {project.enCours && <EnCoursBadge />}
               <Image
                 src={project.thumbnail || "/placeholder.svg"}
                 alt={project.title}

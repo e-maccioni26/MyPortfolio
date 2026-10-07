@@ -31,8 +31,8 @@ export default function Home() {
       <AboutSection />
       <BlogPreviewSection posts={latestPosts} />
       <ServicesSection />
-      <TestimonialsSection />
       <RecentProjectsSection />
+      <TestimonialsSection />
       <FaqSection />
       <ContactCard />
 

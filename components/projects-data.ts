@@ -10,6 +10,8 @@ export interface Project {
   demoLink?: string;
   /** Projet personnel. Absent = projet professionnel (le cas par défaut). */
   perso?: boolean;
+  /** Développement en cours : affiche un badge « En cours » sur la carte. */
+  enCours?: boolean;
 }
 
 export const projects: Project[] = [
@@ -169,6 +171,43 @@ export const projects: Project[] = [
     githubLink: "https://github.com/e-maccioni26/realtime-soc-dashboard",
   },
   {
+    title: "Facilo — CRM, devis et factures pour freelances",
+    link: "/projets/facilo",
+    thumbnail: "/images/projects/visuel-a-venir.png",
+    description: "SaaS de gestion",
+    perso: true,
+    enCours: true,
+    longDescription: "SaaS de gestion destiné aux freelances et aux TPE : un CRM léger, des devis et des factures, sans la lourdeur des suites comptables. Je le développe en Next.js 16 avec l'App Router, en TypeScript strict, sur Prisma 7 et PostgreSQL. Deux partis pris structurent le projet. Les montants sont stockés en centimes entiers et les taux de TVA en points de base, pour que l'arithmétique reste exacte de bout en bout et traverse la frontière Server/Client Component sans conversion. Et devis et factures partagent une même table, distingués par un champ de type, avec une contrainte en base qui rend les combinaisons statut/type impossibles à écrire.",
+    technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "TailwindCss", "NextAuth", "Vitest"],
+    features: [
+      "CRM léger : clients, suivi des échanges et des documents associés.",
+      "Devis et factures partageant une table unique, protégée par une contrainte CHECK en base.",
+      "Génération des PDF côté serveur avec @react-pdf/renderer.",
+      "Montants en centimes entiers et TVA en points de base : aucune erreur d'arrondi.",
+      "Authentification par email et mot de passe, sessions JWT et mots de passe hachés via bcrypt.",
+      "Trois niveaux de tests : unitaires, intégration sur base réelle, et parcours complets en Playwright.",
+    ],
+  },
+  {
+    title: "Foot5 Match — mise en relation pour le foot amateur",
+    link: "/projets/foot5-match",
+    thumbnail: "/images/projects/visuel-a-venir.png",
+    description: "Application de matching",
+    perso: true,
+    enCours: true,
+    longDescription: "Application de mise en relation pour le foot à 5 en Île-de-France : une équipe à qui il manque un joueur publie sa demande, l'application lui propose les profils les plus pertinents à proximité. Le projet est un monorepo TypeScript dont je développe l'API en Node.js avec Prisma, sur PostgreSQL et son extension géographique PostGIS pour les recherches par distance, Supabase assurant l'authentification et le stockage. Le moteur de matching combine quatre critères pondérés — poste, fiabilité, proximité et niveau — et chaque joueur porte un score de fiabilité qui évolue avec ses présences et ses désistements. Ces deux calculs sont écrits en TypeScript pur, hors base de données : ce sont les endroits où une régression silencieuse coûte le plus cher, ils doivent rester testables sans infrastructure.",
+    technologies: ["TypeScript", "Node.js", "Prisma", "PostgreSQL", "PostGIS", "Supabase", "Vitest"],
+    features: [
+      "Moteur de matching pondéré : poste, fiabilité, proximité et niveau.",
+      "Score de fiabilité par joueur, recalculé selon les présences et les désistements.",
+      "Recherche géographique par distance grâce à PostGIS.",
+      "Règles métier regroupées dans un fichier unique, importé aussi bien par le moteur que par les tests.",
+      "Monorepo avec un paquet de contrats partagés entre l'API et le client.",
+      "Authentification et stockage des fichiers délégués à Supabase.",
+    ],
+    githubLink: "https://github.com/e-maccioni26/foot_app",
+  },
+  {
     title: "Application mobile Pokémon",
     link: "/projets/react-native-app",
     perso: true,
@@ -188,7 +227,7 @@ export const projects: Project[] = [
     title: "Site Vitrine React | Vite pour une entreprise de rénovation d'intérieure sur Paris",
     link: "/projets/thierry-zitoun",
     thumbnail: "/images/projects/site_vitrine_thierry_zitoun.png",
-    description: "Site vitrine sur mesure, élégant et performant pour un expert en rénovation d'appartements de luxe.",
+    description: "Site Vitrine | React + Vite",
     longDescription: "Développé avec ReactJS et Vite, ce site vitrine a été conçu pour mettre en valeur l'expertise de Thierry Zitoun dans la rénovation d'intérieurs de prestige à Paris. L'objectif était de créer une plateforme digitale à l'image de ses services haut de gamme, fluide et sans compromis sur la qualité. L'interface, entièrement stylisée avec TailwindCSS, offre une navigation épurée qui valorise les galeries de réalisations (appartements haussmanniens, lofts, etc.) et les témoignages clients. L'expérience utilisateur est pensée pour faciliter la prise de contact avec un formulaire de devis dynamique, le tout avec des performances de chargement ultra-rapides.",
     technologies: ["ReactJS", "Vite", "TailwindCSS"],
     features: [
@@ -207,7 +246,7 @@ export const projects: Project[] = [
     longDescription: "J’ai réalisé un site vitrine moderne en adoptant une architecture headless. Le back-office repose sur WordPress, permettant au client de gérer ses contenus facilement et en autonomie, tandis que le front-end a été développé en Next.js et React afin d’assurer rapidité, fluidité et optimisation SEO. Le design a été pensé pour offrir une expérience utilisateur claire, responsive et adaptée à tous les supports. Le projet intègre les bonnes pratiques d’optimisation et de référencement, avec notamment la mise en place d’un sitemap et l’indexation des pages clés via Google Search Console.",
     technologies: ["Wordpress", "ReactJS", "NextJS", "Vercel", "TailwindCSS"],
     features: [
-      "Architecture headless : CWordPress utilisé uniquement comme CMS pour la gestion des contenus et Next.js/React pour l’affichage.",
+      "Architecture headless : WordPress utilisé uniquement comme CMS pour la gestion des contenus et Next.js/React pour l’affichage.",
       "Interface d’administration simple : le client peut modifier textes, images et articles depuis WordPress sans toucher au code.",
       "Frontend optimisé : rendu rapide, responsive et adapté aux mobiles, tablettes et ordinateurs.",
       "SEO-friendly : optimisation des balises, sitemap XML, indexation via Google Search Console.",

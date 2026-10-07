@@ -25,3 +25,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# Newsletter : gardée en local, volontairement hors dépôt tant que la
+# checklist PDF n'existe pas. Pour la remettre en ligne, voir le README
+# de app/api/newsletter/.
+/components/newsletter-form.tsx
+/components/newsletter-section.tsx
+/app/api/newsletter/
