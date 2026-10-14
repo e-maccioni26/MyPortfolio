@@ -286,4 +286,13 @@ export const projects: Project[] = [
     ],
     demoLink: "https://www.fasterclub.fr/"
   },
+  {
+    title: "EMD DESTOCK — application de commande pour professionnels",
+    link: "/projets/emd-destock",
+    thumbnail: "/images/projects/emd-destock.png",
+    description: "App iOS + back-office",
+    enCours: true,
+    longDescription: "EMD DESTOCK est un fournisseur de parfums et de cosmétiques qui vend à des magasins et points de vente. Je développe pour lui deux applications qui partagent une même base Supabase : une app iOS en Expo et React Native où les clients professionnels consultent le catalogue et passent commande, et un back-office en Next.js, installable en PWA, où l'équipe gère commandes, produits, stocks, clients et encarts d'accueil. Il n'y a pas de paiement en ligne : une commande est une demande transmise au fournisseur. L'essentiel des règles métier vit côté base : la commande passe par une fonction SQL atomique qui verrouille les lignes, vérifie et décrémente le stock, donc deux clients qui visent le dernier exemplaire ne peuvent pas tous deux l'obtenir. Le projet avance par lots, chacun validé avec le client avant le suivant.",
+    technologies: ["React Native", "Expo", "Next.js", "TypeScript", "Supabase", "PostgreSQL", "TailwindCss"],
+  },
 ] 
