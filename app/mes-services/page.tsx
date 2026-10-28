@@ -5,7 +5,7 @@ import RecentProjectsSection from "@/components/recent-projects-section"
 
 export const metadata: Metadata = {
   title: "Mes services | Elone Maccioni - Développeur Freelance React/Next.js",
-  description: "Accompagnement sur-mesure pour vos projets digitaux : création d'applications web (SaaS), refonte de sites vitrines et optimisation de performance. Expertise React, Next.js et Wordpress.",
+  description: "Création de site vitrine, refonte de site web, application web et mobile et optimisation des performances. React, Next.js et WordPress à Paris.",
   keywords: [
     "création application web",
     "développeur react freelance",

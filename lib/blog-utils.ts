@@ -42,6 +42,16 @@ export function parseBlogDate(date: string): Date | null {
   return isRealDate ? parsed : null
 }
 
+/**
+ * Coupe un texte à la dernière espace avant `max` caractères, points de suspension
+ * compris. Une meta description trop longue est de toute façon tronquée par Google,
+ * en plein mot : autant choisir où.
+ */
+export function tronquer(texte: string, max = 155): string {
+  if (texte.length <= max) return texte
+  return texte.slice(0, max - 1).replace(/\s+\S*$/, "") + "…"
+}
+
 export function formatBlogDate(date: string): string {
   const parsed = parseBlogDate(date)
 

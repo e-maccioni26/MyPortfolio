@@ -43,9 +43,8 @@ export const metadata: Metadata = {
     description: "Développeur Full Stack spécialisé en React, Next.js et technologies web modernes. Découvrez mes projets et compétences.",
     images: ["https://elonemaccioni.fr/avatar.png"]
   },
-  alternates: {
-    canonical: "https://elonemaccioni.fr/"
-  },
+  // Pas de canonical ici : une valeur par défaut serait héritée par toute page
+  // qui n'en définit pas, et la déclarerait copie de l'accueil.
   icons: {
     icon: '/icon.png', 
     shortcut: '/favicon.ico', 

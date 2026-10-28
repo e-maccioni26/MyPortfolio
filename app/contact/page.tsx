@@ -83,8 +83,10 @@ export default function ContactPage() {
         <h1 className="font-heading text-4xl md:text-[42px] font-extrabold leading-tight tracking-tight text-foreground">
           Me contacter
         </h1>
-        <p className="text-base md:text-lg leading-relaxed text-muted-foreground max-w-md">
-          N'hésitez pas à me contacter pour discuter de vos projets.
+        <p className="text-[15px] leading-relaxed text-muted-foreground max-w-xl">
+          J'interviens sur Paris et en Île-de-France ou à distance pour toute la France. Pour un
+          devis précis, indiquez dans votre message le type de projet (site vitrine, refonte,
+          application...), vos échéances et si vous en avez un, l'adresse du site actuel.
         </p>
       </section>
 

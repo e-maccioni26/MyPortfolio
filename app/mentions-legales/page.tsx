@@ -1,3 +1,11 @@
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Mentions légales | Elone Maccioni",
+  description: "Mentions légales du site elonemaccioni.fr, développeur web freelance à Paris.",
+  alternates: { canonical: "https://elonemaccioni.fr/mentions-legales" },
+}
+
 export default function MentionsLegales() {
   return (
     <main className="container mx-auto px-4 py-16 min-h-screen">

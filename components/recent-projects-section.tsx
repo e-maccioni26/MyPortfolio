@@ -81,7 +81,10 @@ export default function RecentProjectsSection() {
   }, [])
 
   return (
-    <section className="py-20 md:py-24 bg-muted">
+    // overflow-x-clip : une carte pas encore révélée est inclinée avec de la
+    // perspective, ce qui l'élargit d'environ 8 % et ferait défiler la page
+    // horizontalement sur mobile. `clip` ne crée pas de conteneur de défilement.
+    <section className="py-20 md:py-24 bg-muted overflow-x-clip">
       <div className="container mx-auto px-4">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 sm:gap-6 mb-9">
           <div>

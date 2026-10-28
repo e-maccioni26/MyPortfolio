@@ -16,11 +16,13 @@ export default function HomeHero({ latestPosts = [] }: { latestPosts?: BlogPost[
         <div className="grid md:grid-cols-2 gap-14 items-center">
           <div className="flex flex-col gap-5">
             <span className="font-mono font-semibold text-xs tracking-wide uppercase text-secondary">
-              Elone Maccioni · Disponible pour vos projets.
+              Paris et Île-de-France · Disponible pour vos projets.
             </span>
             <TextType
               as="h1"
-              text={["Développeur Web Full Stack", "React, Next.js, TypeScript, PHP & WordPress", "Chef de Projet", "Je code, Je veille, je Partage.","Retrouver les actualités Techs du moment",]}
+              // La première phrase est celle que lisent les moteurs et les IA
+              // (le reste est animé en JS) : elle porte donc le mot-clé et la ville.
+              text={["Développeur web freelance à Paris", "React, Next.js, TypeScript, PHP & WordPress", "Chef de Projet Digital", "Je code, Je veille, je Partage.","Retrouver les actualités Techs du moment",]}
               typingSpeed={55}
               deletingSpeed={25}
               pauseDuration={2200}
@@ -30,7 +32,7 @@ export default function HomeHero({ latestPosts = [] }: { latestPosts?: BlogPost[
               className="font-heading font-extrabold text-4xl md:text-5xl lg:text-[56px] leading-[1.06] tracking-tight text-foreground max-w-xl min-h-[2.2em]"
             />
             <p className="text-base md:text-[17px] leading-relaxed text-muted-foreground max-w-md">
-              Vos projets digitaux sont mes préocupations, laissez-moi vous aider à les concrétiser. Retrouvez également les dernières actualités tech et IA du moment.
+              Vos projets digitaux sont mes préoccupations, laissez-moi vous aider à les concrétiser. Retrouvez également les dernières actualités tech et IA du moment.
             </p>
 
             <div className="flex flex-wrap gap-3.5 mt-2">

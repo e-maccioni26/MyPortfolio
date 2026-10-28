@@ -15,7 +15,7 @@ type Stat = {
 const stats: Stat[] = [
   { count: 15, suffix: "+", label: "projets livrés" },
   { count: 5, suffix: " ans", label: "d'expérience" },
-  { text: "CDI/CDD", label: "en recherche active" },
+  { text: "Freelance", label: "Me contacter" },
 ]
 
 export default function AboutSection() {

@@ -32,7 +32,15 @@ export default function ProjectsGrid() {
   // Un filtre sans projet n'est pas affiché : l'état vide devient impossible
   // plutôt que d'avoir à le gérer.
   const filtresVisibles = FILTRES.filter((f) => parFiltre[f.id].length > 0)
-  const filteredProjects = parFiltre[filtre]
+
+  // Tous les projets sont rendus côté serveur, seul le groupe inactif est masqué :
+  // sinon les liens des projets perso n'existent pas dans le HTML lu par Google
+  // et leurs pages deviennent orphelines. Le rang sert à la couleur du badge,
+  // calculée dans le groupe pour rester identique à celle d'avant.
+  const rang = useMemo(
+    () => new Map(Object.values(parFiltre).flatMap((g) => g.map((p, i) => [p, i] as const))),
+    [parFiltre]
+  )
 
   return (
     <>
@@ -57,10 +65,13 @@ export default function ProjectsGrid() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredProjects.map((project, index) => (
+        {reversedProjects.map((project) => (
           <article
             key={project.title}
-            className="bg-card border border-border rounded-2xl overflow-hidden flex flex-col"
+            className={cn(
+              "bg-card border border-border rounded-2xl overflow-hidden flex flex-col",
+              (project.perso ? "perso" : "pro") !== filtre && "hidden"
+            )}
           >
             <div className="relative h-[180px] w-full flex-none">
               {project.enCours && <EnCoursBadge />}
@@ -76,8 +87,8 @@ export default function ProjectsGrid() {
               <span
                 className="self-start font-mono text-[10.5px] font-semibold uppercase tracking-wide rounded-md px-2.5 py-1"
                 style={{
-                  color: EYEBROW_COLORS[index % 3],
-                  backgroundColor: `${EYEBROW_COLORS[index % 3]}1A`,
+                  color: EYEBROW_COLORS[rang.get(project)! % 3],
+                  backgroundColor: `${EYEBROW_COLORS[rang.get(project)! % 3]}1A`,
                 }}
               >
                 {project.description}

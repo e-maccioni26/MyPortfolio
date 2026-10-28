@@ -1,3 +1,11 @@
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Politique de confidentialité | Elone Maccioni",
+  description: "Politique de confidentialité du site elonemaccioni.fr : données personnelles, cookies et droits des utilisateurs.",
+  alternates: { canonical: "https://elonemaccioni.fr/politique-confidentialite" },
+}
+
 export default function PolitiqueConfidentialite() {
   return (
     <main className="container mx-auto px-4 py-16 min-h-screen">

@@ -6,6 +6,7 @@ import { notFound } from "next/navigation"
 import { getAllPosts, getPostBySlug, getPostSlugs, getHeadings, formatBlogDate, renderMarkdownToHtml } from "@/lib/blog"
 import { BlogCategoryBadge } from "@/components/blog-category-badge"
 import BlogLinkedinCta from "@/components/blog-linkedin-cta"
+import { tronquer } from "@/lib/blog-utils"
 import { ArticleSchema } from "@/app/components/article-schema"
 
 export async function generateStaticParams() {
@@ -25,13 +26,13 @@ export async function generateMetadata({
 
   return {
     title: `${frontmatter.title} | Blog Elone Maccioni`,
-    description: frontmatter.excerpt,
+    description: tronquer(frontmatter.excerpt),
     alternates: {
       canonical: `https://elonemaccioni.fr/blog/${slug}`,
     },
     openGraph: {
       title: frontmatter.title,
-      description: frontmatter.excerpt,
+      description: tronquer(frontmatter.excerpt),
       url: `https://elonemaccioni.fr/blog/${slug}`,
       type: "article",
       images: frontmatter.coverImage
@@ -41,7 +42,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: frontmatter.title,
-      description: frontmatter.excerpt,
+      description: tronquer(frontmatter.excerpt),
       images: frontmatter.coverImage ? [`https://elonemaccioni.fr${frontmatter.coverImage}`] : ["https://elonemaccioni.fr/avatar.png"],
     },
     authors: [{ name: frontmatter.author }],

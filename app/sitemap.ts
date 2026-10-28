@@ -46,20 +46,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
   });
 
-  const blogPages = [
-    {
-      url: `${baseUrl}/blog`,
-      changeFrequency: "weekly" as const,
-      priority: 0.8,
-    },
-    ...getAllPosts().map((post) => ({
-      url: `${baseUrl}/blog/${post.slug}`,
-      // Une date d'article invalide ne doit pas produire un `<lastmod>` cassé.
-      lastModified: parseBlogDate(post.frontmatter.date) ?? new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    })),
-  ];
+  const blogPages = getAllPosts().map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    // Une date d'article invalide ne doit pas produire un `<lastmod>` cassé.
+    lastModified: parseBlogDate(post.frontmatter.date) ?? new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
 
   return [...staticPages, ...projectPages, ...blogPages];
 } 

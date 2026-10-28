@@ -21,7 +21,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-              Développeur Full Stack Freelance, <br/>Je transforme la présence digitale des entreprises et indépendants.
+              Elone Maccioni<br/>Développeur Web Full Stack <br/>
             </p>
             <div className="flex space-x-4">
               <a

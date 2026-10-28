@@ -57,12 +57,17 @@ export function LocalBusinessSchema() {
     },
     areaServed: [
       { "@type": "City", name: "Paris" },
+      { "@type": "AdministrativeArea", name: "Île-de-France" },
       { "@type": "Country", name: "France" },
     ],
     knowsLanguage: ["fr", "en"],
     founder: { "@type": "Person", name: "Elone Maccioni" },
+    // Mêmes profils que dans le schéma Person : un moteur ou une IA doit
+    // reconnaître une seule entité, pas deux.
     sameAs: [
       "https://linkedin.com/in/elone-maccioni",
+      "https://www.malt.fr/profile/elonemaccioni",
+      "https://github.com/e-maccioni26",
     ],
     knowsAbout: [
       "React",
