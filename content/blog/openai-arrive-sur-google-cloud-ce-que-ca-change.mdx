@@ -1,0 +1,45 @@
+---
+title: "OpenAI arrive sur Google Cloud : ce que ça change quand on choisit son fournisseur d'IA"
+category: "IA Générative"
+excerpt: "Les modèles et Codex d'OpenAI rejoignent le Model Garden de Google Cloud. Facturation, données, calendrier, et ce qui reste flou pour les équipes de développement."
+date: "2026-11-04"
+coverImage: "/blog/openai-arrive-sur-google-cloud.png"
+sources: ["https://openai.com/index/openai-models-google-cloud", "https://thenextweb.com/news/openai-models-codex-google-cloud", "https://alphasignal.ai/news/openai-brings-codex-and-frontier-models-to-google-cloud"]
+author: "Elone Maccioni"
+---
+
+Le 21 octobre 2026, OpenAI et Google ont annoncé que les modèles d'OpenAI et Codex, son outil d'aide au développement, arrivent dans le Model Garden de Google Cloud. Ils sont déjà disponibles sur AWS depuis avril, et Microsoft reste le partenaire cloud principal d'OpenAI.
+
+## Ce qui est annoncé
+
+Le Model Garden est le catalogue de modèles de Google Cloud. Les clients pourront y acheter les modèles d'OpenAI via la Google Cloud Marketplace. Les entreprises qui ont signé un engagement de dépense avec Google pourront l'utiliser pour ces achats.
+
+Google affirme aussi que les prompts et les réponses restent dans le périmètre de données du client et ne servent jamais à entraîner des modèles. Les modèles OpenAI doivent en plus arriver dans Antigravity, l'environnement de développement de Google, et dans Gemini Agent.
+
+## Ce qui reste flou
+
+La disponibilité générale est annoncée « dans les prochaines semaines », sans date. La liste exacte des modèles n'est pas confirmée : un compte rendu cite plusieurs noms en préversion privée, un autre indique que ni OpenAI ni Google n'ont précisé lesquels seront proposés. Tant que ce point n'est pas tranché, mieux vaut ne pas planifier une migration sur des noms de modèles lus dans la presse.
+
+## Pourquoi c'est utile pour une équipe full-stack
+
+Une équipe qui développe une fonctionnalité d'IA doit choisir un fournisseur de modèle et un cloud. Quand le même modèle est disponible sur AWS et sur Google Cloud, ces deux décisions peuvent se prendre séparément. Le cloud se choisit selon la région, la conformité, le budget et l'existant. Le modèle se choisit selon sa qualité sur vos cas d'usage.
+
+Le verrouillage ne disparaît pas, il se déplace : vos données, vos permissions et votre facturation restent chez votre cloud.
+
+## Un réflexe de code
+
+Mettez le nom du modèle et le fournisseur dans la configuration, pas dans chaque appel. Si vous passez de l'API d'OpenAI à celle d'un cloud, vous modifiez des variables d'environnement et vous testez. Si le nom est écrit en dur dans quarante fichiers, vous ouvrez un chantier.
+
+## Ce qu'on peut en déduire, et ce qu'on ne sait pas
+
+OpenAI a maintenant ses modèles sur les trois grands clouds américains. Il est raisonnable de penser que la concurrence va se déplacer vers les outils autour du modèle, comme Antigravity ou Codex, mais c'est une lecture de ma part, pas une annonce.
+
+Ce qu'on ne sait pas encore : le prix réel sur la Marketplace, et si les fonctions les plus récentes arriveront en même temps que sur l'API d'OpenAI. Si votre équipe doit arbitrer entre deux clouds sur ce point, quelle question poseriez-vous en premier à votre commercial ?
+
+## À retenir
+
+• Les modèles et Codex d'OpenAI arrivent dans le Model Garden de Google Cloud, achetables via la Marketplace et imputables sur les engagements de dépense existants.
+
+• La disponibilité générale est prévue « dans les prochaines semaines » et la liste des modèles n'est pas confirmée.
+
+• Le nom du modèle dans la configuration plutôt que dans le code : changer de fournisseur devient un déploiement.

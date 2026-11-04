@@ -1,0 +1,48 @@
+---
+title: "PHP : deux failles critiques corrigées, ce qu'il faut vérifier sur vos serveurs"
+category: "Web Development"
+excerpt: "PHP 8.5.12, 8.4.27, 8.3.36 et 8.2.35 corrigent deux failles d'exécution de code à distance notées 9,2 sur 10. Ce qu'elles permettent, qui les a trouvées, et la liste de vérification pour vos serveurs."
+date: "2026-10-24"
+coverImage: "/blog/php-deux-failles-critiques-corrigees.png"
+sources: ["https://tidbits.com/2026/10/21/php2shell-vulnerabilities-put-70-of-websites-at-risk/", "https://abc7news.com/story/urgent-security-fix-issued-code-vital-estimated-70-websites/19965216/", "https://letsdatascience.com/news/canada-pulls-government-websites-after-ai-found-php-flaws-4e373485"]
+author: "Elone Maccioni"
+---
+
+Le 21 octobre 2026, l'équipe PHP a publié quatre versions de sécurité en une seule journée : 8.5.12, 8.4.27, 8.3.36 et 8.2.35. Elles corrigent deux failles référencées CVE-2026-109618 et CVE-2026-109619, toutes deux notées 9,2 sur 10 en CVSS v4.0.
+
+## Ce que permettent ces failles
+
+Les deux autorisent l'exécution de code à distance sans authentification. Concrètement, quelqu'un qui peut envoyer une requête à votre site peut lui faire exécuter ses propres instructions, sans identifiant ni mot de passe.
+
+PHP s'exécute sur le serveur à chaque requête. Une faille dans l'interpréteur concerne donc tous les sites qui tournent dessus, quelle que soit la qualité de leur propre code. Un WordPress à jour, une boutique bien codée ou un intranet sage restent exposés tant que la version de PHP n'est pas corrigée.
+
+## Qui les a trouvées
+
+Calif a identifié l'une des failles avec un modèle d'IA, dans le cadre de l'initiative Patch the Planet d'OpenAI. Wiz a de son côté découvert et signalé les deux failles de façon indépendante. Les mainteneurs de PHP ont mené les correctifs et la publication.
+
+## Combien de sites sont touchés
+
+Les estimations divergent. Wiz parle de jusqu'à 70 % d'Internet, un ordre de grandeur proche de la part des sites qui utilisent PHP, souvent citée autour de 70 %. Un autre rapport évoque plus d'un million de systèmes accessibles depuis Internet. Personne n'a encore établi le nombre réel d'installations vulnérables.
+
+Ce qui est établi, c'est que des attaques ont été observées tôt. Cloudflare en a signalé et a mis en place des règles de pare-feu temporaires, en précisant qu'elles ne sont qu'un palliatif. Selon un compte rendu, des sites gouvernementaux canadiens, finlandais et néerlandais ont été mis hors ligne pendant que les administrateurs appliquaient les correctifs.
+
+## Ce qu'il faut vérifier aujourd'hui
+
+1. Lancez `php -v` sur chaque serveur, préproduction et vieux serveur de recette compris.
+2. Comparez avec les versions corrigées : 8.5.12, 8.4.27, 8.3.36 et 8.2.35. Si votre branche n'y figure pas, demandez à votre distribution ou à votre hébergeur si elle est encore suivie.
+3. Mettez à jour par le gestionnaire de paquets, reconstruisez vos images Docker, ou passez par le panneau de votre hébergeur.
+4. Redémarrez PHP-FPM ou le serveur web. Un correctif installé mais non rechargé ne protège rien.
+
+## Ce que ça change pour les équipes web
+
+Quand un modèle d'IA aide à trouver des failles, la recherche coûte moins de temps d'expert. On peut s'attendre à voir ce type d'alerte se répéter, avec un délai plus court entre un correctif public et les premières tentatives d'exploitation. Cette conclusion est une déduction à partir de cet épisode, pas un constat chiffré.
+
+Combien de temps faut-il à votre équipe, aujourd'hui, pour passer d'une alerte de sécurité à un serveur redémarré avec la bonne version ? Si la réponse est « je ne sais pas », c'est le premier chantier.
+
+## À retenir
+
+• Deux failles notées 9,2 sur 10 permettent d'exécuter du code sur un serveur PHP sans compte. Les correctifs sont dans 8.5.12, 8.4.27, 8.3.36 et 8.2.35.
+
+• Des attaques ont été signalées dès les premiers jours, et le pare-feu de Cloudflare ne remplace pas la mise à jour.
+
+• Vérifiez la version avec `php -v`, mettez à jour, puis redémarrez PHP-FPM ou le serveur web.

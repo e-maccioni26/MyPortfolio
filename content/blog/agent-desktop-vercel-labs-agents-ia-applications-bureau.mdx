@@ -1,0 +1,53 @@
+---
+title: "Agent-desktop : Vercel Labs apprend aux agents IA à utiliser tes applications"
+category: "IA Générative"
+excerpt: "Vercel Labs publie agent-desktop, un outil open source qui permet à un agent IA de piloter une application de bureau sans capture d'écran. Ce qu'il fait, ses limites et ce que ça change pour les devs."
+date: "2026-11-04"
+coverImage: "/blog/agent-desktop.png"
+sources: ["https://github.com/vercel-labs/agent-desktop", "https://raw.githubusercontent.com/lahfir/agent-desktop/main/docs/faq.md"]
+author: "Elone Maccioni"
+---
+
+Un agent de code sait déjà lire un dépôt, lancer des tests et piloter un navigateur. Dès qu'il doit toucher une application de bureau (un client de messagerie, un logiciel de caisse, une appli Electron), il se retrouve devant un mur. **agent-desktop**, publié par Vercel Labs, propose de le franchir sans passer par des captures d'écran. Le dépôt affiche déjà 14,1 k étoiles et 965 forks.
+
+## Le principe, sans jargon
+
+Quand tu utilises un lecteur d'écran, il ne regarde pas les pixels. Il interroge le système, qui lui répond : "ici un bouton nommé Envoyer, là un champ de texte". Cette description s'appelle l'arbre d'accessibilité, et macOS, Windows et Linux en maintiennent un pour chaque application.
+
+agent-desktop lit cet arbre et le renvoie en JSON. Chaque élément sur lequel on peut agir reçoit une référence, par exemple `@s8f3k2p9:e1`. L'agent n'a plus qu'à renvoyer cette référence avec une commande comme `click`, `type` ou `scroll`.
+
+L'outil ne contient aucun modèle d'IA. C'est l'agent qui l'appelle qui décide quoi faire, puis qui vérifie le résultat.
+
+## Une boucle en trois temps
+
+L'agent lance `snapshot` pour lire l'état de l'application, agit sur une référence, puis reprend un `snapshot` pour constater le changement. Si l'interface a bougé entre-temps, la commande répond `STALE_REF` et l'agent repart d'une capture fraîche. Une référence abrégée comme `@e1` est refusée avec l'erreur `INVALID_ARGS`.
+
+Comme il n'y a pas de reconnaissance d'image, l'agent ne clique pas "à peu près au bon endroit". Il vise un élément précis, identifié par son rôle.
+
+## Ce que contient l'outil
+
+– **60 noms de commandes, dont 56 opérationnelles** : lecture (`snapshot`, `find`, `get`), actions (`click`, `type`, `set-value`, `select`, `toggle`), clavier, souris, fenêtres, presse-papiers, notifications.
+
+– **Quatre commandes en pause** : `key-down`, `key-up`, `mouse-down` et `mouse-up` refusent de s'exécuter tant qu'aucun démon ne peut relâcher une touche restée enfoncée. Un agent qui bloque la touche Majuscule sur ta machine, personne n'en veut.
+
+– **Un mode silencieux par défaut** : les actions se font en arrière-plan, et l'option `--headed` bascule vers de vrais mouvements de pointeur et de clavier.
+
+– **Un serveur MCP intégré** (`agent-desktop mcp`) qui expose chaque commande comme un outil pour les assistants compatibles.
+
+Côté plateformes : macOS 13 et plus, Windows 10 1809 et plus, Ubuntu 24.04 et plus. L'installation tient en une ligne, `npm install -g agent-desktop` ou `brew install agent-desktop`, puis `agent-desktop permissions --guide` pour accorder les autorisations d'accessibilité.
+
+## Pourquoi ça compte pour les développeurs
+
+L'accessibilité devient une API de test. Une interface bien étiquetée sert les lecteurs d'écran et, désormais, les agents. Si tu livres une application Electron ou un client de bureau, tu peux faire vérifier l'interface réelle par un agent, sans maintenir un script par écran qui casse à la mise à jour suivante.
+
+Pour un profil non technique, l'idée est simple : un assistant IA pourrait un jour faire une tâche répétitive dans un logiciel qui n'a aucune API, simplement en le manipulant comme le ferait un humain.
+
+## Les points de vigilance
+
+Une application qui ne publie pas d'arbre d'accessibilité reste invisible pour l'outil. Les pages web ne sont pas couvertes : la FAQ renvoie vers un autre projet, agent-browser. La page des releases du dépôt n'affichait aucune version lors de ma lecture, et le projet vit dans `vercel-labs` : traite-le comme expérimental.
+
+Côté données, le projet prévient lui-même que les captures, les titres de fenêtres, les lectures du presse-papiers et les notifications peuvent contenir du privé. Masquer des champs dans une trace ne rend pas une capture d'écran publiable.
+
+## À retenir
+
+agent-desktop ne rend pas un agent plus intelligent, il lui donne des mains sur le bureau. La vraie question pour ton prochain projet : combien de boutons de ton application ont aujourd'hui un nom lisible par un lecteur d'écran, et donc par un agent ?
