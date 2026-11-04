@@ -1,6 +1,7 @@
 import { ThemeToggle } from "@/components/theme-toggle"
 import { projects } from "@/components/projects-data"
 import Link from "next/link"
+import Image from "next/image"
 import { notFound } from "next/navigation"
 import { Metadata } from "next"
 import { StructuredData } from "@/app/components/structured-data"
@@ -69,14 +70,18 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
         <section className="space-y-4">
           <h1 className="text-4xl font-bold">{project.title}</h1>
-          <div
-            className="w-full h-80 bg-muted rounded-lg overflow-hidden"
-            style={{
-              backgroundImage: `url(${project.thumbnail})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          />
+          {/* Une vraie image et non un background-image : elle porte un alt que
+              Google indexe, et priority en fait l'élément chargé en premier (LCP). */}
+          <div className="relative w-full h-80 bg-muted rounded-lg overflow-hidden">
+            <Image
+              src={project.thumbnail}
+              alt={`Aperçu du projet ${project.title}`}
+              fill
+              priority
+              sizes="(max-width: 896px) 100vw, 896px"
+              className="object-cover object-center"
+            />
+          </div>
         </section>
 
         <section className="space-y-6">

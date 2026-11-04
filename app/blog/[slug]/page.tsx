@@ -6,6 +6,7 @@ import { notFound } from "next/navigation"
 import { getAllPosts, getPostBySlug, getPostSlugs, getHeadings, formatBlogDate, renderMarkdownToHtml } from "@/lib/blog"
 import { BlogCategoryBadge } from "@/components/blog-category-badge"
 import BlogLinkedinCta from "@/components/blog-linkedin-cta"
+import BlogContactCta from "@/components/blog-contact-cta"
 import { tronquer } from "@/lib/blog-utils"
 import { ArticleSchema } from "@/app/components/article-schema"
 
@@ -148,6 +149,7 @@ export default async function BlogArticlePage({
 
           <div className="min-w-0">
             <article className="article-prose" dangerouslySetInnerHTML={{ __html: articleHtml }} />
+            <BlogContactCta />
             <BlogLinkedinCta variant="card" />
           </div>
         </div>
