@@ -27,7 +27,8 @@ export async function generateMetadata({
   const { frontmatter } = getPostBySlug(slug)
 
   return {
-    title: `${frontmatter.title} | Blog Elone Maccioni`,
+    // Pas de suffixe de marque : il ferait dépasser les ~60 caractères que Google affiche.
+    title: frontmatter.seoTitle ?? frontmatter.title,
     description: tronquer(frontmatter.excerpt),
     alternates: {
       canonical: `https://elonemaccioni.fr/blog/${slug}`,

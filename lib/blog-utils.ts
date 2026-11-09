@@ -1,5 +1,7 @@
 export interface BlogPostFrontmatter {
   title: string
+  /** Titre de la balise <title> (50-60 car.). Absent : le titre de l'article. */
+  seoTitle?: string
   category: string
   excerpt: string
   date: string

@@ -22,7 +22,8 @@ export const metadata: Metadata = {
   authors: [{ name: "Elone Maccioni" }],
   creator: "Elone Maccioni",
   publisher: "Elone Maccioni",
-  robots: "index, follow",
+  // Autorise les grands visuels dans les résultats et dans Google Discover.
+  robots: { index: true, follow: true, "max-image-preview": "large" },
   openGraph: {
     type: "website",
     locale: "fr_FR",

@@ -4,6 +4,7 @@ import Image from "next/image"
 import { notFound } from "next/navigation"
 import { Metadata } from "next"
 import Breadcrumb from "@/components/breadcrumb"
+import BlogContactCta from "@/components/blog-contact-cta"
 import { StructuredData } from "@/app/components/structured-data"
 
 export function generateStaticParams() {
@@ -153,8 +154,10 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             </div>
           </section>
         )}
+
+        <BlogContactCta />
       </div>
-      
+
       <StructuredData
         type="Project"
         data={{
