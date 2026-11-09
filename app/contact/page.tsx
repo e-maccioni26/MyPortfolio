@@ -64,6 +64,11 @@ export default function ContactPage() {
         throw new Error(result.error || 'Échec de l\'envoi du message');
       }
 
+      // Déclenché sur la réponse du serveur, pas sur le clic : seul un envoi réussi compte comme lead.
+      // GTM lit cet événement de la dataLayer (déclencheur « Événement personnalisé »).
+      const w = window as unknown as { dataLayer?: Record<string, unknown>[] };
+      (w.dataLayer ??= []).push({ event: 'generate_lead', form_name: 'contact' });
+
       setSubmitStatus('success');
       reset();
     } catch (error) {
