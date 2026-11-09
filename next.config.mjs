@@ -28,6 +28,18 @@ const nextConfig = {
     parallelServerCompiles: true,
   },
   // --- AJOUT DE LA REDIRECTION ICI ---
+  // HSTS est déjà ajouté par Vercel ; ces deux en-têtes complètent le socle.
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+        ],
+      },
+    ]
+  },
   async redirects() {
     return [
       {

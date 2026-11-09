@@ -24,8 +24,11 @@ export function ArticleSchema({
   const url = `${SITE}/blog/${slug}`
   const publiee = parseBlogDate(frontmatter.date)
 
+  // Même @id que le Person de la home : tous les articles sont signés par la
+  // même entité, que les IA peuvent ainsi rattacher à ses profils (sameAs).
   const auteur = {
     "@type": "Person",
+    "@id": `${SITE}/#person`,
     name: frontmatter.author,
     url: SITE,
   }

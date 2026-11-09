@@ -1,0 +1,33 @@
+# Elone Maccioni, développeur web freelance à Paris
+
+> Développeur web full stack freelance basé à Paris, spécialisé en React, Next.js, TypeScript, PHP et WordPress. Il crée des sites vitrines, refond des sites existants et développe des applications web sur mesure pour des entreprises et des indépendants en Île-de-France et à distance en France. Réponse sous 24 h avec devis gratuit.
+
+Ce site contient le portfolio d'Elone Maccioni, ses services, ses projets clients et un blog de veille quotidienne sur l'actualité tech et IA. Tout le contenu est en français.
+
+## Services
+
+- [Mes services](https://elonemaccioni.fr/mes-services): création de site vitrine, refonte de site web, application web (SaaS), optimisation des performances et SEO technique, intégration d'IA et automatisation.
+- [Contact et devis](https://elonemaccioni.fr/contact): demande de devis gratuit, réponse sous 24 h.
+
+## Projets
+
+- [Tous les projets](https://elonemaccioni.fr/projets): réalisations professionnelles (sites vitrines React/Vite, sites headless WordPress/Next.js, outils internes en PHP pour le Crédit Agricole d'Île-de-France) et projets personnels.
+- [Site headless WordPress et Next.js pour un psychanalyste à Bordeaux](https://elonemaccioni.fr/projets/psychanaliste-bordeaux)
+- [Site vitrine pour un ostéopathe à Pantin](https://elonemaccioni.fr/projets/osteopathe)
+- [Site vitrine pour une entreprise de rénovation à Paris](https://elonemaccioni.fr/projets/thierry-zitoun)
+- [Plateforme de Web Stories pour le Crédit Agricole d'Île-de-France](https://elonemaccioni.fr/projets/web-stories)
+
+## Blog
+
+- [Blog](https://elonemaccioni.fr/blog): articles sur l'actualité du développement web et de l'IA générative, chacun avec ses sources citées en fin d'article.
+
+## Profils
+
+- [LinkedIn](https://linkedin.com/in/elone-maccioni)
+- [Malt](https://www.malt.fr/profile/elonemaccioni)
+- [GitHub](https://github.com/e-maccioni26)
+
+## Optionnel
+
+- [Mentions légales](https://elonemaccioni.fr/mentions-legales)
+- [Politique de confidentialité](https://elonemaccioni.fr/politique-confidentialite)

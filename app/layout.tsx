@@ -17,7 +17,7 @@ const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500"
 export const metadata: Metadata = {
   metadataBase: new URL("https://elonemaccioni.fr"),
   title: "Portfolio | Elone Maccioni",
-  description: "Développeur Full Stack spécialisé en React, Next.js.",
+  description: "Développeur web freelance à Paris, spécialiste React, Next.js et WordPress. Sites vitrines, refontes et applications sur mesure.",
   keywords: ["développeur full stack", "portfolio", "react", "next.js", "javascript", "développeur web", "Elone Maccioni", "freelance"],
   authors: [{ name: "Elone Maccioni" }],
   creator: "Elone Maccioni",
@@ -27,21 +27,21 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://elonemaccioni.fr/",
-    description: "Développeur Full Stack spécialisé en React, Next.js et NodeJs. ",
-    siteName: "Portfolio d'Elone Maccioni",
+    description: "Développeur web freelance à Paris, spécialiste React, Next.js et WordPress. Sites vitrines, refontes et applications sur mesure.",
+    siteName: "Elone Maccioni",
     images: [
       {
-        url: "https://elonemaccioni.fr/avatar.png",
-        width: 800,
-        height: 800,
-        alt: "Photo d'Elone Maccioni"
+        url: "https://elonemaccioni.fr/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "Elone Maccioni, développeur web freelance à Paris"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    description: "Développeur Full Stack spécialisé en React, Next.js et technologies web modernes. Découvrez mes projets et compétences.",
-    images: ["https://elonemaccioni.fr/avatar.png"]
+    description: "Développeur web freelance à Paris, spécialiste React, Next.js et WordPress. Sites vitrines, refontes et applications sur mesure.",
+    images: ["https://elonemaccioni.fr/og-default.png"]
   },
   // Pas de canonical ici : une valeur par défaut serait héritée par toute page
   // qui n'en définit pas, et la déclarerait copie de l'accueil.

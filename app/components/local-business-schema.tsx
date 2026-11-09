@@ -61,7 +61,7 @@ export function LocalBusinessSchema() {
       { "@type": "Country", name: "France" },
     ],
     knowsLanguage: ["fr", "en"],
-    founder: { "@type": "Person", name: "Elone Maccioni" },
+    founder: { "@id": "https://elonemaccioni.fr/#person" },
     // Mêmes profils que dans le schéma Person : un moteur ou une IA doit
     // reconnaître une seule entité, pas deux.
     sameAs: [

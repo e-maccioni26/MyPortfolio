@@ -7,6 +7,7 @@ import { getAllPosts, getPostBySlug, getPostSlugs, getHeadings, formatBlogDate, 
 import { BlogCategoryBadge } from "@/components/blog-category-badge"
 import BlogLinkedinCta from "@/components/blog-linkedin-cta"
 import BlogContactCta from "@/components/blog-contact-cta"
+import Breadcrumb from "@/components/breadcrumb"
 import { tronquer } from "@/lib/blog-utils"
 import { ArticleSchema } from "@/app/components/article-schema"
 
@@ -38,13 +39,13 @@ export async function generateMetadata({
       type: "article",
       images: frontmatter.coverImage
         ? [{ url: `https://elonemaccioni.fr${frontmatter.coverImage}`, width: 1200, height: 630, alt: frontmatter.title }]
-        : [{ url: "https://elonemaccioni.fr/avatar.png", width: 1200, height: 630, alt: frontmatter.title }],
+        : [{ url: "https://elonemaccioni.fr/og-default.png", width: 1200, height: 630, alt: frontmatter.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: frontmatter.title,
       description: tronquer(frontmatter.excerpt),
-      images: frontmatter.coverImage ? [`https://elonemaccioni.fr${frontmatter.coverImage}`] : ["https://elonemaccioni.fr/avatar.png"],
+      images: frontmatter.coverImage ? [`https://elonemaccioni.fr${frontmatter.coverImage}`] : ["https://elonemaccioni.fr/og-default.png"],
     },
     authors: [{ name: frontmatter.author }],
     other: {
@@ -81,11 +82,14 @@ export default async function BlogArticlePage({
 
       <div className="max-w-3xl mx-auto px-6 pt-16 pb-24">
         <div>
-          <div className="flex items-center gap-2.5 mb-5 font-semibold text-[13px] text-muted-foreground">
-            <Link href="/blog" className="hover:text-secondary transition-colors">Blog</Link>
-            <span>/</span>
-            <span className="text-secondary">{post.frontmatter.category}</span>
-          </div>
+          <Breadcrumb
+            className="mb-5"
+            items={[
+              { name: "Accueil", path: "/" },
+              { name: "Blog", path: "/blog" },
+              { name: post.frontmatter.title, path: `/blog/${slug}` },
+            ]}
+          />
 
           <BlogCategoryBadge category={post.frontmatter.category} className="mb-5" />
 

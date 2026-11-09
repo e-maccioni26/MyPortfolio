@@ -1,4 +1,9 @@
 import React from "react";
+import { serialiserJsonLd } from "@/lib/json-ld";
+
+// Identifiants partagés avec local-business-schema et article-schema : une IA
+// doit relier Person, ProfessionalService et auteur d'article à une seule entité.
+const SITE = "https://elonemaccioni.fr";
 
 interface StructuredDataProps {
   type: "Person" | "WebSite" | "Project";
@@ -12,6 +17,7 @@ export const StructuredData = ({ type, data }: StructuredDataProps) => {
     schema = {
       "@context": "https://schema.org",
       "@type": "Person",
+      "@id": `${SITE}/#person`,
       name: data.name,
       jobTitle: data.jobTitle,
       description: data.description,
@@ -20,23 +26,19 @@ export const StructuredData = ({ type, data }: StructuredDataProps) => {
       image: data.image,
       email: data.email,
       telephone: data.telephone,
-      worksFor: {
-        "@type": "Organization",
-        name: data.employer,
-      },
+      worksFor: { "@id": `${SITE}/#business` },
       knowsAbout: data.skills,
     };
   } else if (type === "WebSite") {
     schema = {
       "@context": "https://schema.org",
       "@type": "WebSite",
+      "@id": `${SITE}/#website`,
       name: data.name,
       url: data.url,
       description: data.description,
-      author: {
-        "@type": "Person",
-        name: data.author,
-      },
+      author: { "@id": `${SITE}/#person` },
+      publisher: { "@id": `${SITE}/#person` },
       inLanguage: data.language,
     };
   } else if (type === "Project") {
@@ -45,12 +47,10 @@ export const StructuredData = ({ type, data }: StructuredDataProps) => {
       "@type": "CreativeWork",
       name: data.title,
       description: data.description,
-      image: data.image,
+      image: data.image?.startsWith("/") ? `${SITE}${data.image}` : data.image,
       url: data.url,
-      author: {
-        "@type": "Person",
-        name: data.author,
-      },
+      // Le nom reste sur la page : un parseur qui ne lit qu'elle ne résout pas l'@id.
+      author: { "@type": "Person", "@id": `${SITE}/#person`, name: data.author },
       keywords: data.keywords,
       datePublished: data.datePublished,
     };
@@ -61,7 +61,7 @@ export const StructuredData = ({ type, data }: StructuredDataProps) => {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: serialiserJsonLd(schema) }}
     />
   );
 }; 

@@ -1,9 +1,9 @@
 import { ThemeToggle } from "@/components/theme-toggle"
 import { projects } from "@/components/projects-data"
-import Link from "next/link"
 import Image from "next/image"
 import { notFound } from "next/navigation"
 import { Metadata } from "next"
+import Breadcrumb from "@/components/breadcrumb"
 import { StructuredData } from "@/app/components/structured-data"
 
 export function generateStaticParams() {
@@ -64,9 +64,13 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     <main className="min-h-screen p-6">
       <ThemeToggle />
       <div className="max-w-4xl mx-auto space-y-12 py-12">
-        <Link href="/projets" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-          ← Retour aux projets
-        </Link>
+        <Breadcrumb
+          items={[
+            { name: "Accueil", path: "/" },
+            { name: "Projets", path: "/projets" },
+            { name: project.title, path: project.link },
+          ]}
+        />
 
         <section className="space-y-4">
           <h1 className="text-4xl font-bold">{project.title}</h1>
@@ -160,7 +164,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           url: `https://elonemaccioni.fr${project.link}`,
           author: "Elone Maccioni",
           keywords: project.technologies.join(", "),
-          datePublished: "2024-04-07"
         }}
       />
     </main>

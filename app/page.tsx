@@ -51,7 +51,7 @@ export default function Home() {
             "https://www.malt.fr/profile/elonemaccioni",
             "https://github.com/e-maccioni26",
           ],
-          image: "/avatar.png",
+          image: "https://elonemaccioni.fr/avatar.png",
           email: "elonemacc@gmail.com",
           skills: ["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "CSS", "HTML", "API REST", "PHP", "SQL", "Git", "Docker", "Linux", "SEO", "WordPress", "SEO", "IA"]
         }}
