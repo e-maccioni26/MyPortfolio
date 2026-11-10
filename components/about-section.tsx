@@ -15,7 +15,7 @@ type Stat = {
 const stats: Stat[] = [
   { count: 15, suffix: "+", label: "projets livrés" },
   { count: 5, suffix: " ans", label: "d'expérience" },
-  { text: "Freelance", label: "Me contacter" },
+  { text: "Devis", label: "sous 24h" },
 ]
 
 export default function AboutSection() {
@@ -58,12 +58,11 @@ export default function AboutSection() {
             </h2>
 
             <p className="text-base leading-relaxed text-muted-foreground mb-4">
-              Je conçois et développe des sites et applications web sur mesure pour des entreprises et des indépendants. Actuellement à la recherche d&apos;une nouvelle opportunité en CDI/CDD, je poursuis en parallèle quelques missions freelance sélectionnées
+              Je conçois et développe des sites et applications web sur mesure pour des entreprises et des indépendants. Moi c&apos;est Elone, développeur web freelance sur Paris. Mon point de départ est de connaitre le besoin de mon client avant tout, la clef d&apos;un bon projet est la communication et la confiance. Je prends le temps de vous comprendre avant de commencer quoi que ce soit. Sinon le reste du temps, je veille sur la tech et l&apos;IA, et je partage ce que j&apos;apprends sur le blog.
             </p>
             <p className="text-base leading-relaxed text-muted-foreground mb-9">
               En parallèle, je documente ma veille Tech &amp; IA chaque semaine. C&apos;est ce qui me permet de
-              rester à jour sur des technologies qui évoluent vite, et d&apos;en faire bénéficier directement mes
-              projets clients.
+              rester à jour sur des technologies qui évoluent vite, et d&apos;en faire bénéficier directement mes clients.
             </p>
 
             <dl className="flex flex-wrap gap-x-12 gap-y-6">
